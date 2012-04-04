@@ -1,36 +1,5 @@
         <div data-role="page" data-theme="a" id="page1">   <!-- should be page2?? -->
-            <div data-theme="a" data-role="header">
-                <!-- <h1 id="header_logo"><a href="#">Sailthru</a></h1> -->
-                <div id="header_panel">
-                    <!-- <a href="#" id="header_logo" >Sailthru</a> -->
-                    <a href="#"><?php echo $this->Html->image('sailthru_logo.png', array('id' => 'header_logo')); ?></a>
-                    <div id="header_logout_panel">
-                        <a href="#">Logout</a>
-                    </div>
-                </div>
-            </div>
-           <div data-role="navbar">
-                <ul>
-                    <li>
-                        <a href="#" id="reports" data-icon="custom" data-iconpos="top" class="ui-btn-active">
-                            REPORTS
-                        </a>
-                    </li>
-                    <li>
-                        <div id="campaigns">
-                        </div>
-                        
-                        <a href="campaigns" id="campaigns"data-icon="custom" data-iconpos="top">
-                            CAMPAIGNS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#page1" id="contact"data-icon="custom" data-iconpos="top">
-                            CONTACT
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <?php echo $this->element('header', array('page' => 'reports')); ?>
             <div data-role="content">
                 <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="false">

@@ -7,25 +7,7 @@
                     </div>
                 </div>
             </div>
-           <div data-role="navbar">
-                <ul>
-                    <li>
-                        <a href="reports" id="reports" data-icon="custom" data-iconpos="top">
-                            REPORTS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" id="campaigns"data-icon="custom" data-iconpos="top" class="ui-btn-active">
-                            CAMPAIGNS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#page1" id="contact"data-icon="custom" data-iconpos="top" data-transition="slide">
-                            CONTACT
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <?php echo $this->element('menu', array('page' => 'campaigns')); ?>
             <div data-role="content" >
                 <div data-role="collapsible-set" cdata-theme="a" data-content-theme="a">
                     <div data-role="collapsible">
