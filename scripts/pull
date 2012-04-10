@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git pull origin master
+sudo cp -r /home/cake/mobile/webroot_files/* /var/www/mobile/

@@ -1682,3 +1682,37 @@ margin-right:4%;
 background-color: #00CCED;
 }
 */
+
+
+
+
+
+
+
+
+
+/**
+ * This is the navbar style.
+ * Modify at your own risk.
+ */
+
+ #slider {
+	overflow-x:hidden;
+	overflow-y:hidden;
+	visibility:visibility;
+ }
+
+ #slider ul {
+	list-style-type:none;
+	list-style-position:initial;
+	list-style-image:initial;
+	width:1440px;
+	-webkit-transition-duration:0ms;
+	-webkit-transform:translate3d(0px, 0px, 0px);
+ }
+
+ #slider ul li {
+	display:table-cell;
+	width:480px;
+	vertical-align:top;
+ }

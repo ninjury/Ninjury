@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo cp -r /var/www/mobile/* /home/cake/mobile/webroot_files/
+git add /home/cake/mobile/webroot_files/*
+git commit -m "adding webroot as well [push script]"
+git push origin master

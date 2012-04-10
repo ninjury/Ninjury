@@ -1,15 +1,7 @@
-        <div data-role="page" data-theme="a" id="#campaigns">
-            <div data-theme="a" data-role="header" id="page1">              
-                <div id="header_panel">
-                    <a href="#"><?php echo $this->Html->image('sailthru_logo.png', array('id' => 'header_logo')); ?></a>
-                    <div id="header_logout_panel">
-                        <a href="#">Logout</a>
-                    </div>
-                </div>
-            </div>
-            <?php echo $this->element('menu', array('page' => 'campaigns')); ?>
-            <div data-role="content" >
-                <div data-role="collapsible-set" cdata-theme="a" data-content-theme="a">
+        <div data-role="page" id="campaigns_page" data-theme="a">
+            <?php echo $this->element('header', array('page' => 'campaigns')); ?>
+            <div data-role="content">
+                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible">
                         <h3>
                             Scheduled
@@ -161,15 +153,5 @@
                     </div>
                 </div>
             </div>
-            <!-- <div data-role="footer" data-theme="a">
-                <p>
-                2012 Sailthru, Inc. All Rights Reserved.
-                </p>
-                <p>
-                770 Broadway, New York, NY 10003 Tel: 877-812-8689
-                </p> -->
-            </div>
+            <?php echo $this->element('footer'); ?>
         </div>
-        <script>
-            //App custom javascript
-        </script>

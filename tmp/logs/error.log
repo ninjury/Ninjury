@@ -844,3 +844,91 @@
 2012-03-24 16:46:59 Error: [MissingControllerException] Controller class Reports.phpController could not be found.
 #0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2012-04-04 11:56:46 Error: [MissingViewException] View file "/home/cake/mobile/View/Pages/contacts.ctp" is missing.
+#0 /usr/lib/cake/lib/Cake/View/View.php(460): View->_getViewFileName('contacts')
+#1 /usr/lib/cake/lib/Cake/Controller/Controller.php(962): View->render('contacts', NULL)
+#2 /vol/home/cake/mobile/Controller/PagesController.php(71): Controller->render('contacts')
+#3 [internal function]: PagesController->display('contacts')
+#4 /usr/lib/cake/lib/Cake/Controller/Controller.php(488): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-04-10 01:59:52 Error: [MissingControllerException] Controller class AuthController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-10 01:59:57 Error: [MissingControllerException] Controller class AuthController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-10 02:00:38 Error: [MissingControllerException] Controller class AuthController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-10 02:01:28 Error: [MissingControllerException] Controller class AuthController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-10 02:01:55 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:02:23 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:02:26 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:03:33 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:03:35 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:03:36 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:03:36 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:03:37 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:04:12 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:04:13 Error: [MissingActionException] Action AuthController::reports() could not be found.
+#0 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#2 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2012-04-10 02:04:19 Error: [MissingViewException] View file "/home/cake/mobile/View/Pages/reports/reports.ctp" is missing.
+#0 /usr/lib/cake/lib/Cake/View/View.php(460): View->_getViewFileName('reports/reports')
+#1 /usr/lib/cake/lib/Cake/Controller/Controller.php(962): View->render('reports/reports', NULL)
+#2 /vol/home/cake/mobile/Controller/PagesController.php(71): Controller->render('reports/reports')
+#3 [internal function]: PagesController->display('reports', 'reports')
+#4 /usr/lib/cake/lib/Cake/Controller/Controller.php(488): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-04-10 02:19:42 Error: [MissingControllerException] Controller class ContactsController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-10 02:23:06 Error: [MissingControllerException] Controller class ContactsController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

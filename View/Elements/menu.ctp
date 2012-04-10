@@ -1,21 +1,9 @@
-            <div data-id="menu">
-            <div data-role="navbar" style="overflow-x:hidden; overflow-y:hidden; visibility:visible;">
-                <ul>
-                    <li>
-                        <a href="reports" id="reports" data-icon="custom" data-iconpos="top" <?php if($page == 'reports') echo 'class="ui-btn-active ui-state-persist"'; ?>>
-                            REPORTS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="campaigns" id="campaigns" data-icon="custom" data-iconpos="top" <?php if($page == 'campaigns') echo 'class="ui-btn-active ui-state-persist"'; ?>>
-                            CAMPAIGNS
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contacts" id="contact" data-icon="custom" data-iconpos="top" <?php if($page == 'contacts') echo 'class="ui-btn-active ui-state-persist"'; ?>>
-                            CONTACT
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            </div>
+<div id="slider" data-role="navbar">
+	<ul>
+		<li><a data-ajax="false" data-icon="custom" data-iconpos="top" id="reports" <?php if($page == 'reports') echo 'class="ui-btn-active ui-state-persist"'; ?> href="reports">REPORTS</a></li>
+		<li><a data-ajax="false" data-icon="custom" data-iconpos="top" id="campaigns" <?php if($page == 'campaigns') echo 'class="ui-btn-active ui-state-persist"'; ?> href="campaigns">CAMPAIGNS</a></li>
+		<li><a data-ajax="false" data-icon="custom" data-iconpos="top" id="contact" <?php if($page == 'contact') echo 'class="ui-btn-active ui-state-persist"'; ?> href="/">CONTACT</a></li>
+		<li><a data-ajax="false" data-icon="custom" data-iconpos="top" <?php if($page == 'info') echo 'class="ui-btn-active ui-state-persist"'; ?> href="/">INFO</a></li>
+		<li><a data-ajax="false" data-icon="custom" data-iconpos="top" <?php if($page == 'lists') echo 'class="ui-btn-active ui-state-persist"'; ?> href="/">LISTS</a></li>
+	</ul>
+</div>

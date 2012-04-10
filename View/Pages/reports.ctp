@@ -1,4 +1,4 @@
-        <div data-role="page" data-theme="a" id="page1">   <!-- should be page2?? -->
+        <div data-role="page" data-theme="a" id="reports_page">
             <?php echo $this->element('header', array('page' => 'reports')); ?>
             <div data-role="content">
                 <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
@@ -195,7 +195,5 @@
                     </div>
                 </div>
             </div>
+            <?php echo $this->element('footer'); ?>
         </div>
-        <script>
-            //App custom javascript
-        </script>
