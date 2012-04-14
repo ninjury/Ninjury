@@ -108,7 +108,7 @@
                 <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
                         <h3>
-                            Unscheduled
+                            Sent
                         </h3>
                         <p>
                             <table class="table" id="sent">
@@ -117,27 +117,14 @@
                               <th class="list" >List</th>
                               <th class="date">Sent</th>
                             </tr>
+                            <?php foreach ($sent_blasts as $blast): ?>
                             <tr>
-                            <td class="name"><a href="#">Blast1</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
+                            <td class="name"><?php echo $blast['name']; ?></td>
+                            <td class="list">
+                            <?php echo $blast['list']; ?>
+                            </td class="date">
+                            <td><?php echo $blast['start_time']; ?></td>
                             </tr>
-                            <tr class="alt">
-                            <td class="name"><a href="#">Blast2</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            </tr>
-                            <tr>
-                            <td class="name"><a href="#">Blast3</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            </tr>
-                            <tr class="alt">
-                           <td class="name"><a href="#">Blast4</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            </tr>
-                            <tr>
                             <td class="name"><a href="#">Blast5</a></td>
                             <td class="list"><a href="#">Group Members</a></td>
                             <td class="date">3/20/12 12:00</td>
