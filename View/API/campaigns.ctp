@@ -125,10 +125,10 @@
                             </td class="date">
                             <td><?php echo $blast['start_time']; ?></td>
                             </tr>
+			    <?php endforeach; ?>
                             <td class="name"><a href="#">Blast5</a></td>
                             <td class="list"><a href="#">Group Members</a></td>
                             <td class="date">3/20/12 12:00</td>
-                            </tr>
                             </tr>
                             </table>
                         </p>

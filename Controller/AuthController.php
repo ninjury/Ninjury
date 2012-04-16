@@ -19,20 +19,21 @@ class AuthController extends AppController {
  * Check for a valid user and set up access to further pages.
  */
 	public function login() {
-		$this->redirect('/reports', 303);
+		$this->set('title_for_layout', Inflector::humanize('reports'));
+		$this->render('/Pages/reports');
 		
 		// Everything below this line would be useful if we could tell who was
 		// a valid user and who wasn't.
 
-		if(!$this->request->is('post')) $this->redirect('/');
+		//if(!$this->request->is('post')) $this->redirect('/');
 		
-		$username = $this->request->data('u');
-		$password = $this->request->data('p');
+		//$username = $this->request->data('username');
+		//$password = $this->request->data('password');
 
-		if ($username == null || $password == null) $this->redirect('/');
+		//if ($username == null || $password == null) $this->redirect('/');
 
 		// Put validation here
-		// Put appropriate redirect here
+		// Put appropriate render here
 	}
 
 /**

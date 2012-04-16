@@ -932,3 +932,84 @@
 2012-04-10 02:23:06 Error: [MissingControllerException] Controller class ContactsController could not be found.
 #0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2012-04-10 12:33:39 Error: [MissingControllerException] Controller class Reports.htmlController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-10 12:33:51 Error: [MissingControllerException] Controller class Reports.htmlController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-10 12:33:57 Error: [MissingControllerException] Controller class Reports.lController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-10 12:34:03 Error: [MissingControllerException] Controller class Reports.lController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-14 16:31:44 Error: [MissingViewException] View file "/home/cake/mobile/View/Pages/demo.ctp" is missing.
+#0 /usr/lib/cake/lib/Cake/View/View.php(460): View->_getViewFileName('demo')
+#1 /usr/lib/cake/lib/Cake/Controller/Controller.php(962): View->render('demo', NULL)
+#2 /vol/home/cake/mobile/Controller/PagesController.php(71): Controller->render('demo')
+#3 [internal function]: PagesController->display('demo')
+#4 /usr/lib/cake/lib/Cake/Controller/Controller.php(488): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-04-14 18:01:21 Error: [MissingControllerException] Controller class ApiController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-14 18:09:03 Error: [MissingControllerException] Controller class ApiController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-15 13:30:11 Error: [MissingViewException] View file "/home/cake/mobile/View/API/API/campaigns.ctp" is missing.
+#0 /usr/lib/cake/lib/Cake/View/View.php(460): View->_getViewFileName('API/campaigns')
+#1 /usr/lib/cake/lib/Cake/Controller/Controller.php(962): View->render('API/campaigns', NULL)
+#2 /vol/home/cake/mobile/Controller/ApiController.php(55): Controller->render('API/campaigns')
+#3 [internal function]: APIController->display('campaigns')
+#4 /usr/lib/cake/lib/Cake/Controller/Controller.php(488): ReflectionMethod->invokeArgs(Object(APIController), Array)
+#5 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(APIController), Object(CakeRequest), Object(CakeResponse))
+#7 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-04-15 13:30:12 Error: [MissingViewException] View file "/home/cake/mobile/View/API/API/campaigns.ctp" is missing.
+#0 /usr/lib/cake/lib/Cake/View/View.php(460): View->_getViewFileName('API/campaigns')
+#1 /usr/lib/cake/lib/Cake/Controller/Controller.php(962): View->render('API/campaigns', NULL)
+#2 /vol/home/cake/mobile/Controller/ApiController.php(55): Controller->render('API/campaigns')
+#3 [internal function]: APIController->display('campaigns')
+#4 /usr/lib/cake/lib/Cake/Controller/Controller.php(488): ReflectionMethod->invokeArgs(Object(APIController), Array)
+#5 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(APIController), Object(CakeRequest), Object(CakeResponse))
+#7 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-04-15 13:30:44 Error: [MissingViewException] View file "/home/cake/mobile/View/API/API/campaigns.ctp" is missing.
+#0 /usr/lib/cake/lib/Cake/View/View.php(460): View->_getViewFileName('API/campaigns')
+#1 /usr/lib/cake/lib/Cake/Controller/Controller.php(962): View->render('API/campaigns', NULL)
+#2 /vol/home/cake/mobile/Controller/ApiController.php(54): Controller->render('API/campaigns')
+#3 [internal function]: APIController->display('campaigns')
+#4 /usr/lib/cake/lib/Cake/Controller/Controller.php(488): ReflectionMethod->invokeArgs(Object(APIController), Array)
+#5 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(APIController), Object(CakeRequest), Object(CakeResponse))
+#7 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-04-15 23:42:28 Error: [MissingControllerException] Controller class LoginVerifyController could not be found.
+#0 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-15 23:45:23 Error: [MissingViewException] View file "/home/cake/mobile/View/Auth/reports.ctp" is missing.
+#0 /usr/lib/cake/lib/Cake/View/View.php(460): View->_getViewFileName('reports')
+#1 /usr/lib/cake/lib/Cake/Controller/Controller.php(962): View->render('reports', NULL)
+#2 /vol/home/cake/mobile/Controller/AuthController.php(23): Controller->render('reports')
+#3 [internal function]: AuthController->login()
+#4 /usr/lib/cake/lib/Cake/Controller/Controller.php(488): ReflectionMethod->invokeArgs(Object(AuthController), Array)
+#5 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#7 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-04-15 23:46:52 Error: [MissingViewException] View file "/home/cake/mobile/View/pages/reports.ctp" is missing.
+#0 /usr/lib/cake/lib/Cake/View/View.php(460): View->_getViewFileName('/pages/reports')
+#1 /usr/lib/cake/lib/Cake/Controller/Controller.php(962): View->render('/pages/reports', NULL)
+#2 /vol/home/cake/mobile/Controller/AuthController.php(23): Controller->render('/pages/reports')
+#3 [internal function]: AuthController->login()
+#4 /usr/lib/cake/lib/Cake/Controller/Controller.php(488): ReflectionMethod->invokeArgs(Object(AuthController), Array)
+#5 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /usr/lib/cake/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(AuthController), Object(CakeRequest), Object(CakeResponse))
+#7 /vol/web/html/mobile/index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
