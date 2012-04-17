@@ -1373,7 +1373,7 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 }
 
 .ui-navbar .ui-btn-text{
-    font-size: 15pt;
+    font-size: 17px;
     font-family: 'IntervalSansPro-BoldCond',Helvetica,Arial;
     color: #00cced;
 }
@@ -1771,6 +1771,7 @@ margin-top: 20%;
  #slider {
 	overflow-x:hidden;
 	overflow-y:hidden;
+	background-color:#00cced;
 	visibility:visibility;
  }
 
@@ -1779,7 +1780,6 @@ margin-top: 20%;
 	list-style-position:initial;
 	list-style-image:initial;
 	width:1440px;
-	background-color:#00cced;
 	-webkit-transition-duration:0ms;
 	-webkit-transform:translate3d(0px, 0px, 0px);
  }
