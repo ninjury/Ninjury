@@ -125,9 +125,9 @@ class APIController extends AppController {
 	    $api_secret = '75cf7511cb55c4e0692d525ce55aaf5a';
 	    $sailthruClient = new Sailthru_Client($api_key, $api_secret);
 
-        campaigns_sent($sailthruClient);
-        campaigns_scheduled($sailthruClient);
-        campaigns_in_progress($sailthruClient);
+        $this->campaigns_sent($sailthruClient);
+        $this->campaigns_scheduled($sailthruClient);
+        $this->campaigns_in_progress($sailthruClient);
         
         //$options['start_date'] = 'Jan 1 2012';
         //$options['end_date'] = 'Apr 10 2012';
