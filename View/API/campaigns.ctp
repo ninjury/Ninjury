@@ -29,7 +29,7 @@
                             <?php 
                                 for ($i = 1; $i<=$scheduled_pages; $i++){
                                         if ($i != $scheduled_page){
-                                            $url = '/campaigns/' . $i . '/1/1';
+                                            $url = '/campaigns/' . $i . '/' . $in_progress_page . '/' . $sent_page;
                                             echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
                                         } else {
                                             echo $i;
@@ -68,7 +68,7 @@
                             <?php 
                                 for ($i = 1; $i<=$in_progress_pages; $i++){
                                         if ($i != $in_progress_page){
-                                            $url = '/campaigns/1/'. $i .'/1';
+                                            $url = '/campaigns/' . $scheduled_page . '/'. $i .'/' . $sent_page;
                                             echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
                                         } else {
                                             echo $i;
@@ -107,7 +107,7 @@
                             <?php 
                                 for ($i = 1; $i<=$sent_pages; $i++){
                                         if ($i != $sent_page){
-                                            $url = '/campaigns/1/1/' . $i;
+                                            $url = '/campaigns/' . $scheduled_page . '/' . $in_progress_page .'/' . $i;
                                             echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
                                         } else {
                                             echo $i;
