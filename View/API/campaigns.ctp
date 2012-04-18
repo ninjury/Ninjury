@@ -13,37 +13,15 @@
                               <th class="list" >List</th>
                               <th class="date">Scheduled</th>
                             </tr>
+                            <?php foreach ($scheduled_blasts as $blast): ?>
                             <tr>
-                            <td class="name"><a href="#">Blast1</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
+                            <td class="name"><?php echo $blast['name']; ?></td>
+                            <td class="list">
+                            <?php echo $blast['list']; ?>
+                            </td class="date">
+                            <td><?php echo $blast['schedule_time']; ?></td>
                             </tr>
-                            <tr class="alt">
-                            <td class="name"><a href="#">Blast2</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            <tr>
-                            <td class="name"><a href="#">Blast3</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            <tr class="alt">
-                            <td class="name"><a href="#">Blast4</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            <tr>
-                            <td class="name"><a href="#">Blast5</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            </tr>
+                            <?php endforeach; ?>
                             </table>
                         </p>
                         <div class="page_numbers">
@@ -65,37 +43,15 @@
                               <th class="list" >List</th>
                               <th class="date">Sent</th>
                             </tr>
+                            <?php foreach ($in_progress_blasts as $blast): ?>
                             <tr>
-                            <td class="name"><a href="#">Blast1</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
+                            <td class="name"><?php echo $blast['name']; ?></td>
+                            <td class="list">
+                            <?php echo $blast['list']; ?>
+                            </td class="date">
+                            <td><?php echo $blast['schedule_time']; ?></td>
                             </tr>
-                            <tr class="alt">
-                           <td class="name"><a href="#">Blast2</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            <tr>
-                            <td class="name"><a href="#">Blast3</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            <tr class="alt">
-                            <td class="name"><a href="#">Blast4</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            <tr>
-                           <td class="name"><a href="#">Blast5</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            </tr>
+                            <?php endforeach; ?>
                             </table>
                         </p>
                         <div class="page_numbers">
@@ -125,7 +81,7 @@
                             </td class="date">
                             <td><?php echo $blast['start_time']; ?></td>
                             </tr>
-			    <?php endforeach; ?>
+                            <?php endforeach; ?>
                             <td class="name"><a href="#">Blast5</a></td>
                             <td class="list"><a href="#">Group Members</a></td>
                             <td class="date">3/20/12 12:00</td>

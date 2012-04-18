@@ -33,6 +33,8 @@ class APIController extends AppController {
 	    $sailthruClient = new Sailthru_Client($api_key, $api_secret);
 
         campaigns_sent($sailthruClient);
+        campaigns_scheduled($sailthruClient);
+        campaigns_in_progress($sailthruClient);
         //$options['start_date'] = 'Jan 1 2012';
         //$options['end_date'] = 'Apr 10 2012';
         $this->render('campaigns');
