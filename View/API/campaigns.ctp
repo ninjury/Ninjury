@@ -90,10 +90,7 @@
                         </p>
                         <div class="page_numbers">
                             <p>
-                            <?php 
-                                for ($i = 1; $i<=$sent_pages; $i++){
-                                    
-                            ?>
+                           
                             </p>
                         </div>
                     </div>
