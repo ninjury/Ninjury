@@ -34,6 +34,7 @@ class APIController extends AppController {
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
+                echo 'start: ' . $start . ' end: ' . $end;
                 $results = array();
                 for ($i = $start; $i < $end; $i++){
                     if(array_key_exists($i)){
@@ -71,7 +72,7 @@ class APIController extends AppController {
                         $results[$i] = $response['blasts'][$i];
                     }
                 }
-            
+                
                 $this->set('scheduled_blasts',$results);
                 $this->set('scheduled_pages',$pages);
                 $this->set('scheduled_page',$page);

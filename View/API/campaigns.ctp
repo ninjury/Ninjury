@@ -90,7 +90,7 @@
                         </p>
                         <div class="page_numbers">
                             <p>
-                           
+                            <?php echo $send_pages; ?>
                             </p>
                         </div>
                     </div>
