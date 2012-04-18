@@ -82,18 +82,21 @@
                             <td><?php echo $blast['start_time']; ?></td>
                             </tr>
                             <?php endforeach; ?>
-                            <td class="name"><a href="#">Blast5</a></td>
-                            <td class="list"><a href="#">Group Members</a></td>
-                            <td class="date">3/20/12 12:00</td>
-                            </tr>
                             </table>
                         </p>
                         <div class="page_numbers">
                             <p>
                             <?php 
                                 for ($i = 1; $i<=$sent_pages; $i++){
-                                        echo '<a href="/campaigns?sent_page=' . $i . '">' . $i . '</a>';
-                                        //$this->Html->link($i,'/campaigns',array('sent_page' => $i, 'in_progress_page' => 1, 'scheduled_page' => 1));
+                                        //echo '<a href="/campaigns?sent_page=' . $i . '">' . $i . '</a>';
+                                        //array('sent_page' => $i, 'in_progress_page' => 1, 'scheduled_page' => 1)
+                                        //$this->Html->link($i,'/campaigns');
+                                        <?php echo $this->Form->create(false); ?> 
+                                            <input type="hidden" name="sent_page" value="<?php echo $i; ?>" />
+                                            <input type="hidden" name="in_progress_page" value="1" />
+                                            <input type="hidden" name="scheduled_page" value="1" />
+                                            <input type="submit" value="<?php echo $i; ?>" />                                            
+                                        <?php echo $this->Form->end(); ?>
                                 }
                             ?>
                             </p>
