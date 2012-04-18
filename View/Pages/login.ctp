@@ -13,16 +13,12 @@
 				<input type = "hidden" name = 'sid' value = '<?php echo $sessionId; ?>' />
 				<div class="logininput" data-role="fieldcontain">
 					<fieldset data-role="controlgroup">
-						<div class="loginbutton">
 							<input id="username" autocorrect="off" autocapitalize="off" placeholder="Username" type="text" name="username"/>
-						</div>
 					</fieldset>
 				</div>
 				<div class="logininput" data-role="fieldcontain">
 					<fieldset data-role="controlgroup">
-						<div class="loginbutton">
 							<input id="password" autocorrect="off" autocapitalize="off" placeholder="Password" type="password" name="password"/>
-						</div>
 					</fieldset>
 				</div>
 				<div id="loginButton">

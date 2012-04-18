@@ -1680,8 +1680,7 @@ background-color: #00CCED;
 
 
 #login_page {
-background: #00cced; 
-height:100%;
+background: #00cced;
 }
 
 .logininput {
@@ -1716,7 +1715,7 @@ color: #404041;
 
 #logo_img_div{
 background-color: #00cced; 
-padding:20% 0px;
+padding:40px 0px;
 }
 
 #logo_img{
