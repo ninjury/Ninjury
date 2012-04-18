@@ -91,7 +91,7 @@
                                         //echo '<a href="' . $i . '">' . $i . '</a>';
                                         //array('sent_page' => $i, 'in_progress_page' => 1, 'scheduled_page' => 1)
                                         $url = '/campaigns/ ' . $i;
-                                        $this->Html->link($i,$url,array('ajax' => false));
+                                        $this->Html->link($i,$url,array('data-ajax' => false));
                                 }
                             ?>
                             </p>
