@@ -27,7 +27,6 @@ class APIController extends AppController {
  * @param mixed What page to display
  */
 	public function campaigns() {
-        try {
 
 	    $api_key = "8907ecf0f40ee82bc3e58c1df91ceba0";
 	    $api_secret = '75cf7511cb55c4e0692d525ce55aaf5a';
@@ -63,6 +62,8 @@ class APIController extends AppController {
                 }
             
                 $this->set('sent_blasts',$results);
+                $this->set('sent_pages',$pages);
+                $this->set('sent_page',$page);
             } else {
                 echo 'error';
             }
@@ -76,7 +77,23 @@ class APIController extends AppController {
             $options['status'] = 'scheduled';
             $response = $sailthruClient->getBlasts($options);
             if ( isset($response['error']) ) {
-                $this->set('scheduled_blasts',$response['blasts']);
+                $total_count = count($response['blasts']);
+                $pages = ceil($total_count/RESULTS_PER_PAGE);   
+               
+                $page = $this->request->data('scheduled_page');
+                $start = ($page - 1 )*RESULTS_PER_PAGE;
+                $end = $page*RESULTS_PER_PAGE;
+                
+                $results = array();
+                for ($i = $start; $i < $end; $i++){
+                    if(array_key_exists($i)){
+                        $results[$i] = $response['blasts'][$i];
+                    }
+                }
+            
+                $this->set('scheduled_blasts',$results);
+                $this->set('scheduled_pages',$pages);
+                $this->set('scheduled_page',$page);
             } else {
                 echo 'error';
             }
@@ -90,7 +107,23 @@ class APIController extends AppController {
             $options['status'] = 'sending';
             $response = $sailthruClient->getBlasts($options);
             if ( isset($response['error']) ) {
-                $this->set('in_progress_blasts',$response['blasts']);
+                $total_count = count($response['blasts']);
+                $pages = ceil($total_count/RESULTS_PER_PAGE);   
+               
+                $page = $this->request->data('in_progress_page');
+                $start = ($page - 1 )*RESULTS_PER_PAGE;
+                $end = $page*RESULTS_PER_PAGE;
+                
+                $results = array();
+                for ($i = $start; $i < $end; $i++){
+                    if(array_key_exists($i)){
+                        $results[$i] = $response['blasts'][$i];
+                    }
+                }
+            
+                $this->set('in_progress_blasts',$results);
+                $this->set('in_progress_pages',$pages);
+                $this->set('in_progress_page',$page);
             } else {
                 echo 'error';
             }
