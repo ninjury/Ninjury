@@ -26,7 +26,16 @@
                         </p>
                         <div class="page_numbers">
                             <p>
-                            1 <a href="#">2</a> <a href="#">3</a> <a href="#">4</a>
+                            <?php 
+                                for ($i = 1; $i<=$scheduled_pages; $i++){
+                                        if ($i != $scheduled_page){
+                                            $url = '/campaigns/' . $i . '/1/1';
+                                            echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
+                                        } else {
+                                            echo $i;
+                                        }
+                                }
+                            ?>
                             </p>
                         </div>
                     </div>
@@ -56,7 +65,16 @@
                         </p>
                         <div class="page_numbers">
                             <p>
-                            1 <a href="#">2</a> <a href="#">3</a> <a href="#">4</a>
+                            <?php 
+                                for ($i = 1; $i<=$in_progress_pages; $i++){
+                                        if ($i != $in_progress_page){
+                                            $url = '/campaigns/1/'. $i .'/1';
+                                            echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
+                                        } else {
+                                            echo $i;
+                                        }
+                                }
+                            ?>
                             </p>
                         </div>
                     </div>
