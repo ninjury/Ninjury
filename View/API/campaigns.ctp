@@ -89,8 +89,10 @@
                             <?php 
                                 for ($i = 1; $i<=$sent_pages; $i++){
                                         if ($i != $sent_page){
-                                            $url = '/campaigns/1/1' . $i;
+                                            $url = '/campaigns/1/1/' . $i;
                                             echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
+                                        } else {
+                                            echo $i;
                                         }
                                 }
                             ?>
