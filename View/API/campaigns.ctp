@@ -20,6 +20,7 @@
                             <?php echo $blast['list']; ?>
                             </td class="date">
                             <td><?php echo $blast['schedule_time']; ?></td>
+                            <td class="buttons"><a href="#">X</a></td>
                             </tr>
                             <?php endforeach; ?>
                             </table>
@@ -60,6 +61,7 @@
                                 <?php echo $blast['list']; ?>
                                 </td class="date">
                                 <td><?php echo $blast['schedule_time']; ?></td>
+                                <td class="buttons"><a href="#">X</a></td>
                                 </tr>
                                 <?php endforeach; ?>
                                 </table>
