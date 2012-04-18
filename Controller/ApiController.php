@@ -3,6 +3,7 @@
 include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Client_Exception.php");
 include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Client.php");
 include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Util.php");
+define("RESULTS_PER_PAGE", 5);
 
 class APIController extends AppController {
 
@@ -35,8 +36,10 @@ class APIController extends AppController {
         campaigns_sent($sailthruClient);
         campaigns_scheduled($sailthruClient);
         campaigns_in_progress($sailthruClient);
+        
         //$options['start_date'] = 'Jan 1 2012';
         //$options['end_date'] = 'Apr 10 2012';
+        
         $this->render('campaigns');
     }
 
@@ -45,7 +48,21 @@ class APIController extends AppController {
             $options['status'] = 'sent';
             $response = $sailthruClient->getBlasts($options);
             if ( isset($response['error']) ) {
-                $this->set('sent_blasts',$response['blasts']);
+                $total_count = count($response['blasts']);
+                $pages = ceil($total_count/RESULTS_PER_PAGE);   
+               
+                $page = $this->request->data('sent_page');
+                $start = ($page - 1 )*RESULTS_PER_PAGE;
+                $end = $page*RESULTS_PER_PAGE;
+                
+                $results = array();
+                for ($i = $start; $i < $end; $i++){
+                    if(array_key_exists($i)){
+                        $results[$i] = $response['blasts'][$i];
+                    }
+                }
+            
+                $this->set('sent_blasts',$results);
             } else {
                 echo 'error';
             }
