@@ -197,7 +197,7 @@ class APIController extends AppController {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
-                $page = $this->params['pass'][0];
+                $page = $this->params['action'];
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
