@@ -147,6 +147,8 @@ class APIController extends AppController {
                 for ($i = $start; $i < $end; $i++){
                     if(array_key_exists($i, $results)){
                         $results[$i] = $response['blasts'][$i];
+                    } else {
+                        echo "key doesn't exist";
                     }
                 }
                 
