@@ -90,8 +90,9 @@
                                 for ($i = 1; $i<=$sent_pages; $i++){
                                         //echo '<a href="' . $i . '">' . $i . '</a>';
                                         //array('sent_page' => $i, 'in_progress_page' => 1, 'scheduled_page' => 1)
-                                        $url = '/campaigns/ ' . $i;
-                                        $this->Html->link($i,$url,array('data-ajax' => false));
+                                        $url = '/campaigns/' . $i;
+                                        //$this->Html->link($i,$url,array('data-ajax' => false));
+                                        $this->Html->link('Hello',$url);
                                 }
                             ?>
                             </p>
