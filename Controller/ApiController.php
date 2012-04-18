@@ -130,6 +130,8 @@ class APIController extends AppController {
         $this->campaigns_scheduled($sailthruClient);
         $this->campaigns_in_progress($sailthruClient);
         
+        $this->set('sent_pages',5);
+        
         //$options['start_date'] = 'Jan 1 2012';
         //$options['end_date'] = 'Apr 10 2012';
         
