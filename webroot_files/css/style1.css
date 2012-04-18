@@ -1540,13 +1540,6 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
         background-color: #80e5f5;
 }
 
-/* Log In Page */
-
-.ui-field-contain .ui-input-text{
-    width: 50%;
-    background-color: #e5fafc;
-}
-
 /*BELOW ADDED BY ALEX B FOR HER CONVENIENCE BUT SHOULD BE CLEANED UP*/
 .graph-options {
 display: inline-block;
@@ -1591,27 +1584,27 @@ background: #c2a3bf;
 border: 1px solid #c2a3bf;
 }
 
-#graph-options2 .ui-btn-up-a{
+#graph-options3 .ui-btn-up-a{
 background: #6D6E70;
 border: 1px solid #6D6E70;
 }
-#graph-options2 .ui-btn-hover-a{
+#graph-options3 .ui-btn-hover-a{
 background: #b5b5b8;
 border: 1px solid #b5b5b8;
 }
-#graph-options3 .ui-btn-up-a{
+#graph-options4 .ui-btn-up-a{
 background: #F5EB00;
 border: 1px solid #F5EB00;
 }
-#graph-options3 .ui-btn-hover-a{
+#graph-options4 .ui-btn-hover-a{
 background: #faf580;
 border: 1px solid #faf580;
 }
-#graph-options4 .ui-btn-up-a{
+#graph-options2 .ui-btn-up-a{
 background: #00CCED;
 border: 1px solid #00CCED;
 }
-#graph-options4 .ui-btn-hover-a{
+#graph-options2 .ui-btn-hover-a{
 background: #80e5f5;
 border: 1px solid #80e5f5;
 }
@@ -1687,48 +1680,34 @@ background-color: #00CCED;
 
 
 #login_page {
-background-color: #00cced; 
 background: #00cced; 
-}
-#login_form{
-margin-left: 12%;
-margin-right: auto;
-}
-#login_form .ui-field-contain label.ui-input-text {
-width: 9%;
-}
-#login_form .ui-field-contain label.ui-input-text {
-margin: 0 1% 0 0;
-}
-#login_form #textinput1div {
-float: left;
-}
-#login_form #textinput1labeldiv {
-color: white;
-padding-top: 3%;
-padding-right: 4%;
-float: left;
-}
-#login_form #textinput2div {
-float: left;
-}
-#login_form #textinput2labeldiv {
-color: white;
-padding-top: 3%;
-padding-right: 4%;
-float: left;
-}
-#loginf_form .ui-field-contain label.ui-input-text {
-float: left;
+height:100%;
 }
 
-#login_form .ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search {
-width: 65%;
+.logininput {
+max-width:300px;
+width:85%;
+border:0px;
+}
+
+#login_form input{
+   padding: 12px;
+   line-height:1;
 }
 
 #loginButton{
-width: 150px;
+max-width: 180px;
+width:70%;
 }
+
+#login_form .ui-field-contain input.ui-input-text, .ui-field-contain textarea.ui-input-text, .ui-field-contain .ui-input-search {
+width:100%;
+}
+
+#login_form form>* {
+margin: 0px auto;
+}
+
 #loginButton .ui-btn-up-a{
 border: 1px solid #9e9ea1;
 background: #ededed;
@@ -1736,19 +1715,15 @@ color: #404041;
 }
 
 #logo_img_div{
-width: 100%
-height: 50%; 
-/*position: relative; */
 background-color: #00cced; 
-padding-bottom:20%
+padding:20% 0px;
 }
+
 #logo_img{
+max-width:100%;
+display:block;
 position: relative; 
-margin-top:20%
-margin-bottom:20%;
-margin-left: 0%;
-margin-right: 0%;
-margin-top: 20%;
+margin:0px auto;
 }
 
 
