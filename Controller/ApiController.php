@@ -198,9 +198,8 @@ class APIController extends AppController {
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
                 echo 'pages: ' . $pages;
                
-                $page = 1;
+                $page = $this->params['pass'][0];
                 echo $this->params['pass'][0];
-                echo $this->params['pass'][1];
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
