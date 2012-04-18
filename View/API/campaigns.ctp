@@ -90,7 +90,11 @@
                         </p>
                         <div class="page_numbers">
                             <p>
-                            <?php echo $sent_pages; ?>
+                            <?php 
+                                for ($i = 1; $i<=$sent_pages; $i++){
+                                        $this->Html->link($i,'/campaigns',array('sent_page' => $i, 'in_progress_page' => 1, 'scheduled_page' => 1));
+                                }
+                            ?>
                             </p>
                         </div>
                     </div>
