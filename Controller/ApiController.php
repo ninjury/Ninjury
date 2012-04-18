@@ -145,7 +145,7 @@ class APIController extends AppController {
                 
                 $results = array();
                 for ($i = $start; $i < $end; $i++){
-                    if(array_key_exists($i)){
+                    if(array_key_exists($i, $results)){
                         $results[$i] = $response['blasts'][$i];
                     }
                 }
@@ -175,7 +175,7 @@ class APIController extends AppController {
                 
                 $results = array();
                 for ($i = $start; $i < $end; $i++){
-                    if(array_key_exists($i)){
+                    if(array_key_exists($i, $results)){
                         $results[$i] = $response['blasts'][$i];
                     }
                 }
@@ -204,7 +204,7 @@ class APIController extends AppController {
                 
                 $results = array();
                 for ($i = $start; $i < $end; $i++){
-                    if(array_key_exists($i)){
+                    if(array_key_exists($i, $results)){
                         $results[$i] = $response['blasts'][$i];
                     }
                 }
