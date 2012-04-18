@@ -43,10 +43,11 @@ class APIController extends AppController {
     }
 
     public function campaigns_sent($client) {
-            $options = array();
-            $options['status'] = 'sent';
+        $options = array();
+        $options['status'] = 'sent';
+        try{
             $response = $sailthruClient->getBlasts($options);
-            if ( isset($response['error']) ) {
+                if ( isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
@@ -73,8 +74,9 @@ class APIController extends AppController {
     }
     
     public function campaigns_scheduled($client) {
-            $options = array();
-            $options['status'] = 'scheduled';
+        $options = array();
+        $options['status'] = 'scheduled';
+        try{
             $response = $sailthruClient->getBlasts($options);
             if ( isset($response['error']) ) {
                 $total_count = count($response['blasts']);
@@ -103,8 +105,9 @@ class APIController extends AppController {
     }
     
     public function campaigns_in_progress($client) {
-            $options = array();
-            $options['status'] = 'sending';
+        $options = array();
+        $options['status'] = 'sending';
+        try{
             $response = $sailthruClient->getBlasts($options);
             if ( isset($response['error']) ) {
                 $total_count = count($response['blasts']);
