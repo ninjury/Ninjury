@@ -14,9 +14,7 @@
 				<div data-role="fieldcontain">
 					<fieldset data-role="controlgroup">
 						<div id="textinput1labeldiv">
-							<label for="textinput1">
 								USERNAME:
-							</label>
 						</div>
 						<div id="textinput1div">
 							<input id="textinput1" type="text" name="username"/>
@@ -26,9 +24,7 @@
 				<div data-role="fieldcontain">
 					<fieldset data-role="controlgroup">
 						<div id="textinput2labeldiv">
-							<label for="textinput2">
 								PASSWORD:
-							</label>
 						</div>
 						<div id="textinput2div">
 							<input id="textinput2" type="password" name="password"/>
