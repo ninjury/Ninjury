@@ -21,7 +21,7 @@ class APIController extends AppController {
  */
 	public $uses = array();
 
-    public function campaigns_sent($client) {
+    public function campaigns_sent($sailthruClient) {
         $options = array();
         $options['status'] = 'sent';
         try{
@@ -52,7 +52,7 @@ class APIController extends AppController {
         }    
     }
     
-    public function campaigns_scheduled($client) {
+    public function campaigns_scheduled($sailthruClient) {
         $options = array();
         $options['status'] = 'scheduled';
         try{
@@ -83,7 +83,7 @@ class APIController extends AppController {
         }    
     }
     
-    public function campaigns_in_progress($client) {
+    public function campaigns_in_progress($sailthruClient) {
         $options = array();
         $options['status'] = 'sending';
         try{
