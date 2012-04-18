@@ -140,6 +140,7 @@ class APIController extends AppController {
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
                 $page = isset($this->params['pass'][0]) ? $this->params['pass'][0] : 1;
+                echo 'scheduled: ' . $page; 
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
@@ -198,7 +199,7 @@ class APIController extends AppController {
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
                
                 $page = isset($this->params['pass'][3]) ? $this->params['pass'][3] : 1;
-                echo $this->params['pass'][1];
+                //echo $this->params['pass'][1];
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
