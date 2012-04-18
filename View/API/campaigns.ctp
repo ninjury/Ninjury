@@ -91,12 +91,12 @@
                                         //echo '<a href="/campaigns?sent_page=' . $i . '">' . $i . '</a>';
                                         //array('sent_page' => $i, 'in_progress_page' => 1, 'scheduled_page' => 1)
                                         //$this->Html->link($i,'/campaigns');
-                                        <?php echo $this->Form->create(false); ?> 
-                                            <input type="hidden" name="sent_page" value="<?php echo $i; ?>" />
-                                            <input type="hidden" name="in_progress_page" value="1" />
-                                            <input type="hidden" name="scheduled_page" value="1" />
-                                            <input type="submit" value="<?php echo $i; ?>" />                                            
-                                        <?php echo $this->Form->end(); ?>
+                                        echo $this->Form->create(false); 
+                                        echo '<input type="hidden" name="sent_page" value="' . $i . '" />'
+                                        echo '<input type="hidden" name="in_progress_page" value="1" />'
+                                        echo '<input type="hidden" name="scheduled_page" value="1" />'
+                                        echo '<input type="submit" value="' . $i . '" />'                                            
+                                        echo $this->Form->end();
                                 }
                             ?>
                             </p>
