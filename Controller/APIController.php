@@ -29,12 +29,12 @@ $sailthruClient = new Sailthru_Client($api_key, $api_secret);
  *
  * @param mixed What page to display
  */
-	public function display() {
+	public function campaigns() {
         try {
             $options = array();
-            //$options['start_date'] = 'Jan 1 2012';
-            //$options['end_date'] = 'Apr 10 2012';
-            $options['status'] = 'sent';
+            $options['start_date'] = 'Jan 1 2012';
+            $options['end_date'] = 'Apr 10 2012';
+            $options['status'] = 'scheduled';
             //$options['domain'] = 1;
             $response = $sailthruClient->getBlasts($options);
             if ( !isset($response['error']) ) {
@@ -52,6 +52,12 @@ $sailthruClient = new Sailthru_Client($api_key, $api_secret);
         $this->set('sent_blasts',$response['blasts']);
         $this->render('API/campaigns');
     }
+    
+    public function campaigns_scheduled() {
+    
+    }
+    
+    public function campaigns_
 
 
 }
