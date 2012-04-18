@@ -92,7 +92,8 @@
                             <p>
                             <?php 
                                 for ($i = 1; $i<=$sent_pages; $i++){
-                                        $this->Html->link($i,'/campaigns',array('sent_page' => $i, 'in_progress_page' => 1, 'scheduled_page' => 1));
+                                        echo '<a href="/campaigns?sent_page=' . $i . '">' . $i . '</a>';
+                                        //$this->Html->link($i,'/campaigns',array('sent_page' => $i, 'in_progress_page' => 1, 'scheduled_page' => 1));
                                 }
                             ?>
                             </p>
