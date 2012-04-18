@@ -20,6 +20,7 @@
                             <?php echo $blast['list']; ?>
                             </td class="date">
                             <td><?php echo $blast['schedule_time']; ?></td>
+                            <td class="buttons"><a href="#">X</a></td>
                             </tr>
                             <?php endforeach; ?>
                             </table>
@@ -60,6 +61,7 @@
                                 <?php echo $blast['list']; ?>
                                 </td class="date">
                                 <td><?php echo $blast['schedule_time']; ?></td>
+                                <td class="buttons"><a href="#">X</a></td>
                                 </tr>
                                 <?php endforeach; ?>
                                 </table>
@@ -101,7 +103,7 @@
                             <td class="list">
                             <?php echo $blast['list']; ?>
                             </td class="date">
-                            <td><?php echo $blast['start_time']; ?></td>
+                            <td><?php echo date('m/d/y h:i a',strtotime($blast['start_time'])); ?></td>
                             </tr>
                             <?php endforeach; ?>
                             </table>
