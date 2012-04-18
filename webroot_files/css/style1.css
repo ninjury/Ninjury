@@ -102,11 +102,11 @@ color:  #2489CE  /*{a-body-link-visited}*/;
 	color: #ffffff /*{a-bup-color}*/;
 	text-shadow: 0px /*{a-bup-shadow-x}*/ 0px /*{a-bup-shadow-y}*/ 0px /*{a-bup-shadow-radius}*/ #000000 /*{a-bup-shadow-color}*/;
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #80e5f5 /*{a-bup-background-start}*/), to( #80e5f5 /*{a-bup-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( #00cced /*{a-bup-background-start}*/, #00cced /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( #00cced /*{a-bup-background-start}*/, #00cced /*{a-bup-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #00cced /*{a-bup-background-start}*/, #00cced /*{a-bup-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #00cced /*{a-bup-background-start}*/, #00cced /*{a-bup-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( #00cced /*{a-bup-background-start}*/, #00cced /*{a-bup-background-end}*/);
+	background-image: -webkit-linear-gradient( #00cced /*{a-bup-background-start}*/, #0099BA /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #00cced /*{a-bup-background-start}*/, #0099BA /*{a-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #00cced /*{a-bup-background-start}*/, #0099BA /*{a-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #00cced /*{a-bup-background-start}*/, #0099BA /*{a-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #00cced /*{a-bup-background-start}*/, #0099BA /*{a-bup-background-end}*/);
 }
 .ui-btn-up-a a.ui-link-inherit {
 	color: #000000 /*{a-bup-color}*/;
@@ -1544,7 +1544,7 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 
 .ui-field-contain .ui-input-text{
     width: 50%;
-    background-color: e5fafc;
+    background-color: #e5fafc;
 }
 
 /*BELOW ADDED BY ALEX B FOR HER CONVENIENCE BUT SHOULD BE CLEANED UP*/
@@ -1750,17 +1750,6 @@ margin-left: 0%;
 margin-right: 0%;
 margin-top: 20%;
 }
-/* Log In Page */
-
-.ui-field-contain .ui-input-text{
-    width: 50%;
-    background-color: e5fafc;
-}
-
-
-
-
-
 
 
 /**
@@ -1789,3 +1778,50 @@ margin-top: 20%;
 	width:480px;
 	vertical-align:top;
  }
+
+.ui-datebox-griddate {
+	border: 1px solid #404041;
+}
+
+.ui-datebox-container {
+	background-color: #ededed;
+}
+
+.ui-datebox-gridheader .ui-btn {
+	margin: .5em 5px;
+}
+
+.ui-btn-up-e {
+	border: 1px solid #404041 /*{a-bup-border}*/;
+	background: #ededed /*{a-bup-background-color}*/;
+	font-weight: bold;
+	color: #404041 /*{a-bup-color}*/;
+	text-shadow: 0px /*{a-bup-shadow-x}*/ 0px /*{a-bup-shadow-y}*/ 0px /*{a-bup-shadow-radius}*/ #000000 /*{a-bup-shadow-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #ededed /*{a-bup-background-start}*/), to( #9e9ea1 /*{a-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #ededed /*{a-bup-background-start}*/, #9e9ea1 /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #ededed /*{a-bup-background-start}*/, #9e9ea1 /*{a-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #ededed /*{a-bup-background-start}*/, #9e9ea1 /*{a-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #ededed /*{a-bup-background-start}*/, #9e9ea1 /*{a-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #ededed /*{a-bup-background-start}*/, #9e9ea1 /*{a-bup-background-end}*/);
+}
+.ui-btn-up-a a.ui-link-inherit {
+	color: #000000 /*{a-bup-color}*/;
+}
+
+.ui-btn-down-e {
+	border: 1px solid #404041 /*{a-bdown-border}*/;
+	background: #9e9ea1 /*{a-bdown-background-color}*/;
+	font-weight: bold;
+	color: #ffffff /*{a-bdown-color}*/;
+	text-shadow:  0  /*{a-bdown-shadow-x}*/  0px  /*{a-bdown-shadow-y}*/  0px  /*{a-bdown-shadow-radius}*/ #eeeeee /*{a-bdown-shadow-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #9e9ea1 /*{a-bdown-background-start}*/), to( #9e9ea1 /*{a-bdown-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #9e9ea1 /*{a-bdown-background-start}*/, #9e9ea1 /*{a-bdown-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #9e9ea1 /*{a-bdown-background-start}*/, #9e9ea1 /*{a-bdown-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #9e9ea1 /*{a-bdown-background-start}*/, #9e9ea1 /*{a-bdown-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #9e9ea1 /*{a-bdown-background-start}*/, #9e9ea1 /*{a-bdown-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #9e9ea1 /*{a-bdown-background-start}*/, #9e9ea1 /*{a-bdown-background-end}*/);
+}
+
+.ui-input-datebox {
+	background-color: #e5fafc;
+}
