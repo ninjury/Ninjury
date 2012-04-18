@@ -46,22 +46,26 @@
                             In Progress
                         </h3>
                         <p>
-                           <table class="table" id="in_progress" >
-                            <tr>
-                              <th class="name" >Name</th>
-                              <th class="list" >List</th>
-                              <th class="date">Sent</th>
-                            </tr>
-                            <?php foreach ($in_progress_blasts as $blast): ?>
-                            <tr>
-                            <td class="name"><?php echo $blast['name']; ?></td>
-                            <td class="list">
-                            <?php echo $blast['list']; ?>
-                            </td class="date">
-                            <td><?php echo $blast['schedule_time']; ?></td>
-                            </tr>
-                            <?php endforeach; ?>
-                            </table>
+                            <?php if($in_progress_pages != 0){ ?>
+                                <table class="table" id="in_progress" >
+                                <tr>
+                                  <th class="name" >Name</th>
+                                  <th class="list" >List</th>
+                                  <th class="date">Sent</th>
+                                </tr>
+                                <?php foreach ($in_progress_blasts as $blast): ?>
+                                <tr>
+                                <td class="name"><?php echo $blast['name']; ?></td>
+                                <td class="list">
+                                <?php echo $blast['list']; ?>
+                                </td class="date">
+                                <td><?php echo $blast['schedule_time']; ?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                                </table>
+                            <?php } else { ?>
+                                <p>Nothing to Display.</p>    
+                            <?php } ?>
                         </p>
                         <div class="page_numbers">
                             <p>
