@@ -30,7 +30,7 @@ class APIController extends AppController {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
-                $page = $this->request->data('sent_page');
+                $page = 1; //$this->request->data('sent_page');
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
@@ -61,7 +61,7 @@ class APIController extends AppController {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
-                $page = $this->request->data('scheduled_page');
+                $page = 1; //$this->request->data('scheduled_page');
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
@@ -92,7 +92,7 @@ class APIController extends AppController {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
-                $page = $this->request->data('in_progress_page');
+                $page = 1; //$this->request->data('in_progress_page');
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
