@@ -131,6 +131,7 @@ class APIController extends AppController {
         //$this->campaigns_in_progress($sailthruClient);
         
          /* Scheduled Tab */
+        $options = array();
         $options['status'] = 'scheduled';
         try{
             $response = $sailthruClient->getBlasts($options);
@@ -192,7 +193,7 @@ class APIController extends AppController {
         $options['status'] = 'sent';
         try{
             $response = $sailthruClient->getBlasts($options);
-                if ( isset($response['error']) ) {
+            if ( isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
@@ -200,7 +201,7 @@ class APIController extends AppController {
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
-                echo 'start: ' . $start . ' end: ' . $end;
+                
                 $results = array();
                 for ($i = $start; $i < $end; $i++){
                     if(array_key_exists($i)){
