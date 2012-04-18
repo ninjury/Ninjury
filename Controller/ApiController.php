@@ -25,34 +25,58 @@ class APIController extends AppController {
  *
  * @param mixed What page to display
  */
-	public function display() {
+	public function campaigns() {
         try {
 
 	    $api_key = "8907ecf0f40ee82bc3e58c1df91ceba0";
 	    $api_secret = '75cf7511cb55c4e0692d525ce55aaf5a';
 	    $sailthruClient = new Sailthru_Client($api_key, $api_secret);
 
-            $options = array();
-            //$options['start_date'] = 'Jan 1 2012';
-            //$options['end_date'] = 'Apr 10 2012';
-            $options['status'] = 'sent';
-            //$options['domain'] = 1;
-            $response = $sailthruClient->getBlasts($options);
-            if ( !isset($response['error']) ) {
-                // everything OK
-                // do something here
-                //echo print_r($response);
-            } else {
-                //echo 'error';
-            }
-        } catch (Sailthru_Client_Exception $e) {
-            // deal with exceptions
-            echo 'exception';
-        }
-        
-        $this->set('sent_blasts',$response['blasts']);
+        campaigns_sent($sailthruClient);
+        //$options['start_date'] = 'Jan 1 2012';
+        //$options['end_date'] = 'Apr 10 2012';
         $this->render('campaigns');
     }
 
-
+    public function campaigns_sent($client) {
+            $options = array();
+            $options['status'] = 'sent';
+            $response = $sailthruClient->getBlasts($options);
+            if ( isset($response['error']) ) {
+                $this->set('sent_blasts',$response['blasts']);
+            } else {
+                echo 'error';
+            }
+        } catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }    
+    }
+    
+    public function campaigns_scheduled($client) {
+            $options = array();
+            $options['status'] = 'scheduled';
+            $response = $sailthruClient->getBlasts($options);
+            if ( isset($response['error']) ) {
+                $this->set('scheduled_blasts',$response['blasts']);
+            } else {
+                echo 'error';
+            }
+        } catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }    
+    }
+    
+    public function campaigns_in_progress($client) {
+            $options = array();
+            $options['status'] = 'sending';
+            $response = $sailthruClient->getBlasts($options);
+            if ( isset($response['error']) ) {
+                $this->set('in_progress_blasts',$response['blasts']);
+            } else {
+                echo 'error';
+            }
+        } catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }    
+    }
 }
