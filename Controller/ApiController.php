@@ -135,7 +135,7 @@ class APIController extends AppController {
         $options['status'] = 'scheduled';
         try{
             $response = $sailthruClient->getBlasts($options);
-            if ( isset($response['error']) ) {
+            if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
@@ -165,7 +165,7 @@ class APIController extends AppController {
         $options['status'] = 'sending';
         try{
             $response = $sailthruClient->getBlasts($options);
-            if ( isset($response['error']) ) {
+            if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
@@ -193,7 +193,7 @@ class APIController extends AppController {
         $options['status'] = 'sent';
         try{
             $response = $sailthruClient->getBlasts($options);
-            if ( isset($response['error']) ) {
+            if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);   
                
