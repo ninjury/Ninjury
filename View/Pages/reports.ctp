@@ -14,8 +14,7 @@
                                 <input id="textinput6" placeholder="endDate" value="" type="text" />
                             </fieldset>
                         </div>
-                        <div>
-                            <?php echo $this->Html->image('graph.png', array('width' => '100%', 'height' => '90%')); ?>
+                        <div id="highchartcontainer" style="width: 100%; height: 90%">
                         </div>
                         <div data-role="fieldcontain" class="graph-options" data-theme="a" data-content-theme="a">
 
