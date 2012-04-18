@@ -195,12 +195,10 @@ class APIController extends AppController {
             $response = $sailthruClient->getBlasts($options);
             if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
-                $pages = ceil($total_count/RESULTS_PER_PAGE);   
+                $pages = ceil($total_count/RESULTS_PER_PAGE);  
+                echo 'pages: ' . $pages;
                
-                $page = 1;
-                echo $this->params['action'];
-                echo $this->params['pass'][0];
-                echo $this->params['pass'][1];
+                $page = echo $this->params['pass'][1];
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
