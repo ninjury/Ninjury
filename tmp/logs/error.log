@@ -946,4 +946,9 @@
 #1 {main}
 2012-04-17 19:50:16 Error: [MissingControllerException] Controller class Index.phpController could not be found.
 #0 C:\Program Files (x86)\Apache Group\Apache2\htdocs\mobile\index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}2012-04-19 12:29:27 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\Program Files (x86)\Apache Group\Apache2\htdocs\mobile\index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-04-19 17:56:45 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\Program Files (x86)\Apache Group\Apache2\htdocs\mobile\index.php(101): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
