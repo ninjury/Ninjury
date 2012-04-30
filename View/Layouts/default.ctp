@@ -38,10 +38,17 @@
 		echo $this->Html->script('highcharts.js');
 		echo $this->Html->script('highstock.js');
 		echo $this->Html->script('jquery.mobile.datebox.js');
+		echo $this->Html->script('jquery.pjax.js');
 		echo $this->fetch('script');
 	?>
 
 	<!-- Menu Javascript //-->
+	<script type="text/javascript">
+	    $(function(){
+	      // pjax
+	      $('#slider a').pjax({container: "#page_content",fragment: "#page_content"})
+	    })
+	  </script>
 	<script>
 	$(document).ready(function() {
 		// slider

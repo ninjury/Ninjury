@@ -1,6 +1,6 @@
         <div data-role="page" data-theme="a" id="reports_page">
             <?php echo $this->element('header', array('page' => 'reports')); ?>
-            <div data-role="content">
+            <div id="page_content" data-role="content">
                 <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="false">
                         <h3>
