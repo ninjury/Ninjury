@@ -59,7 +59,7 @@ class APIController extends AppController {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
+            echo $e->getMessage();
         }    
         
         /* In Progress Tab */
@@ -89,7 +89,7 @@ class APIController extends AppController {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
+            echo $e->getMessage();
         }  
          /* Sent Tab */
         $options['status'] = 'sent';
@@ -119,7 +119,7 @@ class APIController extends AppController {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
+            echo $e->getMessage();
         }    
         
         //$options['start_date'] = 'Jan 1 2012';
