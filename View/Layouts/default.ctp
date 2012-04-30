@@ -38,6 +38,7 @@
 		echo $this->Html->script('highcharts.js');
 		echo $this->Html->script('highstock.js');
 		echo $this->Html->script('jquery.mobile.datebox.js');
+        echo $this->Html->script('campaigns.js');
 		echo $this->fetch('script');
 	?>
 

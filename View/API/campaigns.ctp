@@ -119,6 +119,7 @@
                                             echo $i;
                                         }
                                 }
+                                echo '<a href="#" onclick="campaigns_sent(1)"" >1</a>';
                             ?>
                             </p>
                         </div>

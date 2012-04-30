@@ -31,7 +31,7 @@
 	Router::connect('/reports', array('controller' => 'pages', 'action' => 'display', 'reports'));
 	Router::connect('/login', array('controller' => 'auth', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'auth', 'action' => 'logout'));
-    Router::connect('/ajax/campaigns_sent', array('controller' => 'ajax', 'action' => 'campaigns_sent'));
+    Router::connect('/campaigns/sent/*', array('controller' => 'ajax', 'action' => 'campaigns_sent'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
