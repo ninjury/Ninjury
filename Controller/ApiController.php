@@ -1,8 +1,8 @@
 <?php
 
-include(APP_PATH . "/scripts/sailthru-api/sailthru/Sailthru_Client_Exception.php");
-include(APP_PATH . "/scripts/sailthru-api/sailthru/Sailthru_Client.php");
-include(APP_PATH . "/scripts/sailthru-api/sailthru/Sailthru_Util.php");
+include(ROOT . DS . APP_DIR . "/scripts/sailthru-api/sailthru/Sailthru_Client_Exception.php");
+include(ROOT . DS . APP_DIR . "/scripts/sailthru-api/sailthru/Sailthru_Client.php");
+include(ROOT . DS . APP_DIR . "/scripts/sailthru-api/sailthru/Sailthru_Util.php");
 define("RESULTS_PER_PAGE", 5);
 
 class APIController extends AppController {
