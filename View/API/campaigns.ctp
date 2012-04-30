@@ -19,7 +19,7 @@
                             <td class="list">
                             <?php echo $blast['list']; ?>
                             </td>
-                            <td class="date"><?php echo date('m/d/y h:i a',strtotime($blast['schedule_time'])); ?></td>
+                            <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['schedule_time'])); ?></td>
                             <td class="buttons"><a href="#">X</a></td>
                             </tr>
                             <?php endforeach; ?>
@@ -60,7 +60,7 @@
                                 <td class="list">
                                 <?php echo $blast['list']; ?>
                                 </td>
-                                <td class="date"><?php echo date('m/d/y h:i a',strtotime($blast['schedule_time'])); ?></td>
+                                <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['schedule_time'])); ?></td>
                                 <td class="buttons"><a href="#">X</a></td>
                                 </tr>
                                 <?php endforeach; ?>
