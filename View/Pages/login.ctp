@@ -6,29 +6,19 @@
         <div data-role="page" data-theme="a" id="login_page">
             <div data-role="content">
                 <div id="logo_img_div">
-                    <?php echo $this->Html->image('sailthru_logo.png', array('id' => 'logo_img', 'alt' => 'image')); ?>
+                    <?php echo $this->Html->image('sailthru_logo_large.png', array('id' => 'logo_img', 'alt' => 'image')); ?>
                 </div>
                 <div id="login_form">
 			<form data-ajax="false" action="login" method="post">
 				<input type = "hidden" name = 'sid' value = '<?php echo $sessionId; ?>' />
-				<div data-role="fieldcontain">
+				<div class="logininput" data-role="fieldcontain">
 					<fieldset data-role="controlgroup">
-						<div id="textinput1labeldiv">
-								USERNAME:
-						</div>
-						<div id="textinput1div">
-							<input id="textinput1" type="text" name="username"/>
-						</div>
+							<input id="username" autocorrect="off" autocapitalize="off" placeholder="Username" type="text" name="username"/>
 					</fieldset>
 				</div>
-				<div data-role="fieldcontain">
+				<div class="logininput" data-role="fieldcontain">
 					<fieldset data-role="controlgroup">
-						<div id="textinput2labeldiv">
-								PASSWORD:
-						</div>
-						<div id="textinput2div">
-							<input id="textinput2" type="password" name="password"/>
-						</div>
+							<input id="password" autocorrect="off" autocapitalize="off" placeholder="Password" type="password" name="password"/>
 					</fieldset>
 				</div>
 				<div id="loginButton">
