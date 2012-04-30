@@ -1,3 +1,19 @@
+ <script type="text/javascript">
+    alert("ajax loaded");
+
+    $.ajaxSetup ({  
+        cache: false  
+    });  
+    var ajax_load = "<img src='img/load.gif' alt='loading...' />";  
+
+    //  campaigns_sent
+    $function campaigns_sent(page){  
+        alert("campaings_sent called");
+        var loadUrl = "index/campaigns.php/sent/" + page;  
+        $("#result").html(ajax_load).load(loadUrl);  
+    }
+ </script>
+
  <div data-role="page" id="campaigns_page" data-theme="a">
             <?php echo $this->element('header', array('page' => 'campaigns')); ?>
             <div data-role="content">
