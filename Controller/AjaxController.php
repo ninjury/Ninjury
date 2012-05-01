@@ -22,7 +22,6 @@ class AjaxController extends AppController {
     
     private $api_key = "8907ecf0f40ee82bc3e58c1df91ceba0";
     private $api_secret = '75cf7511cb55c4e0692d525ce55aaf5a';
-    private $sailthruClient = new Sailthru_Client($api_key, $api_secret);    
     
     /**
     
@@ -33,6 +32,7 @@ class AjaxController extends AppController {
  */
 	public function campaigns_sent() {
 
+        $sailthruClient = new Sailthru_Client($api_key, $api_secret);    
         echo 'hello!';
         
         $options['status'] = 'sent';
