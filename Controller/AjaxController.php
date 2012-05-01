@@ -67,8 +67,8 @@ class AjaxController extends AppController {
                 $html .= '</table>';
 
                 for ($i = 1; $i<=$pages; $i++){
-                                        if ($i != $sent_page){
-                                            $html .= '<a href="#" onclick="campaigns_sent(' . $i .')">' . $i .'</a>';
+                                        if ($i != $page){
+                                            $html .= '<a href="#" onclick="campaigns_sent(' . $i .')" class="ui-link" >' . $i .'</a>';
                                         } else {
                                             $html .=  $i;
                                         }
