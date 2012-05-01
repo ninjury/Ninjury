@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                <div id="collapsible_sent" onclick="campaigns_sent()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
                         <h3>
                             Sent

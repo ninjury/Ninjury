@@ -58,7 +58,7 @@ class AjaxController extends AppController {
                     $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
-                                        '<td class="buttons href="#" >I</td></tr>';
+                                        '<td class="buttons" href="#" >I</td></tr>';
                 }
                 $html .= '</table>';
 
@@ -113,7 +113,7 @@ class AjaxController extends AppController {
                     $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
-                                        '<td class="buttons href="#" >X</td></tr>';
+                                        '<td class="buttons" href="#" >X</td></tr>';
                 }
                 $html .= '</table>';
 
@@ -168,7 +168,7 @@ class AjaxController extends AppController {
                     $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
-                                        '<td class="buttons href="#" >X</td></tr>';
+                                        '<td class="buttons" href="#" >X</td></tr>';
                 }
                 $html .= '</table>';
 
