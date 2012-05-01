@@ -36,7 +36,6 @@
 		echo $this->Html->script('jquery_mobile.js');
 		echo $this->Html->script('swipe_mod.js');
 		echo $this->Html->script('highcharts.js');
-		echo $this->Html->script('highstock.js');
 		echo $this->Html->script('jquery.mobile.datebox.js');
 		echo $this->Html->script('jquery.pjax.js');
         	echo $this->Html->script('campaigns.js');
@@ -45,9 +44,11 @@
 
 	<!-- Menu Javascript //-->
 	<script type="text/javascript">
+
 	    $(function(){
 	      // pjax
-	      $('#slider a').pjax({container: "#page_content",fragment: "#page_content"})
+	      $('#slider a').pjax({container: "#page_content",fragment: "#page_content", timeout: 2000});
+	      $('#page_content').on('pjax:end', function() { $("#page_content").trigger('pagecreate') });
 	    })
 	  </script>
 	<script>
