@@ -1,14 +1,18 @@
-alert("ajax loaded");
-
 $.ajaxSetup ({  
     cache: false  
 });  
-var ajax_load = "<img src='img/load.gif' alt='loading...' />";  
+var ajax_load = "Loading";  
 
 //  campaigns_sent
-function campaigns_sent(page){  
-	alert("campaings_sent called");
-	var loadUrl = "index/campaigns.php/sent/" + page;  
-    $("#result").html(ajax_load).load(loadUrl);  
+function campaigns_sent(page){
+	if (page == null){
+		page = 1;
+	}
+	var loadUrl = "index/ajax/campaigns/sent/" + page;  
+	alert(loadUrl);
+    //$("#campaigns_sent").html(ajax_load).load(loadUrl); 
+
+    $("#campaigns_sent").html(ajax_load);  
+        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_sent").html(responseText); },"html");  
 }
 

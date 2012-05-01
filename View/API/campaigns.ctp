@@ -19,7 +19,7 @@
                             <td class="list">
                             <?php echo $blast['list']; ?>
                             </td>
-                            <td class="date"><?php echo date('m/d/y h:i a',strtotime($blast['schedule_time'])); ?></td>
+                            <td class="date"><?php echo date('m/d/y h:i a', strtotime($blast['schedule_time'])); ?></td>
                             <td class="buttons"><a href="#">X</a></td>
                             </tr>
                             <?php endforeach; ?>
@@ -91,6 +91,7 @@
                             Sent
                         </h3>
                         <p>
+                            <!--
                             <table class="table" id="sent">
                             <tr>
                               <th class="name" >Name</th>
@@ -104,25 +105,21 @@
                             <?php echo $blast['list']; ?>
                             </td>
                             <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['start_time'])); ?></td>
+                            <td class="buttons"><a href="#">I</a></td>
                             </tr>
                             <?php endforeach; ?>
                             </table>
-                        </p>
+                            -->
+                            <div id="campaigns_sent">
+                                <?php echo '<a href="#" onclick="campaigns_sent()" class="ui-link">click me</a>'; ?>
+                            </div>
+                        </p> 
+                        <!-- 
                         <div class="page_numbers">
                             <p>
-                            <?php 
-                                for ($i = 1; $i<=$sent_pages; $i++){
-                                        if ($i != $sent_page){
-                                            $url = '/campaigns/' . $scheduled_page . '/' . $in_progress_page .'/' . $i;
-                                            echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
-                                        } else {
-                                            echo $i;
-                                        }
-                                }
-                                echo '<a href="#" onclick="campaigns_sent(1)">1</a>';
-                            ?>
                             </p>
                         </div>
+                        -->
                     </div>
                 </div>
             </div>

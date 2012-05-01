@@ -31,7 +31,9 @@
 	Router::connect('/reports', array('controller' => 'pages', 'action' => 'display', 'reports'));
 	Router::connect('/login', array('controller' => 'auth', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'auth', 'action' => 'logout'));
-    Router::connect('/campaigns/sent/*', array('controller' => 'ajax', 'action' => 'campaigns_sent'));
+    Router::connect('/ajax/campaigns/sent/*', array('controller' => 'ajax', 'action' => 'campaigns_sent'));
+    Router::connect('/ajax/campaigns/scheduled/*', array('controller' => 'ajax', 'action' => 'campaigns_scheduled'));
+    Router::connect('/ajax/campaigns/in_progress/*', array('controller' => 'ajax', 'action' => 'campaigns_in_progress'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
