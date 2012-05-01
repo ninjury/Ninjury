@@ -85,3 +85,4 @@ class AjaxController extends AppController {
             echo 'exception';
         }      
     }
+}
