@@ -72,4 +72,8 @@ class PagesController extends AppController {
 		$this->render(implode('/', $path));
 	}
 
+	public function campaigns(){
+		$this->render('campaigns');
+	}
+
 }

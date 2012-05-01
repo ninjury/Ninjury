@@ -57,9 +57,10 @@ class AjaxController extends AppController {
                 foreach ($results as $blast){
                     $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
-                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) . '</td></tr>';
+                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
+                                        '<td class="buttons"><a href="#">I</a></td>';
                 }
-                $html .= '</table>';
+                $html .= '</table><div class="page_numbers">';
 
                 for ($i = 1; $i<=$pages; $i++){
                                         if ($i != $page){
@@ -68,6 +69,8 @@ class AjaxController extends AppController {
                                             $html .=  $i;
                                         }
                                 }
+
+                $html .= '</div';
 
                 echo $html;
                 $this->autoLayout = $this->autoRender = false; 
@@ -111,9 +114,10 @@ class AjaxController extends AppController {
                 foreach ($results as $blast){
                     $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
-                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td></tr>';
+                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
+                                        '<td class="buttons"><a href="#">X</a></td>';
                 }
-                $html .= '</table>';
+                $html .= '</table><div class="page_numbers">';
 
                 for ($i = 1; $i<=$pages; $i++){
                                         if ($i != $page){
@@ -123,6 +127,7 @@ class AjaxController extends AppController {
                                         }
                                 }
 
+                $html .= '</div>';
                 echo $html;
                 $this->autoLayout = $this->autoRender = false; 
             } else {
@@ -165,9 +170,10 @@ class AjaxController extends AppController {
                 foreach ($results as $blast){
                     $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
-                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td></tr>';
+                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
+                                        '<td class="buttons"><a href="#">X</a></td>';
                 }
-                $html .= '</table>';
+                $html .= '</table><div class="page_numbers">';
 
                 for ($i = 1; $i<=$pages; $i++){
                                         if ($i != $page){
@@ -176,7 +182,7 @@ class AjaxController extends AppController {
                                             $html .=  $i;
                                         }
                                 }
-
+                $html .= '</div>';
                 echo $html;
                 $this->autoLayout = $this->autoRender = false; 
             } else {
