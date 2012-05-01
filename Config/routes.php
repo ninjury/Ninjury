@@ -27,7 +27,7 @@
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'login'));
     //Router::connect('/campaigns', array('controller' => 'pages', 'action' => 'display', 'campaigns'));
-    Router::connect('/campaigns/*', array('controller' => 'pages', 'action' => 'campaigns', 'campaigns'));
+    Router::connect('/campaigns', array('controller' => 'pages', 'action' => 'campaigns'));//, 'campaigns'));
 	Router::connect('/reports', array('controller' => 'pages', 'action' => 'display', 'reports'));
 	Router::connect('/login', array('controller' => 'auth', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'auth', 'action' => 'logout'));
