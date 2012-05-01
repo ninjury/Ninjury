@@ -25,11 +25,9 @@
                 </div>
                 <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
-                        <div id="collapsible_sent" onclick="campaigns_sent()">
-                            <h3>
-                                Sent
-                            </h3>
-                        </div>
+                        <h3 id="collapsible_sent" onclick="campaigns_sent()">
+                            Sent
+                        </h3>
                         <p>
                             <div id="campaigns_sent">
                             </div>
