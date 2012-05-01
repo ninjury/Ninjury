@@ -6,6 +6,7 @@ include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Util.php");
 
 define('API_KEY', "8907ecf0f40ee82bc3e58c1df91ceba0");
 define('API_SECRET', '75cf7511cb55c4e0692d525ce55aaf5a');
+define('RESULTS_PER_PAGE', 5);
 
 class AjaxController extends AppController {
 
