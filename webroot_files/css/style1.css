@@ -1468,17 +1468,18 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 	width: 30%;
 }
 
+/*
 #sent .name{
-    width: 33%;
+    width: 30%;
 }
 
 #sent .list{
-    width: 33%;
+    width: 30%;
 }
 
 #sent .date{
-    width: 33%;
-}
+    width: 3%;
+}*/
 
 .table {
     -webkit-border-top-left-radius: .6em;
@@ -1514,6 +1515,14 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 }
 
 #in_progress .buttons a:hover, a:active{  
+    background-position: -32px 0px;
+}
+
+#sent .buttons a{
+    background-image: url(../img/sent_info_smal.png);
+}
+
+#sent .buttons a:hover, a:active{  
     background-position: -32px 0px;
 }
 

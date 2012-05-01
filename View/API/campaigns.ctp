@@ -104,6 +104,7 @@
                             <?php echo $blast['list']; ?>
                             </td>
                             <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['start_time'])); ?></td>
+                            <td class="buttons"><a href="#">I</a></td>
                             </tr>
                             <?php endforeach; ?>
                             </table>
