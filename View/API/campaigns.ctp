@@ -117,16 +117,6 @@
                         <!-- 
                         <div class="page_numbers">
                             <p>
-                            <?php 
-                                //for ($i = 1; $i<=$sent_pages; $i++){
-                                        //if ($i != $sent_page){
-                                            //$url = '/campaigns/' . $scheduled_page . '/' . $in_progress_page .'/' . $i;
-                                            //echo '<a href="#" onclick="campaigns_sent('. $i . ')" class="ui-link">' . $i . '</a>';
-                                        //} else {
-                                            //echo $i;
-                                        }
-                                }
-                            ?>
                             </p>
                         </div>
                         -->
