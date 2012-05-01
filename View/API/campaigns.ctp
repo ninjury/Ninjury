@@ -19,7 +19,7 @@
                             <td class="list">
                             <?php echo $blast['list']; ?>
                             </td>
-                            <td class="date"><?php echo date('m/d/y h:i a',strtotime($blast['schedule_time'])); ?></td>
+                            <td class="date"><?php echo date('m/d/y h:i a', strtotime($blast['schedule_time'])); ?></td>
                             <td class="buttons"><a href="#">X</a></td>
                             </tr>
                             <?php endforeach; ?>
@@ -91,6 +91,7 @@
                             Sent
                         </h3>
                         <p>
+                            <!--
                             <table class="table" id="sent">
                             <tr>
                               <th class="name" >Name</th>
@@ -108,23 +109,27 @@
                             </tr>
                             <?php endforeach; ?>
                             </table>
+                            -->
                             <div id="campaigns_sent">
+                                <?php echo '<a href="#" onclick="campaigns_sent()" class="ui-link">click me</a>'; ?>
                             </div>
-                        </p>
+                        </p> 
+                        <!-- 
                         <div class="page_numbers">
                             <p>
                             <?php 
-                                for ($i = 1; $i<=$sent_pages; $i++){
-                                        if ($i != $sent_page){
-                                            $url = '/campaigns/' . $scheduled_page . '/' . $in_progress_page .'/' . $i;
-                                            echo '<a href="#" onclick="campaigns_sent('. $i . ')" class="ui-link">' . $i . '</a>';
-                                        } else {
-                                            echo $i;
+                                //for ($i = 1; $i<=$sent_pages; $i++){
+                                        //if ($i != $sent_page){
+                                            //$url = '/campaigns/' . $scheduled_page . '/' . $in_progress_page .'/' . $i;
+                                            //echo '<a href="#" onclick="campaigns_sent('. $i . ')" class="ui-link">' . $i . '</a>';
+                                        //} else {
+                                            //echo $i;
                                         }
                                 }
                             ?>
                             </p>
                         </div>
+                        -->
                     </div>
                 </div>
             </div>

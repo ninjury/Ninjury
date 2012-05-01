@@ -24,17 +24,13 @@ class AjaxController extends AppController {
  */
 	public $uses = array();
        
-    /**
-    
-    
- * Displays a view
+ /**    
+ *  Sent Campaigns
  *
- * @param mixed What page to display
  */
 	public function campaigns_sent() {
 
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);    
-        echo 'hello!';
         
         $options['status'] = 'sent';
         try{
@@ -44,7 +40,6 @@ class AjaxController extends AppController {
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
                
                 $page = isset($this->params['pass'][0]) ? $this->params['pass'][0] : 1;
-                echo $this->params['pass'][0];
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
@@ -76,9 +71,60 @@ class AjaxController extends AppController {
 
                 echo $html;
                 $this->autoLayout = $this->autoRender = false; 
-                //$this->set('sent_blasts',$results);
-                //$this->set('sent_pages',$pages);
-                //$this->set('sent_page',$page);
+            } else {
+                echo 'error';
+            }
+        } catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }      
+    }
+
+    /**
+    *   Scheduled Campaigns
+    */
+    public function campaigns_scheduled() {
+
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);    
+        
+        $options['status'] = 'scheduled';
+        try{
+            $response = $sailthruClient->getBlasts($options);
+            if (!isset($response['error']) ) {
+                $total_count = count($response['blasts']);
+                $pages = ceil($total_count/RESULTS_PER_PAGE);  
+               
+                $page = isset($this->params['pass'][0]) ? $this->params['pass'][0] : 1;
+                $start = ($page - 1 )*RESULTS_PER_PAGE;
+                $end = $page*RESULTS_PER_PAGE;
+                
+                
+                $results = array();
+                for ($i = $start; $i < $end; $i++){
+                    if(array_key_exists($i, $response['blasts'])){
+                        $results[$i] = $response['blasts'][$i];
+                    }
+                }
+
+                $html = '<table class="table" id="sent"><tr><th class="name" >Name</th>
+                            <th class="list" >List</th><th class="date">Scheduled</th></tr>';
+
+                foreach ($results as $blast){
+                    $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
+                                '<td class="list">' . $blast['list'] . '</td>' .
+                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td></tr>';
+                }
+                $html .= '</table>';
+
+                for ($i = 1; $i<=$pages; $i++){
+                                        if ($i != $page){
+                                            $html .= '<a href="#" onclick="campaigns_sent(' . $i .')" class="ui-link" >' . $i .'</a>';
+                                        } else {
+                                            $html .=  $i;
+                                        }
+                                }
+
+                echo $html;
+                $this->autoLayout = $this->autoRender = false; 
             } else {
                 echo 'error';
             }
