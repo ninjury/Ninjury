@@ -54,10 +54,30 @@ class AjaxController extends AppController {
                         $results[$i] = $response['blasts'][$i];
                     }
                 }
-            
-                $this->set('sent_blasts',$results);
-                $this->set('sent_pages',$pages);
-                $this->set('sent_page',$page);
+
+                $html = '<table class="table" id="sent"><tr><th class="name" >Name</th>
+                            <th class="list" >List</th><th class="date">Sent</th></tr>';
+
+                foreach ($results as $blast){
+                    $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
+                                '<td class="list">' . $blast['list'] . '</td>' .
+                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) . '</td></tr>';
+                }
+                $html .= '</table>';
+
+                for ($i = 1; $i<=$pages; $i++){
+                                        if ($i != $sent_page){
+                                            html .= '<a href="#" onclick="campaigns_sent(' . $i .')">' . $i .'</a>';
+                                        } else {
+                                            html .=  $i;
+                                        }
+                                }
+
+                echo $html;
+
+                //$this->set('sent_blasts',$results);
+                //$this->set('sent_pages',$pages);
+                //$this->set('sent_page',$page);
             } else {
                 echo 'error';
             }
