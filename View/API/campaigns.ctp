@@ -1,9 +1,9 @@
  	<div data-role="page" id="campaigns_page" data-theme="a">
             <?php echo $this->element('header', array('page' => 'campaigns')); ?>
             <div id="page_content" data-role="content">
-                <div id="collapsible__scheduled" onclick="campaigns_scheduled()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible">
-                        <h3>
+                        <h3 id="collapsible__scheduled" onclick="campaigns_scheduled()">
                             Scheduled
                         </h3>
                         <p>
@@ -12,9 +12,9 @@
                         </p>
                     </div>
                 </div>
-                <div id="collapsible_in_progress" onclick="campaigns_in_progress()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
-                        <h3>
+                        <h3 id="collapsible_in_progress" onclick="campaigns_in_progress()">
                             In Progress
                         </h3>
                         <p>
