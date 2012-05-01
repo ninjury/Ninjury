@@ -107,6 +107,8 @@
                             </tr>
                             <?php endforeach; ?>
                             </table>
+                            <div id="campaigns_sent">
+                            </div>
                         </p>
                         <div class="page_numbers">
                             <p>
