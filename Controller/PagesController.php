@@ -65,6 +65,7 @@ class PagesController extends AppController {
 		}
 		if (!empty($path[$count - 1])) {
 			$title = Inflector::humanize($path[$count - 1]);
+			if($title == 'Login') $this->layout = 'login_template';
 		}
 		$this->set(compact('page', 'subpage'));
 		$this->set('title_for_layout', $title);
