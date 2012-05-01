@@ -101,7 +101,6 @@ class APIController extends AppController {
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
                
                 $page = isset($this->params['pass'][3]) ? $this->params['pass'][3] : 1;
-                //echo $this->params['pass'][1];
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
@@ -121,11 +120,7 @@ class APIController extends AppController {
             }
         } catch (Sailthru_Client_Exception $e) {
             echo $e->getMessage();
-        }    
-        
-        //$options['start_date'] = 'Jan 1 2012';
-        //$options['end_date'] = 'Apr 10 2012';
-        
+        }            
         $this->render('campaigns');
     }
 }
