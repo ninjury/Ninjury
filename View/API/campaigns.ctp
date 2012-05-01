@@ -1,7 +1,7 @@
  <div data-role="page" id="campaigns_page" data-theme="a">
             <?php echo $this->element('header', array('page' => 'campaigns')); ?>
             <div data-role="content">
-                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                <div id="collapsible__scheduled" onclick="campaigns_scheduled()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible">
                         <h3>
                             Scheduled
@@ -15,7 +15,6 @@
                             </tr>
                             <?php foreach ($scheduled_blasts as $blast): ?>
                             <tr>
-                            <!-- <td class="name"><a href="#"><?php echo $blast['name']; ?></a></td> -->
                             <td class="name" id = <?php echo($blast['blast_id']); ?>><a href="#"><?php echo $blast['name']; ?></a></td>
                             <td class="list">
                             <?php echo $blast['list']; ?>
@@ -25,29 +24,19 @@
                             </tr>
                             <?php endforeach; ?>
                             </table>
+                            <div id="campaigns_scheduled">
+                            </div> 
                         </p>
-                        <div class="page_numbers">
-                            <p>
-                            <?php 
-                                for ($i = 1; $i<=$scheduled_pages; $i++){
-                                        if ($i != $scheduled_page){
-                                            $url = '/campaigns/' . $i . '/' . $in_progress_page . '/' . $sent_page;
-                                            echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
-                                        } else {
-                                            echo $i;
-                                        }
-                                }
-                            ?>
-                            </p>
                         </div>
                     </div>
                 </div>
-                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                <div id="collapsible_in_progress" onclick="campaigns_in_progress()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
                         <h3>
                             In Progress
                         </h3>
                         <p>
+<<<<<<< HEAD
                             <?php if($in_progress_pages != 0){ ?>
                                 <table class="table" id="in_progress" >
                                 <tr>
@@ -69,24 +58,14 @@
                             <?php } else { ?>
                                 <p>Nothing to Display.</p>    
                             <?php } ?>
+                            
+                            <div id="campaigns_in_progress">
+                            </div>    
                         </p>
-                        <div class="page_numbers">
-                            <p>
-                            <?php 
-                                for ($i = 1; $i<=$in_progress_pages; $i++){
-                                        if ($i != $in_progress_page){
-                                            $url = '/campaigns/' . $scheduled_page . '/'. $i .'/' . $sent_page;
-                                            echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
-                                        } else {
-                                            echo $i;
-                                        }
-                                }
-                            ?>
-                            </p>
                         </div>
                     </div>
                 </div>
-                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                <div id="collapsible_sent" onclick="campaigns_sent()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
                         <h3>
                             Sent
@@ -109,18 +88,11 @@
                             <?php endforeach; ?>
                             </table>
                         </p>
+                            <div id="campaigns_sent">
+                            </div>
+                        </p> 
                         <div class="page_numbers">
                             <p>
-                            <?php 
-                                for ($i = 1; $i<=$sent_pages; $i++){
-                                        if ($i != $sent_page){
-                                            $url = '/campaigns/' . $scheduled_page . '/' . $in_progress_page .'/' . $i;
-                                            echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
-                                        } else {
-                                            echo $i;
-                                        }
-                                }
-                            ?>
                             </p>
                         </div>
                     </div>

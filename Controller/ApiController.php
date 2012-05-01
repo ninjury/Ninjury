@@ -28,6 +28,7 @@ class APIController extends AppController {
  */
 	public function campaigns() {
 
+        
 	    $api_key = "8907ecf0f40ee82bc3e58c1df91ceba0";
 	    $api_secret = '75cf7511cb55c4e0692d525ce55aaf5a';
 	    $sailthruClient = new Sailthru_Client($api_key, $api_secret);
@@ -59,7 +60,7 @@ class APIController extends AppController {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
+            echo $e->getMessage();
         }    
         
         /* In Progress Tab */
@@ -89,7 +90,7 @@ class APIController extends AppController {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
+            echo $e->getMessage();
         }  
          /* Sent Tab */
         $options['status'] = 'sent';
@@ -119,7 +120,7 @@ class APIController extends AppController {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
+            echo $e->getMessage();
         }    
         
         //$options['start_date'] = 'Jan 1 2012';

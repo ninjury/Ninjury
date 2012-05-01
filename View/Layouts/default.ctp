@@ -38,10 +38,14 @@
 		echo $this->Html->script('highcharts.js');
 		echo $this->Html->script('highstock.js');
 		echo $this->Html->script('jquery.mobile.datebox.js');
+<<<<<<< HEAD
 		echo("<!--html comments-->");
 		echo $this->Html->script('pop-up-script.js');
 		echo("<!--html comments-->");
 		
+=======
+        echo $this->Html->script('campaigns.js');
+>>>>>>> c99682cfc90ac5f566e3750bb50111df52c73407
 		echo $this->fetch('script');
 	?>
 
