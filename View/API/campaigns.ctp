@@ -1,87 +1,27 @@
  <div data-role="page" id="campaigns_page" data-theme="a">
             <?php echo $this->element('header', array('page' => 'campaigns')); ?>
             <div data-role="content">
-                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                <div id="collapsible__scheduled" onclick="campaigns_scheduled()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible">
                         <h3>
                             Scheduled
                         </h3>
                         <p>
-                            <table class="table" id="scheduled">
-                            <tr>
-                              <th class="name" >Name</th>
-                              <th class="list" >List</th>
-                              <th class="date">Scheduled</th>
-                            </tr>
-                            <?php foreach ($scheduled_blasts as $blast): ?>
-                            <tr>
-                            <td class="name"><?php echo $blast['name']; ?></td>
-                            <td class="list">
-                            <?php echo $blast['list']; ?>
-                            </td>
-                            <td class="date"><?php echo date('m/d/y h:i a', strtotime($blast['schedule_time'])); ?></td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            <?php endforeach; ?>
-                            </table>
+                            <div id="campaigns_scheduled">
+                            </div> 
                         </p>
-                        <div class="page_numbers">
-                            <p>
-                            <?php 
-                                for ($i = 1; $i<=$scheduled_pages; $i++){
-                                        if ($i != $scheduled_page){
-                                            $url = '/campaigns/' . $i . '/' . $in_progress_page . '/' . $sent_page;
-                                            echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
-                                        } else {
-                                            echo $i;
-                                        }
-                                }
-                            ?>
-                            </p>
                         </div>
                     </div>
                 </div>
-                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                <div id="collapsible_in_progress" onclick="campaigns_in_progress()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
                         <h3>
                             In Progress
                         </h3>
                         <p>
-                            <?php if($in_progress_pages != 0){ ?>
-                                <table class="table" id="in_progress" >
-                                <tr>
-                                  <th class="name" >Name</th>
-                                  <th class="list" >List</th>
-                                  <th class="date">Sent</th>
-                                </tr>
-                                <?php foreach ($in_progress_blasts as $blast): ?>
-                                <tr>
-                                <td class="name"><?php echo $blast['name']; ?></td>
-                                <td class="list">
-                                <?php echo $blast['list']; ?>
-                                </td>
-                                <td class="date"><?php echo date('m/d/y h:i a',strtotime($blast['schedule_time'])); ?></td>
-                                <td class="buttons"><a href="#">X</a></td>
-                                </tr>
-                                <?php endforeach; ?>
-                                </table>
-                            <?php } else { ?>
-                                <p>Nothing to Display.</p>    
-                            <?php } ?>
+                            <div id="campaigns_in_progress">
+                            </div>    
                         </p>
-                        <div class="page_numbers">
-                            <p>
-                            <?php 
-                                for ($i = 1; $i<=$in_progress_pages; $i++){
-                                        if ($i != $in_progress_page){
-                                            $url = '/campaigns/' . $scheduled_page . '/'. $i .'/' . $sent_page;
-                                            echo $this->Html->link($i,$url,array('data-ajax' => 'false'));
-                                        } else {
-                                            echo $i;
-                                        }
-                                }
-                            ?>
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -91,27 +31,7 @@
                             Sent
                         </h3>
                         <p>
-                            <!--
-                            <table class="table" id="sent">
-                            <tr>
-                              <th class="name" >Name</th>
-                              <th class="list" >List</th>
-                              <th class="date">Sent</th>
-                            </tr>
-                            <?php foreach ($sent_blasts as $blast): ?>
-                            <tr>
-                            <td class="name"><?php echo $blast['name']; ?></td>
-                            <td class="list">
-                            <?php echo $blast['list']; ?>
-                            </td>
-                            <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['start_time'])); ?></td>
-                            <td class="buttons"><a href="#">I</a></td>
-                            </tr>
-                            <?php endforeach; ?>
-                            </table>
-                            -->
                             <div id="campaigns_sent">
-                                <?php echo '<a href="#" onclick="campaigns_sent()" class="ui-link">click me</a>'; ?>
                             </div>
                         </p> 
                         <!-- 
