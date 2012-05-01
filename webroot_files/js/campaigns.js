@@ -1,7 +1,7 @@
 $.ajaxSetup ({  
     cache: false  
 });  
-var ajax_load = "<img src='../img/ajax-loader1.gif' alt='Loading' />";  
+var ajax_load = "<img src='/img/ajax-loader1.gif' alt='Loading' />";  
 
 //  campaigns_sent
 function campaigns_sent(page){
