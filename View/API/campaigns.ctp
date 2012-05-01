@@ -15,7 +15,8 @@
                             </tr>
                             <?php foreach ($scheduled_blasts as $blast): ?>
                             <tr>
-                            <td class="name"><?php echo $blast['name']; ?></td>
+                            <!-- <td class="name"><a href="#"><?php echo $blast['name']; ?></a></td> -->
+                            <td class="name" id = <?php echo($blast['blast_id']); ?>><a href="#"><?php echo $blast['name']; ?></a></td>
                             <td class="list">
                             <?php echo $blast['list']; ?>
                             </td>
@@ -56,8 +57,8 @@
                                 </tr>
                                 <?php foreach ($in_progress_blasts as $blast): ?>
                                 <tr>
-                                <td class="name"><?php echo $blast['name']; ?></td>
-                                <td class="list">
+                                <td class="name" class="blast_name_link"><a href="#"><?php echo $blast['name']; ?></a></td>
+                           <td class="list">
                                 <?php echo $blast['list']; ?>
                                 </td>
                                 <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['schedule_time'])); ?></td>
@@ -99,8 +100,8 @@
                             </tr>
                             <?php foreach ($sent_blasts as $blast): ?>
                             <tr>
-                            <td class="name"><?php echo $blast['name']; ?></td>
-                            <td class="list">
+                            <td class="name" class="blast_name_link"><a href="#"><?php echo $blast['name']; ?></a></td>
+                           <td class="list">
                             <?php echo $blast['list']; ?>
                             </td>
                             <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['start_time'])); ?></td>

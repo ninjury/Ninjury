@@ -38,6 +38,10 @@
 		echo $this->Html->script('highcharts.js');
 		echo $this->Html->script('highstock.js');
 		echo $this->Html->script('jquery.mobile.datebox.js');
+		echo("<!--html comments-->");
+		echo $this->Html->script('pop-up-script.js');
+		echo("<!--html comments-->");
+		
 		echo $this->fetch('script');
 	?>
 
@@ -178,6 +182,16 @@
     });
 
 
+	</script>
+	<script>
+		$(document).ready(function(){
+			console.log("hey");
+			$('#blast_name_761276').click(function(){
+				console.log("Handler for .click() called.");
+			});
+		});
+	
+	
 	</script>
 	<?php
 	echo $this->Html->script('sailthrutheme.js');
