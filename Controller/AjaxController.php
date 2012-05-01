@@ -4,6 +4,9 @@ include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Client_Excepti
 include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Client.php");
 include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Util.php");
 
+define('API_KEY', "8907ecf0f40ee82bc3e58c1df91ceba0");
+define('API_SECRET', '75cf7511cb55c4e0692d525ce55aaf5a');
+
 class AjaxController extends AppController {
 
 /**
@@ -19,10 +22,7 @@ class AjaxController extends AppController {
  * @var array
  */
 	public $uses = array();
-    
-    private $api_key = "8907ecf0f40ee82bc3e58c1df91ceba0";
-    private $api_secret = '75cf7511cb55c4e0692d525ce55aaf5a';
-    
+       
     /**
     
     
@@ -32,7 +32,7 @@ class AjaxController extends AppController {
  */
 	public function campaigns_sent() {
 
-        $sailthruClient = new Sailthru_Client($api_key, $api_secret);    
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);    
         echo 'hello!';
         
         $options['status'] = 'sent';
@@ -74,7 +74,7 @@ class AjaxController extends AppController {
                                 }
 
                 echo $html;
-
+                $this->autoLayout = $this->autoRender = false; 
                 //$this->set('sent_blasts',$results);
                 //$this->set('sent_pages',$pages);
                 //$this->set('sent_page',$page);
