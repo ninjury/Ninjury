@@ -21,7 +21,6 @@
                             <div id="campaigns_in_progress">
                             </div>    
                         </p>
-                        </div>
                     </div>
                 </div>
                 <div id="collapsible_sent" onclick="campaigns_sent()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
