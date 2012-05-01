@@ -14,7 +14,7 @@ function campaigns_sent(page){
         $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_sent").html(responseText); },"html");  
 }
 
-function campaigns_sent(page){
+function campaigns_scheduled(page){
 	if (page == null){
 		page = 1;
 	}
@@ -24,7 +24,7 @@ function campaigns_sent(page){
         $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_scheduled").html(responseText); },"html");  
 }
 
-function campaigns_sent(page){
+function campaigns_in_progress(page){
 	if (page == null){
 		page = 1;
 	}
