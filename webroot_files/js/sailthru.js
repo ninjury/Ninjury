@@ -89,8 +89,11 @@ function createChart()
 	{
 		var hc = $("#highchartcontainer");
 		var width = hc.parent().width()*.9;
-		hc.height(width/2);
-		hc.width(width);
+		if(width/2 < 200) {
+			hc.height(width);
+		} else {
+			hc.width(width/2);
+		}
 
 		chart = new Highcharts.Chart({
 		    chart: {
