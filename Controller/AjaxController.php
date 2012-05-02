@@ -35,6 +35,13 @@ class AjaxController extends AppController {
         $options['status'] = 'sent';
         try{
             $response = $sailthruClient->getBlasts($options);
+
+            if (count($response['blasts']) == 0){
+                echo "Nothing to display."
+                return;
+            }
+
+
             if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
@@ -92,6 +99,12 @@ class AjaxController extends AppController {
         $options['status'] = 'scheduled';
         try{
             $response = $sailthruClient->getBlasts($options);
+
+             if (count($response['blasts']) == 0){
+                echo "Nothing to display."
+                return;
+            }
+
             if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
@@ -148,6 +161,12 @@ class AjaxController extends AppController {
         $options['status'] = 'sending';
         try{
             $response = $sailthruClient->getBlasts($options);
+
+             if (count($response['blasts']) == 0){
+                echo "Nothing to display."
+                return;
+            }
+            
             if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
