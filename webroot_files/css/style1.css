@@ -1411,6 +1411,16 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
     background-size: 78px 52px;
 }
 
+#lists .ui-icon {
+    background: url("../img/icon_lists_small.png");
+    background-size: 78px 52px;
+}
+
+#question .ui-icon {
+    background: url("../img/icon_question_small.png");
+    background-size: 78px 52px;
+}
+
 /* Added 3/19/12 */
 
 .table {
