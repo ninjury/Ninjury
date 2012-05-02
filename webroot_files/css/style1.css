@@ -1848,3 +1848,7 @@ div.loader img {
 	height: 32px;
 	width: 32px;
 }
+
+#highchartcontainer {
+	margin: 0px auto;
+}
