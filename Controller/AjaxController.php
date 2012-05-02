@@ -60,7 +60,7 @@ class AjaxController extends AppController {
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
                                         '<td class="buttons"><a href="#">I</a></td>';
                 }
-                $html .= '</table><div class="page_numbers">';
+                $html .= '</table><p><div class="page_numbers">';
 
                 for ($i = 1; $i<=$pages; $i++){
                                         if ($i != $page){
@@ -70,7 +70,7 @@ class AjaxController extends AppController {
                                         }
                                 }
 
-                $html .= '</div';
+                $html .= '</div></p>';
 
                 echo $html;
                 $this->autoLayout = $this->autoRender = false; 
@@ -117,7 +117,7 @@ class AjaxController extends AppController {
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
                                         '<td class="buttons"><a href="#">X</a></td>';
                 }
-                $html .= '</table><div class="page_numbers">';
+                $html .= '</table><p><div class="page_numbers">';
 
                 for ($i = 1; $i<=$pages; $i++){
                                         if ($i != $page){
@@ -127,7 +127,7 @@ class AjaxController extends AppController {
                                         }
                                 }
 
-                $html .= '</div>';
+                $html .= '</div></p>';
                 echo $html;
                 $this->autoLayout = $this->autoRender = false; 
             } else {
@@ -173,7 +173,7 @@ class AjaxController extends AppController {
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
                                         '<td class="buttons"><a href="#">X</a></td>';
                 }
-                $html .= '</table><div class="page_numbers">';
+                $html .= '</table><p><div class="page_numbers">';
 
                 for ($i = 1; $i<=$pages; $i++){
                                         if ($i != $page){
@@ -182,7 +182,7 @@ class AjaxController extends AppController {
                                             $html .=  $i;
                                         }
                                 }
-                $html .= '</div>';
+                $html .= '</div></p>';
                 echo $html;
                 $this->autoLayout = $this->autoRender = false; 
             } else {

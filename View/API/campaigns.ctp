@@ -1,6 +1,6 @@
- <div data-role="page" id="campaigns_page" data-theme="a">
+ 	<div data-role="page" id="campaigns_page" data-theme="a">
             <?php echo $this->element('header', array('page' => 'campaigns')); ?>
-            <div data-role="content">
+            <div id="page_content" data-role="content">
                 <div id="collapsible__scheduled" onclick="campaigns_scheduled()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible">
                         <h3>
@@ -27,7 +27,6 @@
                             <div id="campaigns_scheduled">
                             </div> 
                         </p>
-                        </div>
                     </div>
                 </div>
                 <div id="collapsible_in_progress" onclick="campaigns_in_progress()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
@@ -62,12 +61,11 @@
                             <div id="campaigns_in_progress">
                             </div>    
                         </p>
-                        </div>
                     </div>
                 </div>
-                <div id="collapsible_sent" onclick="campaigns_sent()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
-                        <h3>
+                        <h3 id="collapsible_sent" onclick="campaigns_sent()">
                             Sent
                         </h3>
                         <p>
@@ -91,10 +89,13 @@
                             <div id="campaigns_sent">
                             </div>
                         </p> 
+<<<<<<< HEAD
                         <div class="page_numbers">
                             <p>
                             </p>
                         </div>
+=======
+>>>>>>> 603d6b6f54cbb1e10d3598b415855fef0954f9bb
                     </div>
                 </div>
             </div>

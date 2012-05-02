@@ -1502,27 +1502,27 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
     height: 32px;
 }
 
-#scheduled .buttons a{
+#campaigns_scheduled .buttons a{
     background-image: url(../img/delete_small.png);
 }
 
-#in_progress .buttons a{
+#campaigns_in_progress .buttons a{
     background-image: url(../img/pause_small.png);
 }
 
-#scheduled .buttons a:hover, a:active{  
-    background-position: -32px 0px;
-}
-
-#in_progress .buttons a:hover, a:active{  
-    background-position: -32px 0px;
-}
-
-#sent .buttons a{
+#campaigns_sent .buttons a{
     background-image: url(../img/sent_info_small2.png);
 }
 
-#sent .buttons a:hover, a:active{  
+#campaigns_scheduled .buttons a:hover, a:active{  
+    background-position: -32px 0px;
+}
+
+#campaigns_in_progress .buttons a:hover, a:active{  
+    background-position: -32px 0px;
+}
+
+#campaigns_sent .buttons a:hover, a:active{  
     background-position: -32px 0px;
 }
 

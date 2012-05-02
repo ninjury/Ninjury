@@ -36,20 +36,31 @@
 		echo $this->Html->script('jquery_mobile.js');
 		echo $this->Html->script('swipe_mod.js');
 		echo $this->Html->script('highcharts.js');
-		echo $this->Html->script('highstock.js');
 		echo $this->Html->script('jquery.mobile.datebox.js');
+<<<<<<< HEAD
 <<<<<<< HEAD
 		echo("<!--html comments-->");
 		echo $this->Html->script('pop-up-script.js');
 		echo("<!--html comments-->");
 		
 =======
+=======
+		echo $this->Html->script('jquery.pjax.js');
+>>>>>>> 603d6b6f54cbb1e10d3598b415855fef0954f9bb
         echo $this->Html->script('campaigns.js');
 >>>>>>> c99682cfc90ac5f566e3750bb50111df52c73407
 		echo $this->fetch('script');
 	?>
 
 	<!-- Menu Javascript //-->
+	<script type="text/javascript">
+
+	    $(function(){
+	      // pjax
+	      $('#slider a').pjax({container: "#page_content",fragment: "#page_content", timeout: 2000});
+	      $('#page_content').on('pjax:end', function() { $("#page_content").trigger('pagecreate') });
+	    })
+	  </script>
 	<script>
 	$(document).ready(function() {
 		// slider
