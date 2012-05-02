@@ -35,7 +35,6 @@
                             In Progress
                         </h3>
                         <p>
-<<<<<<< HEAD
                             <?php if($in_progress_pages != 0){ ?>
                                 <table class="table" id="in_progress" >
                                 <tr>
@@ -89,13 +88,6 @@
                             <div id="campaigns_sent">
                             </div>
                         </p> 
-<<<<<<< HEAD
-                        <div class="page_numbers">
-                            <p>
-                            </p>
-                        </div>
-=======
->>>>>>> 603d6b6f54cbb1e10d3598b415855fef0954f9bb
                     </div>
                 </div>
             </div>
