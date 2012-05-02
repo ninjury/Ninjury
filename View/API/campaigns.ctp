@@ -3,8 +3,10 @@
             <div id="page_content" data-role="content">
                 <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible">
-                        <h3 id="collapsible__scheduled" onclick="campaigns_scheduled()">
-                            Scheduled
+                        <h3>
+                            <div id="collapsible__scheduled" onclick="campaigns_scheduled()">
+                                Scheduled
+                            </div>
                         </h3>
                         <p>
 
@@ -15,8 +17,10 @@
                 </div>
                 <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
-                        <h3 id="collapsible_in_progress" onclick="campaigns_in_progress()">
-                            In Progress
+                        <h3>
+                            <div id="collapsible_in_progress" onclick="campaigns_in_progress()">
+                                In Progress
+                            </div>
                         </h3>
                         <p>
                             <div id="campaigns_in_progress">
