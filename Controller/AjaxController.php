@@ -1,8 +1,8 @@
 <?php
 
-include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Client_Exception.php");
-include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Client.php");
-include("/home/cake/mobile/scripts/sailthru-api/sailthru/Sailthru_Util.php");
+include(ROOT . DS . APP_DIR . "/scripts/sailthru-api/sailthru/Sailthru_Client_Exception.php");
+include(ROOT . DS . APP_DIR . "/scripts/sailthru-api/sailthru/Sailthru_Client.php");
+include(ROOT . DS . APP_DIR . "/scripts/sailthru-api/sailthru/Sailthru_Util.php");
 
 define('API_KEY', "8907ecf0f40ee82bc3e58c1df91ceba0");
 define('API_SECRET', '75cf7511cb55c4e0692d525ce55aaf5a');
@@ -55,7 +55,7 @@ class AjaxController extends AppController {
                             <th class="list" >List</th><th class="date">Sent</th></tr>';
 
                 foreach ($results as $blast){
-                    $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
+                    $html .= '<tr><td class="name"><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
                                         '<td class="buttons"><a href="#" onclick="alexBfunction(' . $blast['blast_id'] . ')">I</a></td>';
@@ -112,7 +112,7 @@ class AjaxController extends AppController {
                             <th class="list" >List</th><th class="date">Scheduled</th></tr>';
 
                 foreach ($results as $blast){
-                    $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
+                    $html .= '<tr><td class="name"><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
                                         '<td class="buttons"><a href="#">X</a></td>';
@@ -168,10 +168,10 @@ class AjaxController extends AppController {
                             <th class="list" >List</th><th class="date">Scheduled</th></tr>';
 
                 foreach ($results as $blast){
-                    $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
+                    $html .= '<tr><td class="name" ><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
-                                        '<td class="buttons"><a href="#">X</a></td>';
+                                        '<td class="buttons"><a href="view_campaign.ctp">X</a></td>';
                 }
                 $html .= '</table><p><div class="page_numbers">';
 
@@ -195,31 +195,35 @@ class AjaxController extends AppController {
 
     public function view_blast_preview() {
 
-        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);    
-      
-        try{
-            $response = $sailthruClient->getBlasts($options);
-            if (!isset($response['error']) ) {
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+        			
+			try{
+				$response = $sailthruClient->getBlasts($options);
+				if (!isset($response['error']) ) {
+	
+					if (isset($this->params['pass'][0])){
+						$blast_id = $this->params['pass'][0];
+					} 
+					else {
+						exit;
+					}
+						$response = $sailthruClient->getBlast($blast_id);
+					$html = $response['content_html'];
+					$this->set('view_blast_preview', $html);
+			
+					$this->layout = 'preview_blast_template';
+					$this->render('view_blast_preview');
 
-                if (isset($this->params['pass'][0])){
-                    $blast_id = $this->params['pass'][0];
-                } else {
-                    exit;
-                }
-
-                $response = $sailthruClient->getBlast($blast_id);
-                $html = $response['content_html'];
-                echo $html;
-                $this->autoLayout = $this->autoRender = false; 
-
-            } else {
-                echo 'error';
-            }
-        } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
-        } 
+	
+				} 
+				else {
+					echo 'error';
+				}
+			} 
+			catch (Sailthru_Client_Exception $e) {
+				echo 'exception';
+			} 
         
-        //ALEX FILL IN
     }
         
 }

@@ -15,7 +15,7 @@
                             </tr>
                             <?php foreach ($scheduled_blasts as $blast): ?>
                             <tr>
-                            <td class="name" id = <?php echo($blast['blast_id']); ?>><a href="#"><?php echo $blast['name']; ?></a></td>
+                            <td class="name" ><?php echo('<a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] ); ?></a></td>
                             <td class="list">
                             <?php echo $blast['list']; ?>
                             </td>
@@ -44,7 +44,7 @@
                                 </tr>
                                 <?php foreach ($in_progress_blasts as $blast): ?>
                                 <tr>
-                                <td class="name" class="blast_name_link"><a href="#"><?php echo $blast['name']; ?></a></td>
+                                <td class="name" ><?php echo('<a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] ); ?></a></td>
                            <td class="list">
                                 <?php echo $blast['list']; ?>
                                 </td>
@@ -76,7 +76,7 @@
                             </tr>
                             <?php foreach ($sent_blasts as $blast): ?>
                             <tr>
-                            <td class="name" class="blast_name_link"><a href="#"><?php echo $blast['name']; ?></a></td>
+                            <td class="name" ><?php echo('<a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] ); ?></a></td>
                            <td class="list">
                             <?php echo $blast['list']; ?>
                             </td>
