@@ -48,8 +48,9 @@
 
 	    $(function(){
 	      // pjax
-	      $('#slider a').pjax({container: "#page_content",fragment: "#page_content", timeout: 2000});
-	      $('#page_content').on('pjax:end', function() { $("#page_content").trigger('pagecreate') });
+	      $('#slider a').pjax({container: "#page_content",fragment: "#page_content", timeout: 2000}).live('click', function() { $(".loader").show(); });
+	      $('#page_content').on('pjax:end', function() { $("#page_content").trigger('pagecreate'); $(".loader").hide();});
+		
 	    })
 	  </script>
 	<script>

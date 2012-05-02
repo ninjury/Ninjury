@@ -1820,3 +1820,21 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .ui-input-datebox .ui-btn-icon-notext {
 	margin: .5em 5px;
 }
+
+div.loader {
+	position:absolute;
+	z-index:999;
+	background: #ffffff;
+	height:100%;
+	width:100%;
+	opacity:0.6;
+  	filter:alpha(opacity=60); /* For IE8 and earlier */
+	display:none;
+}
+
+div.loader img {
+	display:block;
+	margin: 40px auto;
+	height: 32px;
+	width: 32px;
+}
