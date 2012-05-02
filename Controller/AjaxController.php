@@ -220,7 +220,7 @@ class AjaxController extends AppController {
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
         			
 			try{
-				$response = $sailthruClient->getBlasts($options);
+                $response = $sailthruClient->getBlast($blast_id);
 				if (!isset($response['error']) ) {
 	
 					if (isset($this->params['pass'][0])){
@@ -229,7 +229,6 @@ class AjaxController extends AppController {
 					else {
 						exit;
 					}
-						$response = $sailthruClient->getBlast($blast_id);
 					$html = $response['content_html'];
 					$this->set('view_blast_preview', $html);
 			
@@ -245,6 +244,36 @@ class AjaxController extends AppController {
 			catch (Sailthru_Client_Exception $e) {
 				echo 'exception';
 			} 
+        
+    }
+
+      public function view_campaigns_stats() {
+
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+                    
+            try{
+                $response = $sailthruClient->getBlast($blast_id);
+                if (!isset($response['error']) ) {
+    
+                    if (isset($this->params['pass'][0])){
+                        $blast_id = $this->params['pass'][0];
+                    } 
+                    else {
+                        exit;
+                    }
+                    
+                    
+        
+
+    
+                } 
+                else {
+                    echo 'error';
+                }
+            } 
+            catch (Sailthru_Client_Exception $e) {
+                echo 'exception';
+            } 
         
     }
         
