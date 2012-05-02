@@ -58,7 +58,7 @@ class AjaxController extends AppController {
                     $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
-                                        '<td class="buttons"><a href="#" onclick="alexBfunction(' . $blast['id'] . ')">I</a></td>';
+                                        '<td class="buttons"><a href="#" onclick="alexBfunction(' . $blast['blast_id'] . ')">I</a></td>';
                 }
                 $html .= '</table><p><div class="page_numbers">';
 
