@@ -202,7 +202,7 @@ class AjaxController extends AppController {
             if (!isset($response['error']) ) {
 
                 if (isset($this->params['pass'][0])){
-                    $blast_id = $this->params['pass'][0]);
+                    $blast_id = $this->params['pass'][0];
                 } else {
                     exit;
                 }
