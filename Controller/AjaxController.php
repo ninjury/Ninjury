@@ -252,7 +252,6 @@ class AjaxController extends AppController {
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
                     
             try{
-                $response = $sailthruClient->getBlast($blast_id);
                 if (!isset($response['error']) ) {
     
                     if (isset($this->params['pass'][0])){
@@ -261,6 +260,8 @@ class AjaxController extends AppController {
                     else {
                         exit;
                     }
+
+                     $response = $sailthruClient->getBlast($blast_id);
                     
                     
         
