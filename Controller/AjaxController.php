@@ -58,17 +58,17 @@ class AjaxController extends AppController {
                     $html .= '<tr><td class="name">' . $blast['name'] . '</td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
-                                        '<td class="buttons"><a href="#">I</a></td>';
+                                        '<td class="buttons"><a href="#" onclick="alexBfunction(' . $blast['id'] . ')">I</a></td>';
                 }
                 $html .= '</table><p><div class="page_numbers">';
 
                 for ($i = 1; $i<=$pages; $i++){
-                                        if ($i != $page){
-                                            $html .= '<a href="#" onclick="campaigns_sent(' . $i .')" class="ui-link" >' . $i .'</a>';
-                                        } else {
-                                            $html .=  $i;
-                                        }
-                                }
+                    if ($i != $page){
+                        $html .= '<a href="#" onclick="campaigns_sent(' . $i .')" class="ui-link" >' . $i .'</a>';
+                    } else {
+                        $html .=  $i;
+                    }
+                }
 
                 $html .= '</div></p>';
 
@@ -176,12 +176,12 @@ class AjaxController extends AppController {
                 $html .= '</table><p><div class="page_numbers">';
 
                 for ($i = 1; $i<=$pages; $i++){
-                                        if ($i != $page){
-                                            $html .= '<a href="#" onclick="campaigns_in_progress(' . $i .')" class="ui-link" >' . $i .'</a>';
-                                        } else {
-                                            $html .=  $i;
-                                        }
-                                }
+                    if ($i != $page){
+                        $html .= '<a href="#" onclick="campaigns_in_progress(' . $i .')" class="ui-link" >' . $i .'</a>';
+                    } else {
+                        $html .=  $i;
+                    }
+                }
                 $html .= '</div></p>';
                 echo $html;
                 $this->autoLayout = $this->autoRender = false; 
@@ -192,4 +192,32 @@ class AjaxController extends AppController {
             echo 'exception';
         }      
     }
+
+    public function campaigns_info() {
+
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);    
+      
+        try{
+            $response = $sailthruClient->getBlasts($options);
+            if (!isset($response['error']) ) {
+
+                if (isset($this->params['pass'][0])){
+                    $blast_id = $this->params['pass'][0]);
+                } else {
+                    exit;
+                }
+
+                $response = $sailthruClient->getBlast($blast_id);
+                $html = $response['content_html'];
+                echo $html;
+                $this->autoLayout = $this->autoRender = false; 
+
+            } else {
+                echo 'error';
+            }
+        } catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }   
+    }
+        
 }
