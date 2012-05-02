@@ -35,6 +35,7 @@
     Router::connect('/ajax/campaigns/scheduled/*', array('controller' => 'ajax', 'action' => 'campaigns_scheduled'));
     Router::connect('/ajax/campaigns/in_progress/*', array('controller' => 'ajax', 'action' => 'campaigns_in_progress'));
     Router::connect('/ajax/campaigns/preview/*', array('controller' => 'ajax', 'action' => 'view_blast_preview'));
+    Router::connect('/ajax/campaigns/stats/*', array('controller' => 'ajax', 'action' => 'view_campaigns_stats'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

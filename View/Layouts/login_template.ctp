@@ -2,7 +2,7 @@
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 	<title><?php echo $title_for_layout; ?></title>
 	<?php
 		echo $this->Html->meta('icon');
@@ -19,7 +19,7 @@
 		echo $this->Html->script('sailthrutheme.js');
 	?>
 </head>
-<body style="background-color:#00CCED;">
+<body style="background-color:#00CCED; min-height:100%;">
 	<div id="container">
 		<div id="content">
 			<?php echo $this->fetch('content'); ?>

@@ -35,6 +35,14 @@ class AjaxController extends AppController {
         $options['status'] = 'sent';
         try{
             $response = $sailthruClient->getBlasts($options);
+
+            if (count($response['blasts']) == 0){
+                echo "Nothing to display.";
+                $this->autoLayout = $this->autoRender = false; 
+                return;
+            }
+
+
             if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
@@ -92,6 +100,13 @@ class AjaxController extends AppController {
         $options['status'] = 'scheduled';
         try{
             $response = $sailthruClient->getBlasts($options);
+
+             if (count($response['blasts']) == 0){
+                echo "Nothing to display.";
+                $this->autoLayout = $this->autoRender = false; 
+                return;
+            }
+
             if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
@@ -148,6 +163,13 @@ class AjaxController extends AppController {
         $options['status'] = 'sending';
         try{
             $response = $sailthruClient->getBlasts($options);
+
+             if (count($response['blasts']) == 0){
+                echo "Nothing to display.";
+                $this->autoLayout = $this->autoRender = false; 
+                return;
+            }
+
             if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
@@ -198,7 +220,6 @@ class AjaxController extends AppController {
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
         			
 			try{
-				$response = $sailthruClient->getBlasts($options);
 				if (!isset($response['error']) ) {
 	
 					if (isset($this->params['pass'][0])){
@@ -207,7 +228,7 @@ class AjaxController extends AppController {
 					else {
 						exit;
 					}
-					$response = $sailthruClient->getBlast($blast_id);
+                    $response = $sailthruClient->getBlast($blast_id);
 					$html = $response['content_html'];
 					$this->set('view_blast_preview', $html);
 			
@@ -223,6 +244,37 @@ class AjaxController extends AppController {
 			catch (Sailthru_Client_Exception $e) {
 				echo 'exception';
 			} 
+        
+    }
+
+      public function view_campaigns_stats() {
+
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+                    
+            try{
+                if (!isset($response['error']) ) {
+    
+                    if (isset($this->params['pass'][0])){
+                        $blast_id = $this->params['pass'][0];
+                    } 
+                    else {
+                        exit;
+                    }
+                    
+                	$response = $sailthruClient->getBlast($blast_id); //associative array with everything i need
+                	
+                    
+        
+
+    
+                } 
+                else {
+                    echo 'error';
+                }
+            } 
+            catch (Sailthru_Client_Exception $e) {
+                echo 'exception';
+            } 
         
     }
         

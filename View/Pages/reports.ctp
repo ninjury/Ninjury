@@ -1,5 +1,6 @@
         <div data-role="page" data-theme="a" id="reports_page">
             <?php echo $this->element('header', array('page' => 'reports')); ?>
+	    <div class='loader' ><img src='img/ajax-loader1.gif'></div>
             <div id="page_content" data-role="content">
                 <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="false">
@@ -8,10 +9,10 @@
                         </h3>
                         <div data-role="fieldcontain" id="graph-dates">
                             <fieldset data-role="controlgroup">
-                                <input id="textinput5" placeholder="Start Date" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                                <input id="textinput5" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
                             </fieldset>
                             <fieldset data-role="controlgroup">
-                                <input id="textinput6" placeholder="End Date" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                                <input id="textinput6" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
                             </fieldset>
                         </div>
                         <div id="highchartcontainer" style="width: 100%; height: 90%">
@@ -85,10 +86,10 @@
                         </div>
                         <div data-role="fieldcontain" id="graph-dates">
                             <fieldset data-role="controlgroup">
-                                <input id="textinput7" placeholder="Start Date" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                                <input id="textinput7" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
                             </fieldset>
                             <fieldset data-role="controlgroup">
-                                <input id="textinput8" placeholder="End Date" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                                <input id="textinput8" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
                             </fieldset>
                         </div>
                         <div class="ui-grid-b" id="recent-campaigns-grid">

@@ -3374,7 +3374,11 @@ $.widget( "mobile.page", $.mobile.widget, {
 				//     moved into more comprehensive isExternalLink
 				isExternal = useDefaultUrlHandling || ( path.isExternal( href ) && !path.isPermittedCrossDomainRequest(documentUrl, href) );
 
-			if( isExternal ) {
+			if($link.is(":jqmData(pjax='true')")) {
+				return;
+			}
+
+			if( isExternal  ) {
 				httpCleanup();
 				//use default click handling
 				return;
