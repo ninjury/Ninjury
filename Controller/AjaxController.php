@@ -37,7 +37,7 @@ class AjaxController extends AppController {
             $response = $sailthruClient->getBlasts($options);
 
             if (count($response['blasts']) == 0){
-                echo "Nothing to display."
+                echo "Nothing to display.";
                 return;
             }
 
@@ -101,7 +101,7 @@ class AjaxController extends AppController {
             $response = $sailthruClient->getBlasts($options);
 
              if (count($response['blasts']) == 0){
-                echo "Nothing to display."
+                echo "Nothing to display.";
                 return;
             }
 
@@ -163,10 +163,10 @@ class AjaxController extends AppController {
             $response = $sailthruClient->getBlasts($options);
 
              if (count($response['blasts']) == 0){
-                echo "Nothing to display."
+                echo "Nothing to display.";
                 return;
             }
-            
+
             if (!isset($response['error']) ) {
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
