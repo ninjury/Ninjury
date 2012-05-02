@@ -99,6 +99,8 @@
 
 	var chart;
     $(document).ready(function() {
+	$("input[data-role='datebox']").click(function() { $(this).datebox("open"); });
+
         chart = new Highcharts.Chart({
             chart: {
                 renderTo: 'highchartcontainer',

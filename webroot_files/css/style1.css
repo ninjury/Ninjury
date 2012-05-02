@@ -1811,3 +1811,12 @@ margin:0px auto;
 .ui-input-datebox {
 	background-color: #e5fafc;
 }
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.ui-input-datebox .ui-btn-icon-notext {
+	margin: .5em 5px;
+}
