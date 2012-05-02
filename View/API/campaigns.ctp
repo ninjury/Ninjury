@@ -7,23 +7,7 @@
                             Scheduled
                         </h3>
                         <p>
-                            <table class="table" id="scheduled">
-                            <tr>
-                              <th class="name" >Name</th>
-                              <th class="list" >List</th>
-                              <th class="date">Scheduled</th>
-                            </tr>
-                            <?php foreach ($scheduled_blasts as $blast): ?>
-                            <tr>
-                            <td class="name" ><?php echo('<a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] ); ?></a></td>
-                            <td class="list">
-                            <?php echo $blast['list']; ?>
-                            </td>
-                            <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['schedule_time'])); ?></td>
-                            <td class="buttons"><a href="#">X</a></td>
-                            </tr>
-                            <?php endforeach; ?>
-                            </table>
+
                             <div id="campaigns_scheduled">
                             </div> 
                         </p>
@@ -35,28 +19,6 @@
                             In Progress
                         </h3>
                         <p>
-                            <?php if($in_progress_pages != 0){ ?>
-                                <table class="table" id="in_progress" >
-                                <tr>
-                                  <th class="name" >Name</th>
-                                  <th class="list" >List</th>
-                                  <th class="date">Sent</th>
-                                </tr>
-                                <?php foreach ($in_progress_blasts as $blast): ?>
-                                <tr>
-                                <td class="name" ><?php echo('<a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] ); ?></a></td>
-                           <td class="list">
-                                <?php echo $blast['list']; ?>
-                                </td>
-                                <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['schedule_time'])); ?></td>
-                                <td class="buttons"><a href="#">X</a></td>
-                                </tr>
-                                <?php endforeach; ?>
-                                </table>
-                            <?php } else { ?>
-                                <p>Nothing to Display.</p>    
-                            <?php } ?>
-                            
                             <div id="campaigns_in_progress">
                             </div>    
                         </p>
@@ -64,27 +26,13 @@
                 </div>
                 <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible" data-collapsed="true">
-                        <h3 id="collapsible_sent" onclick="campaigns_sent()">
+                        <h3>
+                            <div id="collapsible_sent" onclick="campaigns_sent()">
                             Sent
+                            </div>
                         </h3>
                         <p>
-                            <table class="table" id="sent">
-                            <tr>
-                              <th class="name" >Name</th>
-                              <th class="list" >List</th>
-                              <th class="date">Sent</th>
-                            </tr>
-                            <?php foreach ($sent_blasts as $blast): ?>
-                            <tr>
-                            <td class="name" ><?php echo('<a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] ); ?></a></td>
-                           <td class="list">
-                            <?php echo $blast['list']; ?>
-                            </td>
-                            <td class="date"><?php echo @date('m/d/y h:i a',@strtotime($blast['start_time'])); ?></td>
-                            </tr>
-                            <?php endforeach; ?>
-                            </table>
-                        </p>
+
                             <div id="campaigns_sent">
                             </div>
                         </p> 
