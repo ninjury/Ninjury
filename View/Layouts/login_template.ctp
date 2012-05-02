@@ -19,7 +19,7 @@
 		echo $this->Html->script('sailthrutheme.js');
 	?>
 </head>
-<body style="background-color:#00CCED;">
+<body style="background-color:#00CCED; min-height:100%;">
 	<div id="container">
 		<div id="content">
 			<?php echo $this->fetch('content'); ?>
