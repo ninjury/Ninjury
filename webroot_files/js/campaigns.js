@@ -34,4 +34,8 @@ function campaigns_in_progress(page){
     $("#campaigns_sent").html(ajax_load);  
         $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_in_progress").html(responseText); },"html");  
 }
+function view_blast_preview(blastId){
+	var loadUrl = "index/ajax/campaigns/info/" + blastId;
+	
+}
 

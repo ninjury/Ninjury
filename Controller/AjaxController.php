@@ -193,7 +193,7 @@ class AjaxController extends AppController {
         }      
     }
 
-    public function campaigns_info() {
+    public function view_blast_preview() {
 
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);    
       
@@ -217,7 +217,9 @@ class AjaxController extends AppController {
             }
         } catch (Sailthru_Client_Exception $e) {
             echo 'exception';
-        }   
+        } 
+        
+        //ALEX FILL IN
     }
         
 }
