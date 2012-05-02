@@ -58,7 +58,7 @@ class AjaxController extends AppController {
                     $html .= '<tr><td class="name"><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
-                                        '<td class="buttons"><a href="#" onclick="alexBfunction(' . $blast['blast_id'] . ')">I</a></td>';
+                                        '<td class="buttons"><a href="ajax/campaigns/stats/' . $blast['blast_id'] . '" data-rel = "dialog">I</a></td>';
                 }
                 $html .= '</table><p><div class="page_numbers">';
 
@@ -207,7 +207,7 @@ class AjaxController extends AppController {
 					else {
 						exit;
 					}
-						$response = $sailthruClient->getBlast($blast_id);
+					$response = $sailthruClient->getBlast($blast_id);
 					$html = $response['content_html'];
 					$this->set('view_blast_preview', $html);
 			
