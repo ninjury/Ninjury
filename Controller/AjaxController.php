@@ -38,6 +38,7 @@ class AjaxController extends AppController {
 
             if (count($response['blasts']) == 0){
                 echo "Nothing to display.";
+                $this->autoLayout = $this->autoRender = false; 
                 return;
             }
 
@@ -102,6 +103,7 @@ class AjaxController extends AppController {
 
              if (count($response['blasts']) == 0){
                 echo "Nothing to display.";
+                $this->autoLayout = $this->autoRender = false; 
                 return;
             }
 
@@ -164,6 +166,7 @@ class AjaxController extends AppController {
 
              if (count($response['blasts']) == 0){
                 echo "Nothing to display.";
+                $this->autoLayout = $this->autoRender = false; 
                 return;
             }
 
