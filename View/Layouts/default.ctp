@@ -37,8 +37,9 @@
 		echo $this->Html->script('swipe_mod.js');
 		echo $this->Html->script('highcharts.js');
 		echo $this->Html->script('jquery.mobile.datebox.js');
+		// echo $this->Html->script('view_blast_preview.js');
 		echo $this->Html->script('jquery.pjax.js');
-        	echo $this->Html->script('campaigns.js');
+        echo $this->Html->script('campaigns.js');
 		echo $this->fetch('script');
 	?>
 
@@ -189,6 +190,16 @@
     });
 
 
+	</script>
+	<script>
+		$(document).ready(function(){
+			console.log("hey");
+			$('#blast_name_761276').click(function(){
+				console.log("Handler for .click() called.");
+			});
+		});
+	
+	
 	</script>
 	<?php
 	echo $this->Html->script('sailthrutheme.js');

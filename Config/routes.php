@@ -27,13 +27,14 @@
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'login'));
     //Router::connect('/campaigns', array('controller' => 'pages', 'action' => 'display', 'campaigns'));
-    Router::connect('/campaigns/*', array('controller' => 'api', 'action' => 'campaigns', 'campaigns'));
+    Router::connect('/campaigns', array('controller' => 'api', 'action' => 'campaigns', 'campaigns'));
 	Router::connect('/reports', array('controller' => 'pages', 'action' => 'display', 'reports'));
 	Router::connect('/login', array('controller' => 'auth', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'auth', 'action' => 'logout'));
     Router::connect('/ajax/campaigns/sent/*', array('controller' => 'ajax', 'action' => 'campaigns_sent'));
     Router::connect('/ajax/campaigns/scheduled/*', array('controller' => 'ajax', 'action' => 'campaigns_scheduled'));
     Router::connect('/ajax/campaigns/in_progress/*', array('controller' => 'ajax', 'action' => 'campaigns_in_progress'));
+    Router::connect('/ajax/campaigns/preview/*', array('controller' => 'ajax', 'action' => 'view_blast_preview'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
