@@ -261,7 +261,7 @@ class AjaxController extends AppController {
                         exit;
                     }
 
-                     $response = $sailthruClient->getBlast($blast_id);
+                    $response = $sailthruClient->getBlast($blast_id);
                     
                     
         
