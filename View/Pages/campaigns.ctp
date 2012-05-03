@@ -1,6 +1,6 @@
  <div data-role="page" id="campaigns_page" data-theme="a">
             <?php echo $this->element('header', array('page' => 'campaigns')); ?>
-	    <div class='loader' ><img src='img/ajax-loader1.gif'></div>
+	    <div class='loader' ><img src='/mobile/img/ajax-loader1.gif'></div>
             <div id="page_content" data-role="content">
                 <div id="collapsible__scheduled" onclick="campaigns_scheduled()" data-role="collapsible-set" data-theme="a" data-content-theme="a">
                     <div data-role="collapsible">
