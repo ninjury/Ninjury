@@ -66,7 +66,7 @@ class AjaxController extends AppController {
                     $html .= '<tr><td class="name"><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
                                 '<td class="list">' . $blast['list'] . '</td>' .
                                     '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
-                                        '<td class="buttons"><a href="#" onclick="alexBfunction(' . $blast['blast_id'] . ')">I</a></td>';
+                                        '<td class="buttons"><a href="ajax/campaigns/stats/' . $blast['blast_id'] . '" data-rel = "dialog">I</a></td>';
                 }
                 $html .= '</table><p><div class="page_numbers">';
 
@@ -232,10 +232,8 @@ class AjaxController extends AppController {
 					$html = $response['content_html'];
 					$this->set('view_blast_preview', $html);
 			
-					$this->layout = 'preview_blast_template';
+					$this->layout = 'popup_template';
 					$this->render('view_blast_preview');
-
-	
 				} 
 				else {
 					echo 'error';
@@ -246,27 +244,54 @@ class AjaxController extends AppController {
 			} 
         
     }
-
-      public function view_campaigns_stats() {
-
+    public function view_campaigns_stats() {
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
-                    
             try{
                 if (!isset($response['error']) ) {
-    
                     if (isset($this->params['pass'][0])){
                         $blast_id = $this->params['pass'][0];
                     } 
                     else {
                         exit;
                     }
+                	$response = $sailthruClient->getBlast($blast_id); //associative array with everything i need
+                	if(isset($response['count'])){
+                		$num_users = $response['count'];
+                	}
+                	else{
+                		$num_users = 'unknown';
+                	}
+                	if(isset($response['estopens'])){
+                		$est_open_rate = $response['estopens'];
+                	}
+                	else{
+                		$est_open_rate = 'unknown';
+                	}
+                    if(isset($reponse['click'])){
+                    	$click = $reponse['click'];
+                    }
+                    else{
+                    	$click = 'unknown';
+                    }
+                    if(isset($response['rev'])){
+                    	$revenue_in_cents = $response['rev'];
+                    }
+                    else{
+                    	$revenue_in_cents = 'unknown';
+    				}
+    				
+    				$this->set('num_users', $num_users);
+    				$this->set('est_open_rate', $est_open_rate);
+    				$this->set('click', $click);
+    				$this->set('revenue_in_cents', $revenue_in_cents);
+    				
+    				$this->layout = 'popup_template';
 
-                    $response = $sailthruClient->getBlast($blast_id);
-                    
-                    
-        
-
-    
+    				$html = $response['content_html'];
+					$this->set('view_blast_preview', $html);
+			
+					$this->layout = 'preview_blast_template';
+					$this->render('view_campaign_stats');
                 } 
                 else {
                     echo 'error';
