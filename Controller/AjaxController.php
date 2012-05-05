@@ -23,7 +23,8 @@ class AjaxController extends AppController {
  * @var array
  */
 	public $uses = array();
-       
+      
+
  /**    
  *  Sent Campaigns
  *
@@ -256,6 +257,36 @@ class AjaxController extends AppController {
                 echo 'exception';
             } 
         
+    }
+
+        public function campaigns_delete() {
+
+            $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+                    
+            try{
+                if (!isset($response['error']) ) {
+    
+                    if (isset($this->params['pass'][0])){
+                        $blast_id = $this->params['pass'][0];
+                    } 
+                    else {
+                        exit;
+                    }
+                    $response = $sailthruClient->deleteBlast($blast_id);
+                    if ($response['ok'] == 1){
+                        echo 'Campaign was deleted successfully.';
+                    } else {
+                        echo 'Campaign could not be deleted.';
+                    }
+                    $this->autoLayout = $this->autoRender = false; 
+                } 
+                else {
+                    echo 'error';
+                }
+            } 
+            catch (Sailthru_Client_Exception $e) {
+                echo 'exception';
+            }            
     }
         
 }
