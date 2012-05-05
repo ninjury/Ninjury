@@ -2142,6 +2142,27 @@ div.loader img {
 	margin: 0px auto;
 }
 
+/*Alex B is adding the following below in order to stylize the view_campaign_stats page */
+
+#view_campaign_stats_div{
+	display: block;
+	/*border: 3px solid blue; */
+	margin: 5px auto;
+	max-width: 90%;
+	min-width: 28em;
+	width: 70%;
+}
+#view_campaign_stats_div_left{
+	float: left;
+	margin-right: 0;
+}
+#view_campaign_stats_div_right{
+	float: right;
+	margin-left: 0;
+}
+
+/* End of stylizing for view_campaign_stats page */
+
 /* Hex Colors
 00cced
 80e5f5
