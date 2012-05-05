@@ -80,8 +80,12 @@ class AjaxController extends AppController {
 
                 $html .= '</div></p>';
 
-                echo $html;
-                $this->autoLayout = $this->autoRender = false; 
+                //echo $html;
+                $blast_type = 'sent';
+                $this->set('blast_type',$blast_type);
+                $this->set('pages',$pages);
+                $this->layout = 'campaign_table';
+                $this->render('campaign_table_sent');
             } else {
                 echo 'error';
             }
@@ -123,7 +127,7 @@ class AjaxController extends AppController {
                     }
                 }
 
-                $html = '<table class="table" id="sent"><tr><th class="name" >Name</th>
+                $html = '<table class="table" id="scheduled"><tr><th class="name" >Name</th>
                             <th class="list" >List</th><th class="date">Scheduled</th></tr>';
 
                 foreach ($results as $blast){
@@ -143,8 +147,12 @@ class AjaxController extends AppController {
                                 }
 
                 $html .= '</div></p>';
-                echo $html;
-                $this->autoLayout = $this->autoRender = false; 
+                //echo $html;
+                $blast_type = 'scheduled';
+                $this->set('blast_type',$blast_type);
+                $this->set('pages',$pages);
+                $this->layout = 'campaign_table';
+                $this->render('campaign_table_scheduled');
             } else {
                 echo 'error';
             }
@@ -186,8 +194,8 @@ class AjaxController extends AppController {
                     }
                 }
 
-                $html = '<table class="table" id="sent"><tr><th class="name" >Name</th>
-                            <th class="list" >List</th><th class="date">Scheduled</th></tr>';
+                $html = '<table class="table" id="in_progress"><tr><th class="name" >Name</th>
+                            <th class="list" >List</th><th class="date">In Progress</th></tr>';
 
                 foreach ($results as $blast){
                     $html .= '<tr><td class="name" ><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
@@ -205,8 +213,12 @@ class AjaxController extends AppController {
                     }
                 }
                 $html .= '</div></p>';
-                echo $html;
-                $this->autoLayout = $this->autoRender = false; 
+                //echo $html;
+                $blast_type = 'in_progress';
+                $this->set('blast_type',$blast_type);
+                $this->set('pages',$pages);
+                $this->layout = 'campaign_table';
+                $this->render('campaign_table_in_progress');
             } else {
                 echo 'error';
             }
@@ -254,7 +266,7 @@ class AjaxController extends AppController {
                     else {
                         exit;
                     }
-                	$response = $sailthruClient->getBlast($blast_id); //associative array with everything i need
+                	$response = $sailthruClient->stats_blast($blast_id); //associative array with everything i need
                 	if(isset($response['count'])){
                 		$num_users = $response['count'];
                 	}
