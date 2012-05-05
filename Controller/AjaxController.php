@@ -82,6 +82,7 @@ class AjaxController extends AppController {
 
                 //echo $html;
                 $blast_type = 'sent';
+                $this->set('blasts',$results);
                 $this->set('blast_type',$blast_type);
                 $this->set('pages',$pages);
                 $this->layout = 'campaign_table';
@@ -150,6 +151,7 @@ class AjaxController extends AppController {
                 //echo $html;
                 $blast_type = 'scheduled';
                 $this->set('blast_type',$blast_type);
+                $this->set('blasts',$results);
                 $this->set('pages',$pages);
                 $this->layout = 'campaign_table';
                 $this->render('campaign_table_scheduled');
@@ -216,6 +218,7 @@ class AjaxController extends AppController {
                 //echo $html;
                 $blast_type = 'in_progress';
                 $this->set('blast_type',$blast_type);
+                $this->set('blasts',$results);
                 $this->set('pages',$pages);
                 $this->layout = 'campaign_table';
                 $this->render('campaign_table_in_progress');
