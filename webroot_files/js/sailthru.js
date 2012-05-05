@@ -6,6 +6,11 @@ var chart;
 *********************************/
 function initSlider(elementId)
 {
+	if(typeof Swipe === 'undefined')
+	{
+		return;
+	}
+
 	var slider = new Swipe(document.getElementById(elementId), {
 		    elementsShown: 3,
 		});
@@ -17,6 +22,11 @@ function initSlider(elementId)
 *********************************/
 function initPjax()
 {
+	if(typeof pjax === 'undefined')
+	{
+		return;
+	}
+
 	$('#slider a').pjax({container: "#page_content",fragment: "#page_content", timeout: 2000}).live('click', function() { $(".loader").show(); });
 	$('#page_content').on('pjax:end', 
 		function() { 
