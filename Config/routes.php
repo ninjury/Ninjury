@@ -26,9 +26,11 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'login'));
-    //Router::connect('/campaigns', array('controller' => 'pages', 'action' => 'display', 'campaigns'));
-    Router::connect('/campaigns', array('controller' => 'api', 'action' => 'campaigns', 'campaigns'));
+    Router::connect('/campaigns', array('controller' => 'pages', 'action' => 'display', 'campaigns'));
 	Router::connect('/reports', array('controller' => 'pages', 'action' => 'display', 'reports'));
+    Router::connect('/lists', array('controller' => 'pages', 'action' => 'display', 'lists'));
+    Router::connect('/contact', array('controller' => 'pages', 'action' => 'display', 'contact'));
+    Router::connect('/questions', array('controller' => 'pages', 'action' => 'display', 'questions'));
 	Router::connect('/login', array('controller' => 'auth', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'auth', 'action' => 'logout'));
     Router::connect('/ajax/campaigns/sent/*', array('controller' => 'ajax', 'action' => 'campaigns_sent'));
@@ -36,6 +38,7 @@
     Router::connect('/ajax/campaigns/in_progress/*', array('controller' => 'ajax', 'action' => 'campaigns_in_progress'));
     Router::connect('/ajax/campaigns/preview/*', array('controller' => 'ajax', 'action' => 'view_blast_preview'));
     Router::connect('/ajax/campaigns/stats/*', array('controller' => 'ajax', 'action' => 'view_campaigns_stats'));
+    Router::connect('/ajax/campaigns/delete/*', array('controller' => 'ajax', 'action' => 'campaigns_delete'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */

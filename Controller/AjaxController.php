@@ -23,7 +23,8 @@ class AjaxController extends AppController {
  * @var array
  */
 	public $uses = array();
-       
+      
+
  /**    
  *  Sent Campaigns
  *
@@ -59,29 +60,13 @@ class AjaxController extends AppController {
                     }
                 }
 
-                $html = '<table class="table" id="sent"><tr><th class="name" >Name</th>
-                            <th class="list" >List</th><th class="date">Sent</th></tr>';
-
-                foreach ($results as $blast){
-                    $html .= '<tr><td class="name"><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
-                                '<td class="list">' . $blast['list'] . '</td>' .
-                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
-                                        '<td class="buttons"><a href="ajax/campaigns/stats/' . $blast['blast_id'] . '" data-rel = "dialog">I</a></td>';
-                }
-                $html .= '</table><p><div class="page_numbers">';
-
-                for ($i = 1; $i<=$pages; $i++){
-                    if ($i != $page){
-                        $html .= '<a href="#" onclick="campaigns_sent(' . $i .')" class="ui-link" >' . $i .'</a>';
-                    } else {
-                        $html .=  $i;
-                    }
-                }
-
-                $html .= '</div></p>';
-
-                echo $html;
-                $this->autoLayout = $this->autoRender = false; 
+                $blast_type = 'sent';
+                $this->set('blasts',$results);
+                $this->set('blast_type',$blast_type);
+                $this->set('page',$page);
+                $this->set('pages',$pages);
+                $this->layout = 'campaign_table';
+                $this->render('campaign_table_sent');
             } else {
                 echo 'error';
             }
@@ -123,28 +108,13 @@ class AjaxController extends AppController {
                     }
                 }
 
-                $html = '<table class="table" id="sent"><tr><th class="name" >Name</th>
-                            <th class="list" >List</th><th class="date">Scheduled</th></tr>';
-
-                foreach ($results as $blast){
-                    $html .= '<tr><td class="name"><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
-                                '<td class="list">' . $blast['list'] . '</td>' .
-                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
-                                        '<td class="buttons"><a href="#">X</a></td>';
-                }
-                $html .= '</table><p><div class="page_numbers">';
-
-                for ($i = 1; $i<=$pages; $i++){
-                                        if ($i != $page){
-                                            $html .= '<a href="#" onclick="campaigns_scheduled(' . $i .')" class="ui-link" >' . $i .'</a>';
-                                        } else {
-                                            $html .=  $i;
-                                        }
-                                }
-
-                $html .= '</div></p>';
-                echo $html;
-                $this->autoLayout = $this->autoRender = false; 
+                $blast_type = 'scheduled';
+                $this->set('blast_type',$blast_type);
+                $this->set('blasts',$results);
+                $this->set('page',$page);
+                $this->set('pages',$pages);
+                $this->layout = 'campaign_table';
+                $this->render('campaign_table_scheduled');
             } else {
                 echo 'error';
             }
@@ -186,27 +156,13 @@ class AjaxController extends AppController {
                     }
                 }
 
-                $html = '<table class="table" id="sent"><tr><th class="name" >Name</th>
-                            <th class="list" >List</th><th class="date">Scheduled</th></tr>';
-
-                foreach ($results as $blast){
-                    $html .= '<tr><td class="name" ><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
-                                '<td class="list">' . $blast['list'] . '</td>' .
-                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
-                                        '<td class="buttons"><a href="view_campaign.ctp">X</a></td>';
-                }
-                $html .= '</table><p><div class="page_numbers">';
-
-                for ($i = 1; $i<=$pages; $i++){
-                    if ($i != $page){
-                        $html .= '<a href="#" onclick="campaigns_in_progress(' . $i .')" class="ui-link" >' . $i .'</a>';
-                    } else {
-                        $html .=  $i;
-                    }
-                }
-                $html .= '</div></p>';
-                echo $html;
-                $this->autoLayout = $this->autoRender = false; 
+                $blast_type = 'in_progress';
+                $this->set('blast_type',$blast_type);
+                $this->set('blasts',$results);
+                $this->set('page',$page);
+                $this->set('pages',$pages);
+                $this->layout = 'campaign_table';
+                $this->render('campaign_table_in_progress');
             } else {
                 echo 'error';
             }
@@ -258,6 +214,7 @@ class AjaxController extends AppController {
                     else {
                         exit;
                     }
+
                     $options['beacon_times'] = 1;
                     $options['click_times'] = 1;
                     $options['clickmap'] = 1;
@@ -331,6 +288,36 @@ class AjaxController extends AppController {
                 echo 'exception';
             } 
         
+    }
+
+        public function campaigns_delete() {
+
+            $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+                    
+            try{
+                if (!isset($response['error']) ) {
+    
+                    if (isset($this->params['pass'][0])){
+                        $blast_id = $this->params['pass'][0];
+                    } 
+                    else {
+                        exit;
+                    }
+                    $response = $sailthruClient->deleteBlast($blast_id);
+                    if ($response['ok'] == 1){
+                        echo 'Campaign was deleted successfully.';
+                    } else {
+                        echo 'Campaign could not be deleted.';
+                    }
+                    $this->autoLayout = $this->autoRender = false; 
+                } 
+                else {
+                    echo 'error';
+                }
+            } 
+            catch (Sailthru_Client_Exception $e) {
+                echo 'exception';
+            }            
     }
         
 }
