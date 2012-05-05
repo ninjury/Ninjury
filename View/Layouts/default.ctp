@@ -26,6 +26,8 @@
 	<?php
 		echo $this->Html->meta('icon');
 
+        $page = strtolower($title_for_layout);
+
 		//echo $this->Html->css('cake.generic');
 		echo $this->Html->css('style1');
 		echo $this->Html->css('jquery.mobile.datebox.css');
@@ -50,8 +52,14 @@
 		<div id="content">
 
 			<?php //echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
+			<div data-role="page" id="<?php echo $page; ?>_page" data-theme="a">
+				<?php echo $this->element('header', array('page' => $page)); ?>
+				<div class='loader' ><img src='/mobile/img/ajax-loader1.gif'></div>
+				<div id="page_content" data-role="content">
+				    <?php echo $this->fetch('content'); ?>
+				</div>
+			    <?php echo $this->element('footer'); ?>
+			</div>
 		</div>
 	</div>
 </body>
