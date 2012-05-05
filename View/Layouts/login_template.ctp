@@ -14,7 +14,6 @@
 		echo $this->fetch('css');
 		echo $this->Html->script('jquery.js');
 		echo $this->Html->script('jquery_mobile.js');
-        echo $this->Html->script('sailthru.js');
 		echo $this->fetch('script');
 	?>
 </head>
