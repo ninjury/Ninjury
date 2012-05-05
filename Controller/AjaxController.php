@@ -23,7 +23,8 @@ class AjaxController extends AppController {
  * @var array
  */
 	public $uses = array();
-       
+      
+
  /**    
  *  Sent Campaigns
  *
@@ -185,6 +186,8 @@ class AjaxController extends AppController {
 					}
                     $response = $sailthruClient->getBlast($blast_id);
 					$html = $response['content_html'];
+					$name = $response['name'];
+					$this->set('name', $name);
 					$this->set('view_blast_preview', $html);
 			
 					$this->layout = 'popup_template';
@@ -201,6 +204,8 @@ class AjaxController extends AppController {
     }
     public function view_campaigns_stats() {
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+        
+        
             try{
                 if (!isset($response['error']) ) {
                     if (isset($this->params['pass'][0])){
@@ -209,24 +214,37 @@ class AjaxController extends AppController {
                     else {
                         exit;
                     }
-                	$response = $sailthruClient->stats_blast($blast_id); //associative array with everything i need
+
+                    $options['beacon_times'] = 1;
+                    $options['click_times'] = 1;
+                    $options['clickmap'] = 1;
+                    $options['engagement'] = 1;
+                    $options['signup'] = 1;
+                    $options['subject'] = 1;
+                    $options['urls'] = 1;
+                    
+                    
+                	$response = $sailthruClient->stats_blast($blast_id, $options); //associative array with everything i need
+                	$responseName = $sailthruClient->getBlast($blast_id);
+                	$name = $responseName['name'];
+                	
                 	if(isset($response['count'])){
                 		$num_users = $response['count'];
                 	}
                 	else{
-                		$num_users = 'unknown';
+                		$num_users = 0;
                 	}
                 	if(isset($response['estopens'])){
                 		$est_open_rate = $response['estopens'];
                 	}
                 	else{
-                		$est_open_rate = 'unknown';
+                		$est_open_rate = 0;
                 	}
-                    if(isset($reponse['click'])){
-                    	$click = $reponse['click'];
+                    if(isset($reponse['click_total'])){
+                    	$click_total = $reponse['click_total'];
                     }
                     else{
-                    	$click = 'unknown';
+                    	$click_total = 0;
                     }
                     if(isset($response['rev'])){
                     	$revenue_in_cents = $response['rev'];
@@ -234,18 +252,32 @@ class AjaxController extends AppController {
                     else{
                     	$revenue_in_cents = 'unknown';
     				}
-    				
+    				if(isset($response['optout'])){
+    					$optout = $response['optout'];
+    				}
+    				else{
+    					$optout = 0;
+    				}
+    				if(isset($response['spam'])){
+    					$spam = $response['spam'];
+    				}
+    				else{
+    					$spam = 0;
+    				}
+    				$this->set('name', $name);
     				$this->set('num_users', $num_users);
     				$this->set('est_open_rate', $est_open_rate);
-    				$this->set('click', $click);
+    				$this->set('click_total', $click_total);
     				$this->set('revenue_in_cents', $revenue_in_cents);
+    				$this->set('optout', $optout);
+    				$this->set('spam', $spam);
     				
     				$this->layout = 'popup_template';
 
     				$html = $response['content_html'];
 					$this->set('view_blast_preview', $html);
 			
-					$this->layout = 'preview_blast_template';
+					$this->layout = 'popup_template';
 					$this->render('view_campaign_stats');
                 } 
                 else {
@@ -256,6 +288,66 @@ class AjaxController extends AppController {
                 echo 'exception';
             } 
         
+    }
+
+    public function campaigns_delete() {
+
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+                
+        try{
+            if (!isset($response['error']) ) {
+
+                if (isset($this->params['pass'][0])){
+                    $blast_id = $this->params['pass'][0];
+                } 
+                else {
+                    exit;
+                }
+                $response = $sailthruClient->deleteBlast($blast_id);
+                if ($response['ok'] == 1){
+                    echo 'Campaign was deleted successfully.';
+                } else {
+                    echo 'Campaign could not be deleted.';
+                }
+                $this->autoLayout = $this->autoRender = false; 
+            } 
+            else {
+                echo 'error';
+            }
+        } 
+        catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }            
+    }
+
+    public function reports_stats() {
+
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+                
+        try{
+            if (!isset($response['error']) ) {
+
+                if (isset($this->params['pass'][0])){
+                    $blast_id = $this->params['pass'][0];
+                } 
+                else {
+                    exit;
+                }
+                $response = $sailthruClient->deleteBlast($blast_id);
+                if ($response['ok'] == 1){
+                    echo 'Campaign was deleted successfully.';
+                } else {
+                    echo 'Campaign could not be deleted.';
+                }
+                $this->autoLayout = $this->autoRender = false; 
+            } 
+            else {
+                echo 'error';
+            }
+        } 
+        catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }            
     }
         
 }

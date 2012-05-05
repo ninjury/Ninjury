@@ -1663,6 +1663,61 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 	background-size: 78px 52px;
 }
 
+ul.campaign_list {
+	margin: 0px;
+	padding:0px;
+}
+
+ul.campaign_list li {
+	list-style: none;
+	
+}
+
+ul.campaign_list li .entry{
+	border: 1px solid #404041;
+	height:60px;	
+}
+
+ul.campaign_list li .entry > div{
+	display:inline-block;
+}
+
+ul.campaign_list .description div{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+
+ul.campaign_list li .buttons{
+	min-width:60px;
+	float:right;
+}
+
+.float_right {
+	float:right;
+}
+
+.buttons a{
+	display: block;
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	width: 32px;
+	margin:14px;
+	height: 32px;
+}
+
+a.delete_button{
+	background-image: url(../img/delete_small.png);
+}
+
+.inline > div {
+	display:inline-block;
+}
+
+
 .table {
 	font-family: 'IntervalSansPro-RegCond',Helvetica, Arial;
 	width: 100%;
@@ -2086,3 +2141,50 @@ div.loader img {
 #highchartcontainer {
 	margin: 0px auto;
 }
+
+/*Alex B is adding the following below in order to stylize the view_campaign_stats page */
+
+#view_campaign_stats_div{
+	display: block;
+	/*border: 3px solid blue; */
+	margin: 5px auto;
+	max-width: 90%;
+	min-width: 28em;
+	width: 70%;
+}
+#view_campaign_stats_div_left{
+	float: left;
+	margin-right: 0;
+}
+#view_campaign_stats_div_right{
+	float: right;
+	margin-left: 0;
+}
+
+/* End of stylizing for view_campaign_stats page */
+
+/* Hex Colors
+00cced
+80e5f5
+e5fafc
+
+404041
+9e9ea1
+ededed
+
+eeece1
+f5f5f0
+fcfcfc
+
+6d6e70
+b5b5b8
+f0f0f0
+
+864a7f
+c2a3bf
+f2edf2
+
+f5eb00
+faf580
+fffce5
+*/

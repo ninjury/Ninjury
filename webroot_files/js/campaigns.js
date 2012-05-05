@@ -3,18 +3,15 @@ $.ajaxSetup ({
 });  
 var ajax_load = "<img src='/mobile/img/ajax-loader1.gif' alt='Loading' />";  
 
-//  campaigns_sent
+
 function campaigns_sent(page){
-	//alert("campaigns_sent " + page);
 	if (page == null){
 		page = 1;
 	}
 	var loadUrl = "/mobile/ajax/campaigns/sent/" + page;  
-	//alert(loadUrl);
-    //$("#campaigns_sent").html(ajax_load).load(loadUrl); 
 
     $("#campaigns_sent").html(ajax_load);  
-        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_sent").html(responseText); },"html");  
+        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_sent").html(responseText); setStyle();},"html");  
 }
 
 function campaigns_scheduled(page){
@@ -24,7 +21,7 @@ function campaigns_scheduled(page){
 	var loadUrl = "/mobile/ajax/campaigns/scheduled/" + page;   
 
     $("#campaigns_sent").html(ajax_load);  
-        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_scheduled").html(responseText); },"html");  
+        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_scheduled").html(responseText); setStyle();},"html");  
 }
 
 function campaigns_in_progress(page){
@@ -34,13 +31,32 @@ function campaigns_in_progress(page){
 	var loadUrl = "/mobile/ajax/campaigns/in_progress/" + page;  
 
     $("#campaigns_sent").html(ajax_load);  
-        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_in_progress").html(responseText); },"html");  
+        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_in_progress").html(responseText); setStyle(); },"html");  
 }
+
 function view_blast_preview(blastId){
 	var loadUrl = "index/ajax/campaigns/info/" + blastId;
 		$get(loadUrl, {language: "php", version: 5}, function(responseText){
 			
 			});
 }
+
+function campaigns_delete(blast, name, page, type){
+	if (blast == null){
+		return;	
+	}
+	var answer = confirm("Delete campaign" + "'" + name + "'?");
+	if (answer){
+		var loadUrl = "/mobile/ajax/campaigns/delete/" + blast;
+		$.get(loadUrl, function(result){
+   			if (type == 'scheduled'){
+   				campaigns_scheduled(page);
+   			} else if (type == 'in_progress'){
+   				campaigns_in_progress(page);
+   			}
+  		});
+	}
+}
+
 
 

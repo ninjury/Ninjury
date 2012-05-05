@@ -69,7 +69,7 @@ function init()
 
 function pjaxLoadInit()
 {
-	$("input[data-role='datebox']").click(function() { $(this).datebox("open"); });
+	$("input[data-role='datebox']").click(function(){ $(this).datebox("open"); });
 	createChart();
 }
 
@@ -80,8 +80,24 @@ $(document).ready(function() {
 		
 		// url bar hiding
 		hideUrlBar();
+
+		setStyle();
+
+		$(window).resize(function () { 
+			setStyle();		
+		});
 });
 
+
+
+
+function setStyle()
+{
+	var d = $(".description");
+	d.width(d.parent().width()-d.next().width()-6);
+	var l = $('.list');
+	l.width(l.parent().width()-l.next().width()-4);
+}
 
 function createChart()
 {
