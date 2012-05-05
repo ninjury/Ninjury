@@ -6,7 +6,7 @@
         <td class="list"><?php echo($blast['list']); ?></td>
         <td class="date"><?php echo(@date('m/d/y h:i a',@strtotime($blast['schedule_time']))); ?></td>
         <td class="buttons">
-            <a href="#" onclick="campaigns_delete(<?php echo($blast['blast_id'] . ',');?>'<?php echo ($blast['name']); ?>',<?php echo ($page); ?>,'<?php echo 'scheduled');?>')" data-rel = "dialog">X</a>
+            <a href="#" onclick="campaigns_delete(<?php echo($blast['blast_id'] . ',');?>'<?php echo ($blast['name']); ?>',<?php echo ($page); ?>,'<?php echo ('scheduled');?>')" data-rel = "dialog">X</a>
         </td>
         </tr>
     <?php } ?>
