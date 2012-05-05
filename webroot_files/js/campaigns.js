@@ -49,6 +49,7 @@ function campaigns_delete(blast, name, page, type){
 	if (answer){
 		var loadUrl = "/mobile/ajax/campaigns/delete/" + blast;
 		$.get(loadUrl, function(result){
+			alert(type);
    			//if (type == 'scheduled'){
    				campaigns_scheduled(page);
    			//} else {
