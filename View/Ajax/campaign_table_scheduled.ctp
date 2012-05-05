@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <a class="delete_button" href="#" data-rel = "dialog">X</a>
+                    <a class="delete_button" onclick="campaigns_delete(<?php echo($blast['blast_id'] . ',');?>'<?php echo ($blast['name']); ?>',<?php echo ($page); ?>,'<?php echo ('scheduled');?>')" href="#" data-rel = "dialog">X</a>
                 </div>
             </div>
         </li>
