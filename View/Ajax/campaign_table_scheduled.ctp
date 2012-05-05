@@ -1,3 +1,24 @@
+<ul class="campaign_list" id="scheduled">
+    <?php foreach ($blasts as $blast){ ?>
+        <li>
+            <div class="entry">
+                <div class="description">
+                    <div>
+                        <a class="name" href = "ajax/campaigns/preview/<?php echo($blast['blast_id']); ?>" data-rel = "dialog" ><?php echo($blast['name']); ?></a>
+                    </div>
+                    <div class="inline">
+                        <div class="list"><?php echo($blast['list']); ?></div>
+                        <div class="float_right"><?php echo(@date('m/d/y h:i a',@strtotime($blast['schedule_time']))); ?></div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a class="delete_button" href="#" data-rel = "dialog">X</a>
+                </div>
+            </div>
+        </li>
+    <?php } ?>
+<!-- d.width(d.parent().width()-d.next().width()-6); -->
+</ul>
 <table class="table" id="scheduled">
     <tr><th class="name" >Name</th><th class="list" >List</th><th class="date">Scheduled</th></tr>
     <?php foreach ($blasts as $blast){ ?>

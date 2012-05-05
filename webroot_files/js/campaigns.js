@@ -14,7 +14,7 @@ function campaigns_sent(page){
     //$("#campaigns_sent").html(ajax_load).load(loadUrl); 
 
     $("#campaigns_sent").html(ajax_load);  
-        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_sent").html(responseText); },"html");  
+        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_sent").html(responseText); setStyle();},"html");  
 }
 
 function campaigns_scheduled(page){
@@ -24,7 +24,7 @@ function campaigns_scheduled(page){
 	var loadUrl = "/mobile/ajax/campaigns/scheduled/" + page;   
 
     $("#campaigns_sent").html(ajax_load);  
-        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_scheduled").html(responseText); },"html");  
+        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_scheduled").html(responseText); setStyle();},"html");  
 }
 
 function campaigns_in_progress(page){
@@ -34,7 +34,7 @@ function campaigns_in_progress(page){
 	var loadUrl = "/mobile/ajax/campaigns/in_progress/" + page;  
 
     $("#campaigns_sent").html(ajax_load);  
-        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_in_progress").html(responseText); },"html");  
+        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_in_progress").html(responseText); setStyle(); },"html");  
 }
 function view_blast_preview(blastId){
 	var loadUrl = "index/ajax/campaigns/info/" + blastId;
