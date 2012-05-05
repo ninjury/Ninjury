@@ -59,28 +59,6 @@ class AjaxController extends AppController {
                     }
                 }
 
-                $html = '<table class="table" id="sent"><tr><th class="name" >Name</th>
-                            <th class="list" >List</th><th class="date">Sent</th></tr>';
-
-                foreach ($results as $blast){
-                    $html .= '<tr><td class="name"><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
-                                '<td class="list">' . $blast['list'] . '</td>' .
-                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['start_time'])) .'</td>' .
-                                        '<td class="buttons"><a href="ajax/campaigns/stats/' . $blast['blast_id'] . '" data-rel = "dialog">I</a></td>';
-                }
-                $html .= '</table><p><div class="page_numbers">';
-
-                for ($i = 1; $i<=$pages; $i++){
-                    if ($i != $page){
-                        $html .= '<a href="#" onclick="campaigns_sent(' . $i .')" class="ui-link" >' . $i .'</a>';
-                    } else {
-                        $html .=  $i;
-                    }
-                }
-
-                $html .= '</div></p>';
-
-                //echo $html;
                 $blast_type = 'sent';
                 $this->set('blasts',$results);
                 $this->set('blast_type',$blast_type);
@@ -129,27 +107,6 @@ class AjaxController extends AppController {
                     }
                 }
 
-                $html = '<table class="table" id="scheduled"><tr><th class="name" >Name</th>
-                            <th class="list" >List</th><th class="date">Scheduled</th></tr>';
-
-                foreach ($results as $blast){
-                    $html .= '<tr><td class="name"><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
-                                '<td class="list">' . $blast['list'] . '</td>' .
-                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
-                                        '<td class="buttons"><a href="#">X</a></td>';
-                }
-                $html .= '</table><p><div class="page_numbers">';
-
-                for ($i = 1; $i<=$pages; $i++){
-                                        if ($i != $page){
-                                            $html .= '<a href="#" onclick="campaigns_scheduled(' . $i .')" class="ui-link" >' . $i .'</a>';
-                                        } else {
-                                            $html .=  $i;
-                                        }
-                                }
-
-                $html .= '</div></p>';
-                //echo $html;
                 $blast_type = 'scheduled';
                 $this->set('blast_type',$blast_type);
                 $this->set('blasts',$results);
@@ -198,26 +155,6 @@ class AjaxController extends AppController {
                     }
                 }
 
-                $html = '<table class="table" id="in_progress"><tr><th class="name" >Name</th>
-                            <th class="list" >List</th><th class="date">In Progress</th></tr>';
-
-                foreach ($results as $blast){
-                    $html .= '<tr><td class="name" ><a href = "ajax/campaigns/preview/' . $blast['blast_id'] . '" data-rel = "dialog" >' . $blast['name'] . '</a></td>' .
-                                '<td class="list">' . $blast['list'] . '</td>' .
-                                    '<td class="date">' . @date('m/d/y h:i a',@strtotime($blast['schedule_time'])) . '</td>' .
-                                        '<td class="buttons"><a href="view_campaign.ctp">X</a></td>';
-                }
-                $html .= '</table><p><div class="page_numbers">';
-
-                for ($i = 1; $i<=$pages; $i++){
-                    if ($i != $page){
-                        $html .= '<a href="#" onclick="campaigns_in_progress(' . $i .')" class="ui-link" >' . $i .'</a>';
-                    } else {
-                        $html .=  $i;
-                    }
-                }
-                $html .= '</div></p>';
-                //echo $html;
                 $blast_type = 'in_progress';
                 $this->set('blast_type',$blast_type);
                 $this->set('blasts',$results);
