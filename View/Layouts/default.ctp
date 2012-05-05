@@ -39,19 +39,17 @@
 		echo $this->Html->script('swipe_mod.js');
 		echo $this->Html->script('highcharts.js');
 		echo $this->Html->script('jquery.mobile.datebox.js');
-		// echo $this->Html->script('view_blast_preview.js');
 		echo $this->Html->script('jquery.pjax.js');
 		echo $this->Html->script('sailthru.js');
 		echo $this->Html->script('campaigns.js');
 		echo $this->Html->script('sailthrutheme.js');
 		echo $this->fetch('script');
 	?>
+	
 </head>
 <body>
 	<div id="container">
 		<div id="content">
-
-			<?php //echo $this->Session->flash(); ?>
 			<div data-role="page" id="<?php echo $page; ?>_page" data-theme="a">
 				<?php echo $this->element('header', array('page' => $page)); ?>
 				<div class='loader' ><img src='/mobile/img/ajax-loader1.gif'></div>
