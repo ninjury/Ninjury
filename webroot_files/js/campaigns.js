@@ -50,11 +50,11 @@ function campaigns_delete(blast, name, page, type){
 		var loadUrl = "/mobile/ajax/campaigns/delete/" + blast;
 		$.get(loadUrl, function(result){
 			alert(type);
-   			//if (type == 'scheduled'){
+   			if (type == 'scheduled'){
    				campaigns_scheduled(page);
-   			//} else {
-   			//	campaigns_in_progress(page);
-   			//}
+   			} else {
+   				campaigns_in_progress(page);
+   			}
   		});
 	}
 }
