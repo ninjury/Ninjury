@@ -96,7 +96,6 @@ $(document).ready(function() {
 		$(window).resize(function () { 
 			setStyle();
 		});
-		$('#selectmenu3').selectmenu();
 });
 
 
