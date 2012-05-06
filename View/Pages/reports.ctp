@@ -172,7 +172,7 @@
 				</select>
             </div>
         </div>
-        <form id = "recent_campaigns_form" method="POST" onsubmit = "recent_campaigns(this); return false;" data-ajax="false">
+        <form id = "recent_campaigns_form" onsubmit = "recent_campaigns(this); return false;" data-ajax="false">
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
                 <input id="start_date_2" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
@@ -194,7 +194,7 @@
 							<option value="pv">Pageviews</option>
 							<option value="rev">Revenue</option>
 							<option value="softbounce">Softbounce</option>
-							<option value="hardbounce">Softbounce</option>
+							<option value="hardbounce">Hardbounce</option>
 						</select>
 					</div>
 					<div data-role="fieldcontain" class="ui-block-c" id="recent-campaigns-grid-clicks" >
@@ -205,14 +205,14 @@
 							<option value="pv">Pageviews</option>
 							<option value="rev">Revenue</option>
 							<option value="softbounce">Softbounce</option>
-							<option value="hardbounce">Softbounce</option>
+							<option value="hardbounce">Hardbounce</option>
 						</select>
 					</div>
 				</div>
 			<div id="recent_campaigns">
             </div>
         </div>
-        <input type='submit' class="reports-refresh-button" value='Refresh' data-role="button" data-transition="fade" href="#page1">   
+        <input type='submit' class="reports-refresh-button" value='Refresh' data-role="button">   
         </form>
     </div>
 </div>
