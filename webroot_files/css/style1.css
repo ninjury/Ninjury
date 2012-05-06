@@ -2148,7 +2148,6 @@ div.loader img {
 	display: block;
 	/*border: 3px solid blue; */
 	margin: 5px auto;
-	min-width: 30em;
 	width: 100%;
 }
 #view_campaign_stats_div_left{
