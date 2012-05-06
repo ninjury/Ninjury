@@ -1855,20 +1855,6 @@ padding: 0px;
 	height: 32px;
 }
 
-/*
-#campaigns_scheduled{
-	background: #f0f0f0;
-}
-
-#campaigns_in_progress{
-	background: #f0f0f0;
-}
-
-#campaigns_sent{
-	background: #f0f0f0;
-}
-*/
-
 #campaigns_scheduled .buttons a{
 	background-image: url(../img/delete_small.png);
 }

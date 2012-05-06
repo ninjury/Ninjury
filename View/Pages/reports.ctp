@@ -175,7 +175,7 @@
                 <input id="end_date_2" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
         </div>
-        <div class="ui-grid-b" id="recent-campaigns-grid">
+        <!-- <div class="ui-grid-b" id="recent-campaigns-grid">
         	<div id="grid-top" >
 				<div class="ui-block-a cell" id="recent-campaigns-grid-campaigns">
 					<h5>Campaigns</h5>
@@ -203,6 +203,38 @@
 						</select>
 					</div>
 				</div>
+			</div> -->
+			<table>
+				<tr>
+					<td><h5>Campaigns</h5></td>
+					<td>
+						<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
+							<select name="selectmenu1" id="selectmenu1">
+								<option value="count">Count</option>
+								<option value="estopens">Est. Opens</option>
+								<option value="click">Clicks</option>
+								<option value="pv">Pageviews</option>
+								<option value="rev">Revenue</option>
+								<option value="softbounce">Softbounce</option>
+								<option value="hardbounce">Hardbounce</option>
+							</select>
+						</div>
+					</td>
+					<td>
+						<div data-role="fieldcontain" class="ui-block-c" id="recent-campaigns-grid-clicks" >
+							<select name="selectmenu2" id="selectmenu2">
+								<option value="count">Count</option>
+								<option value="estopens">Est. Opens</option>
+								<option value="click">Clicks</option>
+								<option value="pv">Pageviews</option>
+								<option value="rev">Revenue</option>
+								<option value="softbounce">Softbounce</option>
+								<option value="hardbounce">Hardbounce</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+			</table>
 			<div id="recent_campaigns">
         <input type='submit' class="reports-refresh-button" value='Refresh' data-role="button">   
         </form>
