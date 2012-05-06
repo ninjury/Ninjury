@@ -470,7 +470,11 @@ class AjaxController extends AppController {
             $pages = ceil($total_count/RESULTS_PER_PAGE);  
            
             // Get the page requested from the URL of this request.
-            $page = isset($this->params['pass'][5]) ? $this->params['pass'][5] : 1;
+            if ($this->params['pass'][5] == 'null'){
+                $page = 1;
+            } else {
+                $page = $this->params['pass'][5];
+            }
             $start = ($page - 1 )*RESULTS_PER_PAGE;
             $end = $page*RESULTS_PER_PAGE;
 
