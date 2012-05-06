@@ -1187,7 +1187,7 @@ div.ui-mobile-viewport { overflow-x:hidden; }
 }
 .ui-collapsible-content-collapsed { display: none; }
 
-.ui-collapsible-set { margin: .5em 0; background-color: #f0f0f0;}
+.ui-collapsible-set { margin: .5em 0;}
 .ui-collapsible-set .ui-collapsible { margin: -1px 0 0; }
 .ui-controlgroup, fieldset.ui-controlgroup { padding: 0; margin: .5em 0 1em; }
 .ui-bar .ui-controlgroup { margin: 0 .3em; }
@@ -1711,6 +1711,7 @@ ul.campaign_list .name a {
 	font-family: 'IntervalSansPro-BoldCond',Helvetica,Arial;
 	color: #00cced;
 	text-decoration:none;
+	text-shadow: #000000 1px 1px;
 }
 
 ul.campaign_list .name {
@@ -1856,6 +1857,14 @@ padding: 0px;
 }
 
 #campaigns_scheduled{
+	background: #f0f0f0;
+}
+
+#campaigns_in_progress{
+	background: #f0f0f0;
+}
+
+#campaigns_sent{
 	background: #f0f0f0;
 }
 
