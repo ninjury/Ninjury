@@ -127,6 +127,9 @@ function createChart()
 		        }
 		    },
 		    plotOptions: {
+		    	series: {
+                connectNulls: true,
+            }
 		        area: {
 		            pointStart: 1940,
 		            marker: {
