@@ -25,10 +25,10 @@
 					revenue (in cents):
 				</h3>
 				<h3>
-					users who opted out:
+					users opted out:
 				</h3>
 				<h3>
-					users who reported spam:
+					users reported spam:
 				</h3>
 			</div>
 			<div id = 'view_campaign_stats_div_right' >
