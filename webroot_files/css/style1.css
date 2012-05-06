@@ -1783,6 +1783,7 @@ padding: 0px;
 	font-family: 'IntervalSansPro-RegCond',Helvetica, Arial;
 	width: 100%;
 	border-collapse:collapse;
+	margin: 0px auto;
 }
 
 .table .ui-link{
@@ -1816,19 +1817,19 @@ padding: 0px;
 	background: #80e5f5;	
 }
 
-.table td.name{
+.table tr.name{
 	/*padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-.table td.stat_1{
+.table tr.stat_1{
 	/* padding: 8x 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-.table td.stat_2{
+.table tr.stat_2{
 	/* padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
