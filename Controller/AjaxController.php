@@ -523,14 +523,14 @@ class AjaxController extends AppController {
         // If start is not set, default it to 7 days prior to end date.
         } else if ($this->params['pass'][0] == 'null'){
             $end_date = $this->params['pass'][1];
-            str_replace("-","/",end_date);
+            str_replace("-","/",$end_date);
             $temp = strtotime($end_date) - DEFAULT_DAYS*86400;
             $start_date = date("m/d/y",$temp);
 
         // If end date is not set, default it to 7 days after the start date.
         } else {
             $start_date = $this->params['pass'][0];
-            str_replace("-","/",start_date);
+            str_replace("-","/",$start_date);
             $temp = strtotime($start_date) + DEFAULT_DAYS*86400;
             $end_date = date("m/d/y",$temp);
         }
