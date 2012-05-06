@@ -439,6 +439,18 @@ class AjaxController extends AppController {
             $end_date = date("m/d/y",$temp);
         }
 
+        if($this->params['pass'][3] == 'null'){
+            $stat_1 = 'click';
+        } else {
+            $stat_1 = $this->params['pass'][3];
+        }
+
+         if($this->params['pass'][4] == 'null'){
+            $stat_1 = 'estopens';
+        } else {
+            $stat_1 = $this->params['pass'][4];
+        }
+
         $options['start_date'] = $start_date;
         $options['end_date'] = $end_date;
         $options['status'] = 'sent';
