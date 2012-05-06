@@ -1825,27 +1825,40 @@ padding: 0px;
 	background: #80e5f5;	
 }
 
-#recent_campaigns .name{
+#recent_campaigns_table td.name{
 	/*padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-#recent_campaigns .table.stat_1{
+#recent_campaigns_table td.stat_1{
 	/* padding: 8x 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-#recent_campaigns .table.stat_2{
+#recent_campaigns_table td.stat_2{
 	/* padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-.table {
-	-webkit-border-top-left-radius: .6em;
-	border-top-left-radius: .6em;
+#recent_campaigns_header td.name{
+	/*padding: 8px 0px 8px 0px; */
+	text-align: center;
+	width: 33%;
+}
+
+#recent_campaigns_header td.stat_1{
+	/* padding: 8x 0px 8px 0px; */
+	text-align: center;
+	width: 33%;
+}
+
+#recent_campaigns_header td.stat_2{
+	/* padding: 8px 0px 8px 0px; */
+	text-align: center;
+	width: 33%;
 }
 
 #campaigns_scheduled .buttons a{
