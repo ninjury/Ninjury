@@ -185,7 +185,16 @@
                 </h4>
             </div>
         </div>
-        <a data-role="button" data-transition="fade" href="#page1">
+        <script type="text/javascript">
+
+        	function test(){
+	        	var loadUrl = "/mobile/ajax/reports/recent_campaigns/";
+				$.get(loadUrl, function(result){
+	   				alert(result);
+	  			});
+			}
+        </script>
+        <a data-role="button" data-transition="fade" href="#page1" onclick="test()">
             See More
         </a>
     </div>
