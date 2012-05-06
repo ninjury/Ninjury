@@ -454,7 +454,7 @@ class AjaxController extends AppController {
             $results = $response['blasts'];
 
             // Calculate the number pages by dividing the total blasts by the results per page constant.
-            $total_count = count($result['blasts']);
+            $total_count = count($results['blasts']);
             $pages = ceil($total_count/RESULTS_PER_PAGE);  
            
             // Get the page requested from the URL of this request.
@@ -488,7 +488,7 @@ class AjaxController extends AppController {
                //set variables and render view.
                 $test = 'test';
                 $this->set('test',$test);
-                $this->set('results', $toReturn);
+                $this->set('results',$toReturn);
                 $this->layout = 'campaign_table';               //this layout simply echos the content of the View.
                 $this->render('reports_recent_campaigns');
             } else {
