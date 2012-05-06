@@ -1979,11 +1979,11 @@ padding: 0px;
 	border: 1px solid #80e5f5;
 }
 
-#recent-campaigns-list, #recent-campaigns-templates {
+#recent-campaigns-list {
 	width: 40%;
 	display: inline-block;
-	margin-right: 4%;
-	margin-left: 4%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #recent-campaigns-list .ui-btn-up-a, #recent-campaigns-templates .ui-btn-up-a{
