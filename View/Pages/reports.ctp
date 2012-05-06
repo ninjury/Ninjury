@@ -4,7 +4,7 @@
             Visualizer
         </h3>
         
-		<form action="#" method="GET">
+		<form action="#" method="POST">
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
                 <input id="textinput5" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
@@ -16,132 +16,140 @@
         <div id="highchartcontainer" style="width: 100%; height: 90%">
         </div>
         <div data-role="fieldcontain" class="graph-options" data-theme="a" data-content-theme="a">
-			
-            <div id="graph-options1">
-				<select name="selectmenu3" id="selectmenu3">
-							<option value = "count">
-								users
-							</option>
-							<option value="click_total">
-								clicks
-							</option>
-							<option value="spam">
-								spam
-							</option>
-							<option value="optout">
-								optouts
-							</option>
-							<option value="hardbounce">
-								hardbounces
-							</option>
-							<option value = "softbounce">
-								softbounces
-							</option>
-							<option value = "rev">
-								revenue
-							</option>
-							<option value = "estopens">
-								est. opens
-							</option>
-							<option value="pv">
-								pageviews
-							</option>
-				</select>
-			
-	    	</div>
-            <div id="graph-options2">
-				<select name="selectmenu4" id="selectmenu4">
-							<option value="click_total">
-								clicks
-							</option>
-							<option value = "count">
-								users
-							</option>
-							<option value="spam">
-								spam
-							</option>
-							<option value="optout">
-								optouts
-							</option>
-							<option value="hardbounce">
-								hardbounces
-							</option>
-							<option value = "softbounce">
-								softbounces
-							</option>
-							<option value = "rev">
-								revenue
-							</option>
-							<option value = "estopens">
-								est. opens
-							</option>
-							<option value="pv">
-								pageviews
-							</option>
-				</select>
+        	<div id="graph_options_container_left">
+				<div id="graph-options1">
+					<select name="selectmenu3" id="selectmenu3">
+								<option value = "count">
+									users
+								</option>
+								<option value="click_total">
+									clicks
+								</option>
+								<option value="spam">
+									spam
+								</option>
+								<option value="optout">
+									optouts
+								</option>
+								<option value="hardbounce">
+									hardbounces
+								</option>
+								<option value = "softbounce">
+									softbounces
+								</option>
+								<option value = "rev">
+									revenue
+								</option>
+								<option value = "estopens">
+									est. opens
+								</option>
+								<option value="pv">
+									pageviews
+								</option>
+					</select>
+				
+				</div>
+				<div id="graph-options2">
+					<select name="selectmenu4" id="selectmenu4">
+								<option value="click_total">
+									clicks
+								</option>
+								<option value = "count">
+									users
+								</option>
+								<option value="spam">
+									spam
+								</option>
+								<option value="optout">
+									optouts
+								</option>
+								<option value="hardbounce">
+									hardbounces
+								</option>
+								<option value = "softbounce">
+									softbounces
+								</option>
+								<option value = "rev">
+									revenue
+								</option>
+								<option value = "estopens">
+									est. opens
+								</option>
+								<option value="pv">
+									pageviews
+								</option>
+					</select>
+				</div>
 			</div>
-            <div id="graph-options3">
-				<select name="selectmenu5" id="selectmenu5">
-							<option value = "estopens">
-								est. opens
-							</option>
-							<option value="click_total">
-								clicks
-							</option>
-							<option value = "count">
-								users
-							</option>
-							<option value="spam">
-								spam
-							</option>
-							<option value="optout">
-								optouts
-							</option>
-							<option value="hardbounce">
-								hardbounces
-							</option>
-							<option value = "softbounce">
-								softbounces
-							</option>
-							<option value = "rev">
-								revenue
-							</option>
-							<option value="pv">
-								pageviews
-							</option>
-				</select>
+			<div id="graph_options_container_right">
+				<div id="graph-options3">
+					<select name="selectmenu5" id="selectmenu5">
+								<option value = "estopens">
+									est. opens
+								</option>
+								<option value="click_total">
+									clicks
+								</option>
+								<option value = "count">
+									users
+								</option>
+								<option value="spam">
+									spam
+								</option>
+								<option value="optout">
+									optouts
+								</option>
+								<option value="hardbounce">
+									hardbounces
+								</option>
+								<option value = "softbounce">
+									softbounces
+								</option>
+								<option value = "rev">
+									revenue
+								</option>
+								<option value="pv">
+									pageviews
+								</option>
+					</select>
+				</div>
+				<div id="graph-options4">
+					<select name="selectmenu6" id="selectmenu6">
+								<option value="pv">
+									pageviews
+								</option>
+								<option value = "estopens">
+									est. opens
+								</option>
+								<option value="click_total">
+									clicks
+								</option>
+								<option value = "count">
+									users
+								</option>
+								<option value="spam">
+									spam
+								</option>
+								<option value="optout">
+									optouts
+								</option>
+								<option value="hardbounce">
+									hardbounces
+								</option>
+								<option value = "softbounce">
+									softbounces
+								</option>
+								<option value = "rev">
+									revenue
+								</option>
+					</select>
+				</div>
 			</div>
-            <div id="graph-options4">
-				<select name="selectmenu6" id="selectmenu6">
-							<option value="pv">
-								pageviews
-							</option>
-							<option value = "estopens">
-								est. opens
-							</option>
-							<option value="click_total">
-								clicks
-							</option>
-							<option value = "count">
-								users
-							</option>
-							<option value="spam">
-								spam
-							</option>
-							<option value="optout">
-								optouts
-							</option>
-							<option value="hardbounce">
-								hardbounces
-							</option>
-							<option value = "softbounce">
-								softbounces
-							</option>
-							<option value = "rev">
-								revenue
-							</option>
-				</select>
-			</div>
+        </div>
+        <div id="reset_graph_button" >
+        <a data-role="button"  href="#" onclick="">
+            Reset Graph
+        </a>
         </div>
 		</form>
     </div>
