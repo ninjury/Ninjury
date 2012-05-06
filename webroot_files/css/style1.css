@@ -1817,19 +1817,19 @@ padding: 0px;
 	background: #80e5f5;	
 }
 
-.table tr.name{
+.table.name{
 	/*padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-.table tr.stat_1{
+.table.stat_1{
 	/* padding: 8x 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-.table tr.stat_2{
+.table.stat_2{
 	/* padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
