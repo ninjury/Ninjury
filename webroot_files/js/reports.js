@@ -38,9 +38,6 @@ function recent_campaigns(form_elt){
 	sdate = (sdate == "") ? "null" : sdate;
 	edate = (edate == "") ? "null" : edate;
 
-	sdate.replace("-","/");
-	edate.replace("-","/");
-
 	var insert = $("#recent_campaigns");
 	insert.html(ajax_load);
 
