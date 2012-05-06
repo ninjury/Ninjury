@@ -1817,19 +1817,19 @@ padding: 0px;
 	background: #80e5f5;	
 }
 
-.table.name{
+#recent_campaigns .name{
 	/*padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-.table.stat_1{
+#recent_campaigns .table.stat_1{
 	/* padding: 8x 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-.table.stat_2{
+#recent_campaigns .table.stat_2{
 	/* padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
