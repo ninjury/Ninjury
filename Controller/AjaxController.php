@@ -447,9 +447,9 @@ class AjaxController extends AppController {
         }
 
          if($this->params['pass'][4] == 'null'){
-            $stat_1 = 'estopens';
+            $stat_2 = 'estopens';
         } else {
-            $stat_1 = $this->params['pass'][4];
+            $stat_2 = $this->params['pass'][4];
         }
 
         $options['start_date'] = $start_date;
