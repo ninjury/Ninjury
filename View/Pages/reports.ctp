@@ -7,15 +7,14 @@
 		<form action="#" method="POST">
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
-                <input id="textinput5" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                <input id="start_date" name="start_date" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
             <fieldset data-role="controlgroup">
-                <input id="textinput6" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                <input id="end_date" name="end_date" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
         </div>
-        <div id="highchartcontainer" style="width: 100%; height: 90%">
-        </div>
-        <div data-role="fieldcontain" class="graph-options" data-theme="a" data-content-theme="a">
+	<div id="highchartscontainer" style="width: 100%; height: 90%"></div>
+        <div data-role="fieldcontain" id="graph_options_container" class="graph-options" data-theme="a" data-content-theme="a">
         	<div id="graph_options_container_left">
 				<div id="graph-options1">
 					<select name="selectmenu3" id="selectmenu3">

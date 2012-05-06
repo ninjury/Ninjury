@@ -247,6 +247,7 @@ class AjaxController extends AppController {
 			} 
         
     }
+    
     public function view_campaigns_stats() {
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
         
@@ -331,6 +332,95 @@ class AjaxController extends AppController {
             } 
         
     }
+
+    public function aggregate_trends() {
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET); 
+        
+        try {
+            if(!isset($response['error'])) {
+                // get post params
+                $start_date = $this->request->data('start_date');
+                $end_date = $this->request->data('end_date');
+                $start_date = ($start_date == NULL ? @date('Y-m-d') : $start_date);
+                $end_date = ($end_date = NULL ? @date('Y-m-d') : $end_date);
+
+                $key1 = $this->request->data('selectmenu3');
+                $key2 = $this->request->data('selectmenu4');
+                $key3 = $this->request->data('selectmenu5');
+                $key4 = $this->request->data('selectmenu6');
+                $key1 = ($key1 == NULL ? 'count' : $key1);
+                $key2 = ($key2 == NULL ? 'click_total' : $key2);
+                $key3 = ($key3 == NULL ? 'estopens' : $key3);
+                $key4 = ($key4 == NULL ? 'pv' : $key4);
+
+                $key1_values = array();
+                $key2_values = array();
+                $key3_values = array();
+                $key4_values = array();
+
+                $options['beacon_times'] = 1;
+                $options['click_times'] = 1;
+                $options['clickmap'] = 1;
+                $options['engagement'] = 1;
+                $options['signup'] = 1;
+                $options['subject'] = 1;
+                $options['urls'] = 1;
+                
+                $current_datetime = @strtotime($start_date);
+                $last_datetime = @strtotime($end_date);
+                do {
+                    $current_date = @date('Y-m-d', $current_datetime);
+                    $response = $sailthruClient->stats_blast($current_date, $current_date, $options);
+                    if(isset($response[$key1])) {
+                	    array_push($key1_values, $response[$key1]);
+                    } else {
+                	    array_push($key1_values, 0);
+                    }
+                    if(isset($reponse[$key2])) {
+                  	    array_push($key2_values, $reponse[$key2]);
+                    } else{
+                   	    array_push($key2_values, 0);
+                    }
+                    if(isset($response[$key3])) {
+                        array_push($key3_values, $response[$key3]);
+                    } else {
+                        array_push($key3_values, 0);
+                    }
+                    if(isset($response[$key4])) {
+                        array_push($key4_values, $response[$key4]);
+                    } else {
+                        array_push($key4_values, 0);
+                    }
+                    $current_datetime = @strtotime('+1 day', $current_datetime);
+                } while($current_datetime < $last_datetime);
+    		    
+                $seriesData = array(
+                                array(
+                                    'name' => $key1,
+                                    'data' => $key1_values
+                                ),
+                                array(
+                                    'name' => $key2,
+                                    'data' => $key2_values
+                                ),
+                                array(
+                                    'name' => $key3,
+                                    'data' => $key3_values
+                                ),
+                                array(
+                                    'name' => $key4,
+                                    'data' => $key4_values
+                                )
+                              );
+                echo json_encode($seriesData);
+            } else {
+                echo 'error';
+            }
+        } catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }
+    }
+
 
     /**    
     *  Delete Campaign - This function is used to delete a campaign.
