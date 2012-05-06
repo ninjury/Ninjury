@@ -414,6 +414,7 @@ class AjaxController extends AppController {
     *      list (optional) - The list used to filter campaigns by.  Defaults to all lists.
     *      stat_1 - The first statistic queried for the set of campaigns (e.g. open %, click %, bounce % ).
     *      stat_2 - The second statistic queried for the set of campaigns (e.g. open %, click %, bounce % ).
+    *      page - the page to request information for.
     *  @return
     *      Returns a table of the information requested in html form.
     */
@@ -502,8 +503,10 @@ class AjaxController extends AppController {
                 }
 
                //set variables and render view.
-                $test = count($results);
+                $test = ($start_date);
+                $test2 = ($end_date);
                 $this->set('test',$test);
+                $this->set('test2',$test2);
                 $this->set('results',$toReturn);
                 $this->layout = 'campaign_table';               //this layout simply echos the content of the View.
                 $this->render('reports_recent_campaigns');
