@@ -439,6 +439,18 @@ class AjaxController extends AppController {
             $end_date = date("m/d/y",$temp);
         }
 
+        if($this->params['pass'][3] == 'null'){
+            $stat_1 = 'click';
+        } else {
+            $stat_1 = $this->params['pass'][3];
+        }
+
+         if($this->params['pass'][4] == 'null'){
+            $stat_1 = 'estopens';
+        } else {
+            $stat_1 = $this->params['pass'][4];
+        }
+
         $options['start_date'] = $start_date;
         $options['end_date'] = $end_date;
         $options['status'] = 'sent';
@@ -458,7 +470,11 @@ class AjaxController extends AppController {
             $pages = ceil($total_count/RESULTS_PER_PAGE);  
            
             // Get the page requested from the URL of this request.
-            $page = isset($this->params['pass'][5]) ? $this->params['pass'][5] : 1;
+            if ($this->params['pass'][5] == 'null'){
+                $page = 1;
+            } else {
+                $page = $this->params['pass'][5];
+            }
             $start = ($page - 1 )*RESULTS_PER_PAGE;
             $end = $page*RESULTS_PER_PAGE;
 
