@@ -290,34 +290,64 @@ class AjaxController extends AppController {
         
     }
 
-        public function campaigns_delete() {
+    public function campaigns_delete() {
 
-            $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
-                    
-            try{
-                if (!isset($response['error']) ) {
-    
-                    if (isset($this->params['pass'][0])){
-                        $blast_id = $this->params['pass'][0];
-                    } 
-                    else {
-                        exit;
-                    }
-                    $response = $sailthruClient->deleteBlast($blast_id);
-                    if ($response['ok'] == 1){
-                        echo 'Campaign was deleted successfully.';
-                    } else {
-                        echo 'Campaign could not be deleted.';
-                    }
-                    $this->autoLayout = $this->autoRender = false; 
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+                
+        try{
+            if (!isset($response['error']) ) {
+
+                if (isset($this->params['pass'][0])){
+                    $blast_id = $this->params['pass'][0];
                 } 
                 else {
-                    echo 'error';
+                    exit;
                 }
+                $response = $sailthruClient->deleteBlast($blast_id);
+                if ($response['ok'] == 1){
+                    echo 'Campaign was deleted successfully.';
+                } else {
+                    echo 'Campaign could not be deleted.';
+                }
+                $this->autoLayout = $this->autoRender = false; 
             } 
-            catch (Sailthru_Client_Exception $e) {
-                echo 'exception';
-            }            
+            else {
+                echo 'error';
+            }
+        } 
+        catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }            
+    }
+
+    public function reports_stats() {
+
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+                
+        try{
+            if (!isset($response['error']) ) {
+
+                if (isset($this->params['pass'][0])){
+                    $blast_id = $this->params['pass'][0];
+                } 
+                else {
+                    exit;
+                }
+                $response = $sailthruClient->deleteBlast($blast_id);
+                if ($response['ok'] == 1){
+                    echo 'Campaign was deleted successfully.';
+                } else {
+                    echo 'Campaign could not be deleted.';
+                }
+                $this->autoLayout = $this->autoRender = false; 
+            } 
+            else {
+                echo 'error';
+            }
+        } 
+        catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }            
     }
         
 }

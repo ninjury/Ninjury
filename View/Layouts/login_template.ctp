@@ -15,8 +15,6 @@
 		echo $this->Html->script('jquery.js');
 		echo $this->Html->script('jquery_mobile.js');
 		echo $this->fetch('script');
-
-		echo $this->Html->script('sailthrutheme.js');
 	?>
 </head>
 <body style="background-color:#00CCED; min-height:100%;">

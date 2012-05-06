@@ -6,6 +6,11 @@ var chart;
 *********************************/
 function initSlider(elementId)
 {
+	if(typeof Swipe === 'undefined')
+	{
+		return;
+	}
+
 	var slider = new Swipe(document.getElementById(elementId), {
 		    elementsShown: 3,
 		});
@@ -17,6 +22,11 @@ function initSlider(elementId)
 *********************************/
 function initPjax()
 {
+	if(typeof pjax === 'undefined')
+	{
+		return;
+	}
+
 	$('#slider a').pjax({container: "#page_content",fragment: "#page_content", timeout: 2000}).live('click', function() { $(".loader").show(); });
 	$('#page_content').on('pjax:end', 
 		function() { 
@@ -69,7 +79,7 @@ function init()
 
 function pjaxLoadInit()
 {
-	$("input[data-role='datebox']").click(function() { $(this).datebox("open"); });
+	$("input[data-role='datebox']").click(function(){ $(this).datebox("open"); });
 	createChart();
 }
 
@@ -80,8 +90,24 @@ $(document).ready(function() {
 		
 		// url bar hiding
 		hideUrlBar();
+
+		setStyle();
+
+		$(window).resize(function () { 
+			setStyle();		
+		});
 });
 
+
+
+
+function setStyle()
+{
+	var d = $(".description");
+	d.width(d.parent().width()-d.next().width()-6);
+	var l = $('.list');
+	l.width(l.parent().width()-l.next().width()-4);
+}
 
 function createChart()
 {
