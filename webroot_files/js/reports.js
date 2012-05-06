@@ -44,7 +44,7 @@ function recent_campaigns(form_elt){
 
 	var url = "/mobile/ajax/reports/recent_campaigns/" + sdate + "/" + edate + "/" + "null" + "/" + s2 + "/" + s3 + "/" + "null";
 	alert(url);
-	$.get(url, {language: "php", version: 5}, function(responseText){ $(insert).html(responseText); setStyle(); $(insert).addClass("loaded");},"html");
+	$.get(url, {language: "php", version: 5}, function(responseText){ $(insert).html(responseText); $(insert).addClass("loaded");},"html");
 }
 
 function checkBeforeLoad(id,loadFunction)
@@ -55,4 +55,4 @@ function checkBeforeLoad(id,loadFunction)
 	}
 }
 
-$(document).on("expand","#collapsible_recent_campaigns", function() {checkBeforeLoad('#recent_campaigns',recent_campaigns);} );
+//$(document).on("expand","#collapsible_recent_campaigns", function() {checkBeforeLoad('#recent_campaigns',recent_campaigns);} );
