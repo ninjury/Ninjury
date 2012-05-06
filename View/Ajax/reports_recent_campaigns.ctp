@@ -4,6 +4,7 @@
     <div class="ui-block-c cell"><h4>124</h4></div>
 </div> -->
 <!-- <table id="recent_campaigns_table"> -->
+<div class="ui-grid-b" id="recent-campaigns-grid">
 <?php foreach ($results as $blast){ ?>
         <!-- <td class="name"><a href="/mobile/ajax/campaigns/preview/<?php echo($blast['blast_id']); ?>"><?php echo ($blast['name']); ?></a></td>
         <td class="stat_1"><?php echo ($blast['stat_1']); ?></td>
@@ -12,5 +13,6 @@
         <div class="ui-block-b cell"><?php echo ($blast['stat_1']); ?></div>
         <div class="ui-block-c cell"><?php echo ($blast['stat_2']); ?></div>
 <?php } ?>
+</div>
 <!-- </table> -->
 <?php echo $this->element('reports_pagination_recent_campaigns'); ?>
