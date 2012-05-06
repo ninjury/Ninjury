@@ -535,6 +535,9 @@ class AjaxController extends AppController {
             $end_date = date("m/d/y",$temp);
         }
 
+        echo $start_date;
+        echo $end_date;
+
         // Check if parameters for the first statistics is set.
         if($this->params['pass'][3] == 'null'){
             $stat_1 = 'click';
