@@ -96,7 +96,7 @@ Swipe.prototype = {
     style.webkitTransitionDuration = style.MozTransitionDuration = style.msTransitionDuration = style.OTransitionDuration = style.transitionDuration = duration + 'ms';
 
     // translate to given index position
-if(this.two)
+if(this.twod)
 {
     style.webkitTransform = 'translate(' + -(index * this.width/this.elnum) + 'px,0)';
 }
