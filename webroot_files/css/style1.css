@@ -1700,9 +1700,9 @@ ul.campaign_list li .buttons{
 
 ul.campaign_list li .buttons > div{
 	display:inline-block;
-}
 
 ul.campaign_list div.list{
+}
 	min-width:40px;
 }
 
@@ -1711,6 +1711,10 @@ ul.campaign_list .name a {
 	font-family: 'IntervalSansPro-BoldCond',Helvetica,Arial;
 	color: #00cced;
 	text-decoration:none;
+}
+
+ul.campaign_list .name {
+	height: 25px;
 }
 
 ul.campaign_list
@@ -1757,6 +1761,8 @@ a.delete_button{
 
 .info {
 padding-left:10px;
+padding-top:10px;
+padding:right:5px;
 }
 
 
@@ -1918,7 +1924,7 @@ padding: 0px;
 }
 
 #graph-options1, #graph-options2, #graph-options3, #graph-options4 {
-	width:90%;
+	width:40%;
 	display: inline-block;
 	margin-left: 3%;
 	margin-right: 3%;
@@ -1932,18 +1938,7 @@ padding: 0px;
 	text-align: left;
 	cursor: pointer;
 }
-#reset_graph_button{
-	width: 90%;
-	margin: auto;
-	}
-#graph_options_container_left{
-	width: 50%;
-	float: left;
-}
-#graph_options_container_right{
-	width: 50%;
-	float: right;
-}
+
 #graph-options1 .ui-btn-up-a{
 	background: #864A7F;
 	border: 1px solid #864A7F;
