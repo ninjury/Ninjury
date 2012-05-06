@@ -18,34 +18,139 @@
             <div id="graph-options1">
 			<form action="#" method="GET">
 				<select name="selectmenu3" id="selectmenu3">
-					<option value="option1">
-						Open %
-					</option>
-					<option value="">
-						Option
-					</option>
+							<option value = "option_users">
+								users
+							</option>
+							<option value="option_opens">
+								opens
+							</option>
+							<option value="option_clicks">
+								clicks
+							</option>
+							<option value="option_spam">
+								spam
+							</option>
+							<option value="option_optouts">
+								optouts
+							</option>
+							<option value="option_hardbounces">
+								hardbounces
+							</option>
+							<option value = "option_softbounces">
+								softbounces
+							</option>
+							<option value = "option_revenue">
+								revenue
+							</option>
+							<option value = "option_estopens">
+								est. opens
+							</option>
+							<option value="option_pageviews">
+								pageviews
+							</option>
 				</select>
 			</form>
 	    </div>
             <div id="graph-options2">
 				<select name="selectmenu4" id="selectmenu4">
-					<option value="option1">
-						PV/M %
-					</option>
+							<option value = "option_users">
+								users
+							</option>
+							<option value="option_opens">
+								opens
+							</option>
+							<option value="option_clicks">
+								clicks
+							</option>
+							<option value="option_spam">
+								spam
+							</option>
+							<option value="option_optouts">
+								optouts
+							</option>
+							<option value="option_hardbounces">
+								hardbounces
+							</option>
+							<option value = "option_softbounces">
+								softbounces
+							</option>
+							<option value = "option_revenue">
+								revenue
+							</option>
+							<option value = "option_estopens">
+								est. opens
+							</option>
+							<option value="option_pageviews">
+								pageviews
+							</option>
 				</select>
 			</div>
             <div id="graph-options3">
 				<select name="selectmenu5" id="selectmenu5">
-					<option value="option1">
-						Clicks
-					</option>
+							<option value = "option_users">
+								users
+							</option>
+							<option value="option_opens">
+								opens
+							</option>
+							<option value="option_clicks">
+								clicks
+							</option>
+							<option value="option_spam">
+								spam
+							</option>
+							<option value="option_optouts">
+								optouts
+							</option>
+							<option value="option_hardbounces">
+								hardbounces
+							</option>
+							<option value = "option_softbounces">
+								softbounces
+							</option>
+							<option value = "option_revenue">
+								revenue
+							</option>
+							<option value = "option_estopens">
+								est. opens
+							</option>
+							<option value="option_pageviews">
+								pageviews
+							</option>
 				</select>
 			</div>
             <div id="graph-options4">
 				<select name="selectmenu6" id="selectmenu6">
-					<option value="option1">
-						Bounce %
-					</option>
+							<option value = "option_users">
+								users
+							</option>
+							<option value="option_opens">
+								opens
+							</option>
+							<option value="option_clicks">
+								clicks
+							</option>
+							<option value="option_spam">
+								spam
+							</option>
+							<option value="option_optouts">
+								optouts
+							</option>
+							<option value="option_hardbounces">
+								hardbounces
+							</option>
+							<option value = "option_softbounces">
+								softbounces
+							</option>
+							<option value = "option_revenue">
+								revenue
+							</option>
+							<option value = "option_estopens">
+								est. opens
+							</option>
+							<option value="option_pageviews">
+								pageviews
+							</option>
 				</select>
 			</div>
         </div>
@@ -102,7 +207,7 @@
 					<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
 						<select name="selectmenu1" >
 							<option value="option1">
-								Open%
+								Opens
 							</option>
 							<option value="list2">
 								Clicks
