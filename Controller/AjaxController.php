@@ -457,10 +457,9 @@ class AjaxController extends AppController {
         $options['status'] = 'sent';
 
         // If list is specified, add it to the options array. 
-        /*
         if ($this->params['pass'][2] != 'null'){
             $options['list'] = $this->params['pass'][2];
-        }*/
+        }
         
         try{
             //Retrieve the blast id via API call.
@@ -497,9 +496,9 @@ class AjaxController extends AppController {
                         $toReturn[$i]['name'] = $results[$i]['name'];
 
                         //Make the secondary API call to retrieve the stats specified by the $stats_1 and $stats_2 parameters 
-                        $blast_stats = $sailthruClient->stats_blast($results[$i]['name'],null,null,$data);
-                        //$toReturn[$i]['stat_1'] = isset($blast_stats[$stat_1]) ? $blast_stats[$stat_1] : 0;
-                        //$toReturn[$i]['stat_2'] = isset($blast_stats[$stat_2]) ? $blast_stats[$stat_2] : 0;
+                        $blast_stats = $sailthruClient->stats_blast($results[$i]['blast_id'],null,null,$data);
+                        $toReturn[$i]['stat_1'] = isset($blast_stats[$stat_1]) ? $blast_stats[$stat_1] : 0;
+                        $toReturn[$i]['stat_2'] = isset($blast_stats[$stat_2]) ? $blast_stats[$stat_2] : 0;
                     }
                 }
 
