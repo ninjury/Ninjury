@@ -84,7 +84,6 @@ function init()
 function pjaxLoadInit()
 {
 	$("input[data-role='datebox']").click(function(){ $(this).datebox("open"); });
-	createChart();
 }
 
 
@@ -120,7 +119,7 @@ function setStyle()
 	}
 }
 
-function createChart()
+function createChart(seriesData)
 {
 	if(!($("#highchartcontainer").length == 0))
 	{
@@ -181,7 +180,12 @@ function createChart()
 		            }
 		        }
 		    },
-		    series: [{
+		    series: seriesData
+		});
+	}
+}
+/*
+		    [{
 		        name: 'Open %',
 		        data: [null, null, null, null, null, 6 , 11, 32, 110, 235, 369, 640,
 		            1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126,
@@ -219,6 +223,4 @@ function createChart()
 		        11100, 11100, 11100, 11100, 11500, 11800, 12000, 14000, 17000,
 		        21000, 20000, 26500, 30000, 40000, 42000, 41000]
 		    }]
-		});
-	}
-}
+*/

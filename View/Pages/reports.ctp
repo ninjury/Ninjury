@@ -7,15 +7,14 @@
 		<form action="#" method="POST">
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
-                <input id="textinput5" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                <input id="start_date" name="start_date" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
             <fieldset data-role="controlgroup">
-                <input id="textinput6" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                <input id="end_date" name="end_date" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
         </div>
-        <div id="highchartcontainer" style="width: 100%; height: 90%">
-        </div>
-        <div data-role="fieldcontain" class="graph-options" data-theme="a" data-content-theme="a">
+	<div id="highchartscontainer" style="width: 100%; height: 90%"></div>
+        <div data-role="fieldcontain" id="graph_options_container" class="graph-options" data-theme="a" data-content-theme="a">
         	<div id="graph_options_container_left">
 				<div id="graph-options1">
 					<select name="selectmenu3" id="selectmenu3">
@@ -171,19 +170,6 @@
 					</option>
 				</select>
             </div>
-            <div id="recent-campaigns-templates">
-				<select name="selectmenu2" id="selectmenu2">
-					<option value="template1">
-						Template
-					</option>
-					<option value="template2">
-						Template1
-					</option>
-					<option value="template3">
-						Template2
-					</option>
-				</select>
-			</div>
         </div>
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
@@ -230,71 +216,11 @@
 					</div>
 				</form>
 			</div>
-            <div id="cell-top">
-				<div class="ui-block-a cell" >
-					<h4>
-						Total
-					</h4>
-				</div>
-				<div class="ui-block-b cell" >
-					<h4>
-						25%
-					</h4>
-				</div>
-				<div class="ui-block-c cell">
-					<h4>
-						124
-					</h4>
-				</div>
-			</div>
-            <div class="ui-block-a cell">
-                    <a href="#" data-transition="fade">
-                        JuneNew..
-                    </a>
-            </div>
-            <div class="ui-block-b cell" >
-                <h4>
-                    11%
-                </h4>
-            </div>
-            <div class="ui-block-c cell" >
-                <h4>
-                    32
-                </h4>
-            </div>
-            <div class="ui-block-a cell">
-                    <a href="#" data-transition="fade">
-                        Special pro..
-                    </a>
-            </div>
-            <div class="ui-block-b cell" >
-                <h4>
-                    05%
-                </h4>
-            </div>
-            <div class="ui-block-c cell">
-                <h4>
-                    11
-                </h4>
-            </div>
-            <div class="ui-block-a cell" >
-                    <a href="#" data-transition="fade" >
-                        New Cust..
-                    </a>
-            </div>
-            <div class="ui-block-b cell" >
-                <h4>
-                    03%
-                </h4>
-            </div>
-            <div class="ui-block-c cell" >
-                <h4>
-                    17
-                </h4>
+			<div id="recent_campaigns">
             </div>
         </div>
         <a data-role="button" data-transition="fade" href="#page1">
-            See More
+            Refresh
         </a>
         <div id="test">
         </div>
