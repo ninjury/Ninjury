@@ -317,9 +317,6 @@ class AjaxController extends AppController {
     				$this->set('spam', $spam);
     				
     				$this->layout = 'popup_template';
-
-    				$html = $response['content_html'];
-					$this->set('view_blast_preview', $html);
 			
 					$this->layout = 'popup_template';
 					$this->render('view_campaign_stats');
