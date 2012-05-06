@@ -1670,7 +1670,7 @@ ul.campaign_list {
 
 ul.campaign_list li {
 	list-style: none;
-	
+	background-color: #f0f0f0;
 }
 
 ul.campaign_list li .entry{
