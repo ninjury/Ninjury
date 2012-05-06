@@ -515,7 +515,7 @@ class AjaxController extends AppController {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
+            echo $e->getMessage();
         }   
     }
         
