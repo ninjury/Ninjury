@@ -35,6 +35,8 @@ function recent_campaigns(form_elt){
 	var s2 = form_elt.elements['selectmenu1'].value;
 	var s3 = form_elt.elements['selectmenu2'].value;
 
+	alert("sdate: " + sdate + "  edate: " + edate + "  s2: " + s2 );
+
 	sdate.replace("-","/");
 	edate.replace("-","/");
 
@@ -44,6 +46,7 @@ function recent_campaigns(form_elt){
 	var url = "/mobile/ajax/reports/recent_campaigns/" + sdate + "/" + edate + "/" + "null" + "/" + s2 + "/" + s3 + "/" + "null";
 	alert(url);
 	$.get(url, {language: "php", version: 5}, function(responseText){ $(insert).html(responseText); $(insert).addClass("loaded");},"html");
+	return false;
 }
 
 function checkBeforeLoad(id,loadFunction)
