@@ -535,8 +535,9 @@ class AjaxController extends AppController {
 
         str_replace("-","/",$end_date);
         str_replace("-","/",$start_date);
-        echo $start_date;
-        echo $end_date;
+
+        echo "start: " . $start_date;
+        echo "end: " . $end_date;
 
         // Check if parameters for the first statistics is set.
         if($this->params['pass'][3] == 'null'){
