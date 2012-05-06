@@ -1980,10 +1980,10 @@ padding: 0px;
 }
 
 #recent-campaigns-list {
-	width: 100%;
+	width: 75%;
 	display: inline-block;
-	/*margin-right: 10%;
-	margin-left: 10%;*/
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #recent-campaigns-list .ui-btn-up-a, #recent-campaigns-templates .ui-btn-up-a{
