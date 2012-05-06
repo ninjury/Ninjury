@@ -608,6 +608,8 @@ class AjaxController extends AppController {
 
 
                         $toReturn[$i]['name'] = $results[$i]['name'];
+                        $toReturn[$i]['blast_id'] = $results[$i]['blast_id'];
+                        $toReturn[$i]['list'] = $results[$i]['list'];
 
                         //Make the secondary API call to retrieve the stats specified by the $stats_1 and $stats_2 parameters 
                         $blast_stats = $sailthruClient->stats_blast($results[$i]['blast_id'],null,null,$data);

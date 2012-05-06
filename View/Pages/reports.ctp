@@ -204,8 +204,6 @@
 					</div>
 				</div>
 			<div id="recent_campaigns">
-            </div>
-        </div>
         <input type='submit' class="reports-refresh-button" value='Refresh' data-role="button">   
         </form>
     </div>
