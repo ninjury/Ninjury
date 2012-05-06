@@ -1937,6 +1937,9 @@ padding: 0px;
 	width: 90%;
 	margin: auto;
 	}
+#graph_options_container{
+	border-bottom: none;
+}
 #graph_options_container_left{
 	width: 50%;
 	float: left;
@@ -1955,12 +1958,12 @@ padding: 0px;
 	border: 1px solid #c2a3bf;
 }
 
-#graph-options3 .ui-btn-up-a{
+#graph-options2 .ui-btn-up-a{
 	background: #6D6E70;
 	border: 1px solid #6D6E70;
 }
 
-#graph-options3 .ui-btn-hover-a{
+#graph-options2 .ui-btn-hover-a{
 	background: #b5b5b8;
 	border: 1px solid #b5b5b8;
 }
@@ -1975,12 +1978,12 @@ padding: 0px;
 	border: 1px solid #faf580;
 }
 
-#graph-options2 .ui-btn-up-a{
+#graph-options3 .ui-btn-up-a{
 	background: #00CCED;
 	border: 1px solid #00CCED;
 }
 
-#graph-options2 .ui-btn-hover-a{
+#graph-options3 .ui-btn-hover-a{
 	background: #80e5f5;
 	border: 1px solid #80e5f5;
 }
