@@ -191,6 +191,7 @@
         <script type="text/javascript">
 
         	function test(){
+        		alert('test');
 	        	var loadUrl = "/mobile/ajax/reports/recent_campaigns/";
 				$.get(loadUrl, function(result){
 	   				alert(result);
