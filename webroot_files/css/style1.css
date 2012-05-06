@@ -71,7 +71,7 @@ color:  #2489CE  /*{a-bar-link-visited}*/;
 	color: #404041 /*{a-body-color}*/;
 	text-shadow:  0  /*{a-body-shadow-x}*/  1px  /*{a-body-shadow-y}*/  0  /*{a-body-shadow-radius}*/ #eeeeee /*{a-body-shadow-color}*/;
 	background: #b5b5b8 /*{a-body-background-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #b5b5b8 /*{a-body-background-start}*/), to( #ffffff /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #b5b5b8 /*{a-body-background-start}*/), to( #b5b5b8 /*{a-body-background-end}*/)); /* Saf4+, Chrome */
 	background-image: -webkit-linear-gradient( #b5b5b8 /*{a-body-background-start}*/, #b5b5b8 /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
 	background-image:    -moz-linear-gradient( #b5b5b8 /*{a-body-background-start}*/, #b5b5b8/*{a-body-background-end}*/); /* FF3.6 */
 	background-image:     -ms-linear-gradient( #b5b5b8 /*{a-body-background-start}*/, #b5b5b8 /*{a-body-background-end}*/); /* IE10 */
