@@ -29,7 +29,7 @@ function aggregate_trends(form_elt){
 }
 
 function recent_campaigns(form_elt){
-	var sdate = form_elt.elements['start_date_1'].value;
+	var sdate = form_elt.elements['start_date_2'].value;
 	var edate = form_elt.elements['end_date_2'].value;
 	var s0 = form_elt.elements['selectmenu0'].value;
 	var s2 = form_elt.elements['selectmenu1'].value;
