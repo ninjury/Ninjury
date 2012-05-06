@@ -503,8 +503,8 @@ class AjaxController extends AppController {
                 }
 
                //set variables and render view.
-                $test = var_dump($results);
-                $test2 = var_dump($response);
+                $test = ($start_date);
+                $test2 = ($end_date);
                 $this->set('test',$test);
                 $this->set('test2',$test2);
                 $this->set('results',$toReturn);
