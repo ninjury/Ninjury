@@ -1709,8 +1709,7 @@ ul.campaign_list div.list{
 ul.campaign_list .name a {
 	font-size: 20px;
 	font-family: 'IntervalSansPro-BoldCond',Helvetica,Arial;
-	/* color: #00cced; */
-	color: #ffffff;
+	color: #00cced;
 	text-decoration:none;
 }
 
