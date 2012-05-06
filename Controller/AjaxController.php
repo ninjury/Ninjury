@@ -250,7 +250,7 @@ class AjaxController extends AppController {
                     	$revenue_in_cents = $response['rev'];
                     }
                     else{
-                    	$revenue_in_cents = 'unknown';
+                    	$revenue_in_cents = 'n/a';
     				}
     				if(isset($response['optout'])){
     					$optout = $response['optout'];

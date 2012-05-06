@@ -54,18 +54,29 @@ color:  #2489CE  /*{a-bar-link-visited}*/;
 .ui-bar-a button {
 	 font-family: Helvetica, Arial, sans-serif  /*{global-font-family}*/;
 }
-.ui-body-a,
-.ui-dialog.ui-overlay-a {
+.ui-body-a{
 	border: 1px solid #6d6e70 /*{a-body-border}*/;
 	color: #404041 /*{a-body-color}*/;
 	text-shadow:  0  /*{a-body-shadow-x}*/  1px  /*{a-body-shadow-y}*/  0  /*{a-body-shadow-radius}*/ #eeeeee /*{a-body-shadow-color}*/;
 	background: #ffffff /*{a-body-background-color}*/;
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #ffffff /*{a-body-background-start}*/), to( #ffffff /*{a-body-background-end}*/)); /* Saf4+, Chrome */
 	background-image: -webkit-linear-gradient( #ffffff /*{a-body-background-start}*/, #ffffff /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( #ffffff /*{a-body-background-start}*/, #ffffff/*{a-body-background-end}*/); /* FF3.6 */
+	background-image:    -moz-linear-gradient( #ffffff /*{a-body-background-start}*/, #ffffff /*{a-body-background-end}*/); /* FF3.6 */
 	background-image:     -ms-linear-gradient( #ffffff /*{a-body-background-start}*/, #ffffff /*{a-body-background-end}*/); /* IE10 */
 	background-image:      -o-linear-gradient( #ffffff /*{a-body-background-start}*/, #ffffff /*{a-body-background-end}*/); /* Opera 11.10+ */
 	background-image:         linear-gradient( #ffffff /*{a-body-background-start}*/, #ffffff /*{a-body-background-end}*/);
+}
+.ui-dialog.ui-overlay-a {
+	border: 1px solid #6d6e70 /*{a-body-border}*/;
+	color: #404041 /*{a-body-color}*/;
+	text-shadow:  0  /*{a-body-shadow-x}*/  1px  /*{a-body-shadow-y}*/  0  /*{a-body-shadow-radius}*/ #eeeeee /*{a-body-shadow-color}*/;
+	background: #b5b5b8 /*{a-body-background-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #b5b5b8 /*{a-body-background-start}*/), to( #b5b5b8 /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #b5b5b8 /*{a-body-background-start}*/, #b5b5b8 /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #b5b5b8 /*{a-body-background-start}*/, #b5b5b8/*{a-body-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #b5b5b8 /*{a-body-background-start}*/, #b5b5b8 /*{a-body-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #b5b5b8 /*{a-body-background-start}*/, #b5b5b8 /*{a-body-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #b5b5b8 /*{a-body-background-start}*/, #b5b5b8 /*{a-body-background-end}*/);
 }
 .ui-body-a,
 .ui-body-a input,
@@ -1663,6 +1674,61 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 	background-size: 78px 52px;
 }
 
+ul.campaign_list {
+	margin: 0px;
+	padding:0px;
+}
+
+ul.campaign_list li {
+	list-style: none;
+	
+}
+
+ul.campaign_list li .entry{
+	border: 1px solid #404041;
+	height:60px;	
+}
+
+ul.campaign_list li .entry > div{
+	display:inline-block;
+}
+
+ul.campaign_list .description div{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+
+ul.campaign_list li .buttons{
+	min-width:60px;
+	float:right;
+}
+
+.float_right {
+	float:right;
+}
+
+.buttons a{
+	display: block;
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	width: 32px;
+	margin:14px;
+	height: 32px;
+}
+
+a.delete_button{
+	background-image: url(../img/delete_small.png);
+}
+
+.inline > div {
+	display:inline-block;
+}
+
+
 .table {
 	font-family: 'IntervalSansPro-RegCond',Helvetica, Arial;
 	width: 100%;
@@ -2093,9 +2159,7 @@ div.loader img {
 	display: block;
 	/*border: 3px solid blue; */
 	margin: 5px auto;
-	max-width: 90%;
-	min-width: 28em;
-	width: 70%;
+	width: 100%;
 }
 #view_campaign_stats_div_left{
 	float: left;
@@ -2106,9 +2170,30 @@ div.loader img {
 	margin-left: 0;
 }
 
-
-
 /* End of stylizing for view_campaign_stats page */
 
+/* Hex Colors
+00cced
+80e5f5
+e5fafc
 
+404041
+9e9ea1
+ededed
 
+eeece1
+f5f5f0
+fcfcfc
+
+6d6e70
+b5b5b8
+f0f0f0
+
+864a7f
+c2a3bf
+f2edf2
+
+f5eb00
+faf580
+fffce5
+*/
