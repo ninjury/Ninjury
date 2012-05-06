@@ -160,13 +160,13 @@
         <div data-role="fieldcontain" class="list-template">
             <div id="recent-campaigns-list">
 				<select name="selectmenu0" id="selectmenu1">
-					<option value="list1">
+					<option value="null">
 						List
 					</option>
-					<option value="list2">
+					<option value="null">
 						List1
 					</option>
-					<option value="list3">
+					<option value="null">
 						List3
 					</option>
 				</select>

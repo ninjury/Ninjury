@@ -13,9 +13,6 @@ function aggregate_trends(form_elt){
 	var s2 = form_elt.elements['selectmenu4'].value;
 	var s3 = form_elt.elements['selectmenu5'].value;
 	var s4 = form_elt.elements['selectmenu6'].value;
-
-	sdate.replace("-","/");
-	edate.replace("-","/");
 	
 	var hc = $("#highchartcontainer");
 	hc.html(ajax_load);
@@ -39,6 +36,9 @@ function recent_campaigns(form_elt){
 	var s2 = form_elt.elements['selectmenu1'].value;
 	var s3 = form_elt.elements['selectmenu2'].value;
 
+	sdate.replace("-","/");
+	edate.replace("-","/");
+
 	var insert = $("#recent_campaigns");
 	insert.html(ajax_load);
 
@@ -55,4 +55,4 @@ function checkBeforeLoad(id,loadFunction)
 	}
 }
 
-$(document).on("expand","#collapsible_recent_campaigns", function() {alert("hi"); checkBeforeLoad('#recent_campaigns',recent_campaigns);} );
+$(document).on("expand","#collapsible_recent_campaigns", function() {checkBeforeLoad('#recent_campaigns',recent_campaigns);} );
