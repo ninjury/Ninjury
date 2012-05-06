@@ -16,6 +16,7 @@
         <div data-role="fieldcontain" class="graph-options" data-theme="a" data-content-theme="a">
 
             <div id="graph-options1">
+			<form action="#" method="GET">
 				<select name="selectmenu3" id="selectmenu3">
 					<option value="option1">
 						Open %
@@ -24,7 +25,8 @@
 						Option
 					</option>
 				</select>
-			</div>
+			</form>
+	    </div>
             <div id="graph-options2">
 				<select name="selectmenu4" id="selectmenu4">
 					<option value="option1">
