@@ -4,7 +4,8 @@
 			<a id="close-dialog" href="#" onclick="$('.ui-dialog').dialog('close');"> X </a>
 		</div>
 		<center> 
-			<p style = "font-size: 1em; margin: 0; margin-bottom: 10px;" >  Campaign Statistics for <?php echo('"' . $name . '"'); ?></p> 
+			<p style = "font-size: 1em; margin: 5px, 5px, 10px, 5px;" >  Campaign Statistics </p>
+			<p style = "font-size: 1em; margin: 0; margin-bottom: 10px;" > <?php echo('"' . $name . '"'); ?> </p> 
 		</center> 
 	
 	</div>
