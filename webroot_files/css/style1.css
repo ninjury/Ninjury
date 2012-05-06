@@ -1817,42 +1817,26 @@ padding: 0px;
 }
 
 .table .name{
-	padding: 8px 0px 8px 0px;
+	/*padding: 8px 0px 8px 0px; */
 	text-align: center;
-	width: 30%;
+	width: 33%;
 }
 
-.table .list{
-	padding: 8x 0px 8px 0px;
+.table .stat_1{
+	/* padding: 8x 0px 8px 0px; */
 	text-align: center;
-	width: 30%;
+	width: 33%;
 }
 
-.table .date{
-	padding: 8px 0px 8px 0px;
+.table .stat_2{
+	/* padding: 8px 0px 8px 0px; */
 	text-align: center;
-	width: 30%;
+	width: 33%;
 }
 
 .table {
 	-webkit-border-top-left-radius: .6em;
 	border-top-left-radius: .6em;
-}
-
-.table .buttons{
-	background: #ffffff;
-	height: 32px;
-	width: 10%;
-	border-width: 0px;
-}
-
-.table .buttons a{
-	display: block;
-	text-indent: -9999px;
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
-	width: 32px;
-	height: 32px;
 }
 
 #campaigns_scheduled .buttons a{

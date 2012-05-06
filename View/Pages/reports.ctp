@@ -206,8 +206,8 @@
 			</div> -->
 			<table>
 				<tr>
-					<td><h5>Campaigns</h5></td>
-					<td>
+					<td class="name"><h5>Campaigns</h5></td>
+					<td class="stat_1">
 						<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
 							<select name="selectmenu1" id="selectmenu1">
 								<option value="count">Count</option>
@@ -219,7 +219,7 @@
 								<option value="hardbounce">Hardbounce</option>
 							</select>
 						</div>
-					</td>
+					</td class="stat_2">
 					<td>
 						<div data-role="fieldcontain" class="ui-block-c" id="recent-campaigns-grid-clicks" >
 							<select name="selectmenu2" id="selectmenu2">
