@@ -30,6 +30,7 @@
 
 		//echo $this->Html->css('cake.generic');
 		echo $this->Html->css('style1');
+		
 		echo $this->Html->css('jquery.mobile.datebox.css');
 
 		echo $this->fetch('meta');
@@ -48,8 +49,6 @@
 	
 </head>
 <body>
-	<div id="container">
-		<div id="content">
 			<div data-role="page" id="<?php echo $page; ?>_page" data-theme="a">
 				<?php echo $this->element('header', array('page' => $page)); ?>
 				<div class='loader' ><img src='/mobile/img/ajax-loader1.gif'></div>
@@ -58,7 +57,5 @@
 				</div>
 			    <?php echo $this->element('footer'); ?>
 			</div>
-		</div>
-	</div>
 </body>
 </html>
