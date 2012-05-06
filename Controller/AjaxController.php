@@ -457,7 +457,7 @@ class AjaxController extends AppController {
         $options['status'] = 'sent';
 
         // If list is specified, add it to the options array.
-        if (isset($this->params['pass'][2])){
+        if ($this->params['pass'][2]) != 'null'){
             $options['list'] = $this->params['pass'][2];
         }
 
