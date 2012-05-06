@@ -616,6 +616,10 @@ class AjaxController extends AppController {
                     }
                 }
 
+                if(count($toReturn) == 0){
+                    echo "Nothing to Display.";
+                }
+
                //set variables and render view.
                 $test = ($start_date);
                 $test2 = ($end_date);

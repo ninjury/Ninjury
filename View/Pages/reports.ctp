@@ -161,9 +161,9 @@
         <div data-role="fieldcontain" class="list-template">
             <div id="recent-campaigns-list">
 				<select name="selectmenu0" id="selectmenu0">
-					<option value="null">List</option>
-					<option value="null">List1</option>
-					<option value="null">List3</option>
+					<option value="null">All Lists</option>
+					<option value="group members">group members</option>
+					<option value="Sample List">Sample List</option>
 				</select>
             </div>
         </div>

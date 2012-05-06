@@ -35,13 +35,14 @@ function recent_campaigns(form_elt){
 	var s1 = form_elt.elements['selectmenu1'].value;
 	var s2 = form_elt.elements['selectmenu2'].value;
 
+	//s0 = (s0 == "all") ? "null" : s0;
 	sdate = (sdate == "") ? "null" : sdate;
 	edate = (edate == "") ? "null" : edate;
 
 	var insert = $("#recent_campaigns");
 	insert.html(ajax_load);
 
-	var url = "/mobile/ajax/reports/recent_campaigns/" + sdate + "/" + edate + "/" + "null" + "/" + s1 + "/" + s2 + "/" + "null";
+	var url = "/mobile/ajax/reports/recent_campaigns/" + sdate + "/" + edate + "/" + s0 + "/" + s1 + "/" + s2 + "/" + "null";
 	//alert(url);
 	$.get(url, {language: "php", version: 5}, function(responseText){ $(insert).html(responseText); $(insert).addClass("loaded");},"html");
 
