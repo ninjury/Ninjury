@@ -342,7 +342,7 @@ class AjaxController extends AppController {
                 $start_date = $this->request->data('start_date');
                 $end_date = $this->request->data('end_date');
                 $start_date = ($start_date == NULL ? @date('Y-m-d') : $start_date);
-                $end_date = ($end_date = NULL ? @date('Y-m-d') : $end_date);
+                $end_date = ($end_date == NULL ? @date('Y-m-d') : $end_date);
 
                 $key1 = $this->request->data('selectmenu3');
                 $key2 = $this->request->data('selectmenu4');
@@ -392,7 +392,8 @@ class AjaxController extends AppController {
                         array_push($key4_values, 0);
                     }
                     $current_datetime = @strtotime('+1 day', $current_datetime);
-                } while($current_datetime < $last_datetime);
+                }while(false);
+                //} while($current_datetime < $last_datetime);
     		    
                 $seriesData = array(
                                 array(
@@ -412,7 +413,9 @@ class AjaxController extends AppController {
                                     'data' => $key4_values
                                 )
                               );
-                echo json_encode($seriesData);
+            	$this->layout='campaign_table';
+            	$this->set('seriesData', $seriesData);
+            	$this->render('trends_graph');
             } else {
                 echo 'error';
             }

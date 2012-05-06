@@ -43,6 +43,7 @@
 		echo $this->Html->script('jquery.pjax.js');
 		echo $this->Html->script('sailthru.js');
 		echo $this->Html->script('campaigns.js');
+		echo $this->Html->script('reports.js');
 		echo $this->Html->script('sailthrutheme.js');
 		echo $this->fetch('script');
 	?>
