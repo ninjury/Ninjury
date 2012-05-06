@@ -18,6 +18,4 @@
         </li>
     <?php } ?>
 </ul>
-<p>
-	<?php echo $this->element('campaign_pagination_sent', array('pages' => $pages)); ?>
-</p>
+<?php echo $this->element('campaign_pagination_sent'); ?>

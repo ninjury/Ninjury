@@ -8,3 +8,4 @@
     <div class="ui-block-b cell"><h4><?php echo ($blast['stat_1']); ?></h4></div>
     <div class="ui-block-c cell"><h4><?php echo ($blast['stat_2']); ?></h4></div>    
 <?php } ?>
+<?php echo $this->element('reports_pagination_recent_campaigns'); ?>
