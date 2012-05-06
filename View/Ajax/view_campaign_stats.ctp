@@ -5,7 +5,7 @@
 		</div>
 		<center> 
 			<p style = "font-size: 1.5em; margin: 0;" >  Campaign Statistics </p>
-			<p style = "font-size: 1.5em; margin: 0; margin-bottom: 10px;" > <?php echo('"' . $name . '"'); ?> </p> 
+			<p style = "font-size: 1.2em; margin: 0; margin-bottom: 10px;" > <?php echo('"' . $name . '"'); ?> </p> 
 		</center> 
 	
 	</div>
