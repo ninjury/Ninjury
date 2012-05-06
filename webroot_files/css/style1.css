@@ -1658,7 +1658,7 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 	background-size: 78px 52px;
 }
 
-#question .ui-icon {
+#questions .ui-icon {
 	background: url("../img/icon_question_small.png");
 	background-size: 78px 52px;
 }
@@ -1700,9 +1700,9 @@ ul.campaign_list li .buttons{
 
 ul.campaign_list li .buttons > div{
 	display:inline-block;
-}
 
 ul.campaign_list div.list{
+}
 	min-width:40px;
 }
 
@@ -1711,6 +1711,10 @@ ul.campaign_list .name a {
 	font-family: 'IntervalSansPro-BoldCond',Helvetica,Arial;
 	color: #00cced;
 	text-decoration:none;
+}
+
+ul.campaign_list .name {
+	height: 25px;
 }
 
 ul.campaign_list
@@ -1724,7 +1728,6 @@ color:#404041;
 }
 
 .float_right {
-	float:right;
 }
 
 
@@ -1758,6 +1761,8 @@ a.delete_button{
 
 .info {
 padding-left:10px;
+padding-top:10px;
+padding:right:5px;
 }
 
 

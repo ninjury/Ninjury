@@ -19,5 +19,5 @@
     <?php } ?>
 </ul>
 <p>
-	<?php echo $this->element('campaign_pagination_scheduled', array('pages' => $pages)); ?>
+	<?php echo $this->element('campaign_pagination_sent', array('pages' => $pages)); ?>
 </p>

@@ -504,6 +504,7 @@ class AjaxController extends AppController {
     *      list (optional) - The list used to filter campaigns by.  Defaults to all lists.
     *      stat_1 - The first statistic queried for the set of campaigns (e.g. open %, click %, bounce % ).
     *      stat_2 - The second statistic queried for the set of campaigns (e.g. open %, click %, bounce % ).
+    *      page - the page to request information for.
     *  @return
     *      Returns a table of the information requested in html form.
     */
@@ -529,26 +530,42 @@ class AjaxController extends AppController {
             $end_date = date("m/d/y",$temp);
         }
 
+        if($this->params['pass'][3] == 'null'){
+            $stat_1 = 'click';
+        } else {
+            $stat_1 = $this->params['pass'][3];
+        }
+
+         if($this->params['pass'][4] == 'null'){
+            $stat_2 = 'estopens';
+        } else {
+            $stat_2 = $this->params['pass'][4];
+        }
+
         $options['start_date'] = $start_date;
         $options['end_date'] = $end_date;
         $options['status'] = 'sent';
 
-        // If list is specified, add it to the options array.
-        if (isset($this->params['pass'][2])){
+        // If list is specified, add it to the options array. 
+        if ($this->params['pass'][2] != 'null'){
             $options['list'] = $this->params['pass'][2];
         }
-
+        
         try{
             //Retrieve the blast id via API call.
             $response = $sailthruClient->getBlasts($options);
             $results = $response['blasts'];
 
             // Calculate the number pages by dividing the total blasts by the results per page constant.
-            $total_count = count($result['blasts']);
+            $total_count = count($results);
             $pages = ceil($total_count/RESULTS_PER_PAGE);  
            
             // Get the page requested from the URL of this request.
-            $page = isset($this->params['pass'][5]) ? $this->params['pass'][5] : 1;
+            if ($this->params['pass'][5] == 'null'){
+                $page = 1;
+            } else {
+                $page = $this->params['pass'][5];
+            }
             $start = ($page - 1 )*RESULTS_PER_PAGE;
             $end = $page*RESULTS_PER_PAGE;
 
@@ -569,21 +586,25 @@ class AjaxController extends AppController {
                         $toReturn[$i]['name'] = $results[$i]['name'];
 
                         //Make the secondary API call to retrieve the stats specified by the $stats_1 and $stats_2 parameters 
-                        $blast_stats = $sailthruClient->stats_blast($results[$i]['name'],null,null,$data);
+                        $blast_stats = $sailthruClient->stats_blast($results[$i]['blast_id'],null,null,$data);
                         $toReturn[$i]['stat_1'] = isset($blast_stats[$stat_1]) ? $blast_stats[$stat_1] : 0;
                         $toReturn[$i]['stat_2'] = isset($blast_stats[$stat_2]) ? $blast_stats[$stat_2] : 0;
                     }
                 }
 
                //set variables and render view.
-                $this->set('results', $toReturn);
+                $test = ($start_date);
+                $test2 = ($end_date);
+                $this->set('test',$test);
+                $this->set('test2',$test2);
+                $this->set('results',array_reverse($toReturn));
                 $this->layout = 'campaign_table';               //this layout simply echos the content of the View.
                 $this->render('reports_recent_campaigns');
             } else {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
+            echo $e->getMessage();
         }   
     }
         
