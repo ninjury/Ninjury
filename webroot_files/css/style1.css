@@ -1187,7 +1187,7 @@ div.ui-mobile-viewport { overflow-x:hidden; }
 }
 .ui-collapsible-content-collapsed { display: none; }
 
-.ui-collapsible-set { margin: .5em 0; }
+.ui-collapsible-set { margin: .5em 0; background-color: #f0f0f0;}
 .ui-collapsible-set .ui-collapsible { margin: -1px 0 0; }
 .ui-controlgroup, fieldset.ui-controlgroup { padding: 0; margin: .5em 0 1em; }
 .ui-bar .ui-controlgroup { margin: 0 .3em; }
@@ -1853,6 +1853,10 @@ padding: 0px;
 	background-position: 0px 0px;
 	width: 32px;
 	height: 32px;
+}
+
+#campaigns_scheduled{
+	background: #f0f0f0;
 }
 
 #campaigns_scheduled .buttons a{
