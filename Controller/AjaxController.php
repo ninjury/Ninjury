@@ -7,6 +7,7 @@ include(ROOT . DS . APP_DIR . "/scripts/sailthru-api/sailthru/Sailthru_Util.php"
 define('API_KEY', "8907ecf0f40ee82bc3e58c1df91ceba0");
 define('API_SECRET', '75cf7511cb55c4e0692d525ce55aaf5a');
 define('RESULTS_PER_PAGE', 5);
+define('DEFAULT_DAYS',7);
 
 class AjaxController extends AppController {
 
@@ -418,11 +419,25 @@ class AjaxController extends AppController {
     */
     public function reports_recent_campaigns(){
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+        
+        // If both start and end date are not set, set to default values.
+        if ($this->params['pass'][0] == 'null' && $this->params['pass'][1] == 'null'){
+            $end_date = date("m/d/y");
+            $temp = strtotime($end_date) - DEFAULT_DAYS*86400;
+            $start_date = date("m/d/y",$temp);
 
-        echo (var_dump($this->params['pass']));
-        return;
-        $start_date = isset($this->params['pass'][0]) ? $this->params['pass'][0] : date("m/d/y");
-        $end_date = isset($this->params['pass'][1]) ? $this->params['pass']1] : date("m/d/y");
+        // If start is not set, default it to 7 days prior to end date.
+        } else if ($this->params['pass'][0] == 'null'){
+            $end_date = $this->params['pass'][1];
+            $temp = strtotime($end_date) - DEFAULT_DAYS*86400;
+            $start_date = date("m/d/y",$temp);
+
+        // If end date is not set, default it to 7 days after the start date.
+        } else {
+            $start_date = $this->params['pass'][0];
+            $temp = strtotime($start_date) + DEFAULT_DAYS*86400;
+            $end_date = date("m/d/y",$temp);
+        }
 
         $options['start_date'] = $start_date;
         $options['end_date'] = $end_date;
@@ -430,23 +445,56 @@ class AjaxController extends AppController {
 
         // If list is specified, add it to the options array.
         if (isset($this->params['pass'][2])){
-            $options['list'] = $this->params['pass'][2]);
+            $options['list'] = $this->params['pass'][2];
         }
 
         try{
+            //Retrieve the blast id via API call.
             $response = $sailthruClient->getBlasts($options);
+            $results = $response['blasts'];
+
+            // Calculate the number pages by dividing the total blasts by the results per page constant.
+            $total_count = count($result['blasts']);
+            $pages = ceil($total_count/RESULTS_PER_PAGE);  
+           
+            // Get the page requested from the URL of this request.
+            $page = isset($this->params['pass'][5]) ? $this->params['pass'][5] : 1;
+            $start = ($page - 1 )*RESULTS_PER_PAGE;
+            $end = $page*RESULTS_PER_PAGE;
 
             if (!isset($response['error']) ) {
 
+                // Prepare option array for secondary API call.
+                $data['beacon_times'] = 1;
+                $data['click_times'] = 1;
+                $data['engagement'] = 1;
+
+                $toReturn = array();
+
+                // For each of the blasts on the current page
+                for ($i = $start; $i < $end; $i++){
+                    if(array_key_exists($i, $results)){
 
 
-               
+                        $toReturn[$i]['name'] = $results[$i]['name'];
+
+                        //Make the secondary API call to retrieve the stats specified by the $stats_1 and $stats_2 parameters 
+                        $blast_stats = $sailthruClient->stats_blast($results[$i]['name'],null,null,$data);
+                        $toReturn[$i]['stat_1'] = isset($blast_stats[$stat_1]) ? $blast_stats[$stat_1] : 0;
+                        $toReturn[$i]['stat_2'] = isset($blast_stats[$stat_2]) ? $blast_stats[$stat_2] : 0;
+                    }
+                }
+
+               //set variables and render view.
+                $this->set('results', $toReturn);
+                $this->layout = 'campaign_table';               //this layout simply echos the content of the View.
+                $this->render('reports_recent_campaigns');
             } else {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
             echo 'exception';
-        }     
+        }   
     }
         
 }
