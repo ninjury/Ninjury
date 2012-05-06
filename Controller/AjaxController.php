@@ -7,6 +7,7 @@ include(ROOT . DS . APP_DIR . "/scripts/sailthru-api/sailthru/Sailthru_Util.php"
 define('API_KEY', "8907ecf0f40ee82bc3e58c1df91ceba0");
 define('API_SECRET', '75cf7511cb55c4e0692d525ce55aaf5a');
 define('RESULTS_PER_PAGE', 5);
+define('DEFAULT_DAYS',7);
 
 class AjaxController extends AppController {
 
@@ -25,18 +26,28 @@ class AjaxController extends AppController {
 	public $uses = array();
       
 
- /**    
- *  Sent Campaigns
- *
- */
+    /**    
+    *  Sent Campaigns - This function is used to make an AJAX request for a 
+    *  specific page of sent campaigns on the Campaigns page of the mobile site.
+    *
+    *  @param 
+    *      page - The page of sent campaigns to be returned.
+    *  @return
+    *      Returns a table of the sent campaigns of the current page in html format.
+    */
 	public function campaigns_sent() {
 
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);    
         
+        // Create of array of options and specify that sent campaigns are being requested.
         $options['status'] = 'sent';
         try{
+
+            // API call to obtain information on blasts, passing in the options array.
             $response = $sailthruClient->getBlasts($options);
 
+            /*  If the response from the API contains no value for blasts, there is nothing to display.
+                Send a message to the front end and return. */
             if (count($response['blasts']) == 0){
                 echo "Nothing to display.";
                 $this->autoLayout = $this->autoRender = false; 
@@ -45,9 +56,12 @@ class AjaxController extends AppController {
 
 
             if (!isset($response['error']) ) {
+
+                // Calculate the number pages by dividing the total blasts by the results per page constant.
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
                
+                // Get the page requested from the URL of this request.
                 $page = isset($this->params['pass'][0]) ? $this->params['pass'][0] : 1;
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
@@ -60,6 +74,7 @@ class AjaxController extends AppController {
                     }
                 }
 
+                // Set variables so they can be accessed by the View, then render the View.
                 $blast_type = 'sent';
                 $this->set('blasts',$results);
                 $this->set('blast_type',$blast_type);
@@ -75,27 +90,41 @@ class AjaxController extends AppController {
         }      
     }
 
-    /**
-    *   Scheduled Campaigns
+    /**    
+    *  Scheduled Campaigns - This function is used to make an AJAX request for a 
+    *  specific page of scheduled campaigns on the Campaigns page of the mobile site.
+    *
+    *  @param 
+    *      page - The page of sent campaigns to be returned.
+    *  @return
+    *      Returns a table of the scheduled campaigns of the current page in html format.
     */
     public function campaigns_scheduled() {
 
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);    
         
+        // Create of array of options and specify that scheduled campaigns are being requested.
         $options['status'] = 'scheduled';
         try{
+
+            // API call to obtain information on blasts, passing in the options array.
             $response = $sailthruClient->getBlasts($options);
 
-             if (count($response['blasts']) == 0){
+            /*  If the response from the API contains no value for blasts, there is nothing to display.
+                Send a message to the front end and return. */
+            if (count($response['blasts']) == 0){
                 echo "Nothing to display.";
                 $this->autoLayout = $this->autoRender = false; 
                 return;
             }
 
             if (!isset($response['error']) ) {
+
+                // Calculate the number pages by dividing the total blasts by the results per page constant.
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
                
+                // Get the page requested from the URL of this request.
                 $page = isset($this->params['pass'][0]) ? $this->params['pass'][0] : 1;
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
@@ -108,6 +137,7 @@ class AjaxController extends AppController {
                     }
                 }
 
+                // Set variables so they can be accessed by the View, then render the View.
                 $blast_type = 'scheduled';
                 $this->set('blast_type',$blast_type);
                 $this->set('blasts',$results);
@@ -123,27 +153,41 @@ class AjaxController extends AppController {
         }      
     }
 
-    /**
-    *   In Progress Campaigns
+    /**    
+    *  In Progress Campaigns - This function is used to make an AJAX request for a 
+    *  specific page of in progress campaigns on the Campaigns page of the mobile site.
+    *
+    *  @param 
+    *      page - The page of sent campaigns to be returned. ()
+    *  @return
+    *      Returns a table of the in progress campaigns of the current page in html format.
     */
     public function campaigns_in_progress() {
 
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);    
         
+        // Create of array of options and specify that in progress campaigns are being requested.
         $options['status'] = 'sending';
         try{
+
+            // API call to obtain information on blasts, passing in the options array.
             $response = $sailthruClient->getBlasts($options);
 
-             if (count($response['blasts']) == 0){
+            /*  If the response from the API contains no value for blasts, there is nothing to display.
+                Send a message to the front end and return. */
+            if (count($response['blasts']) == 0){
                 echo "Nothing to display.";
                 $this->autoLayout = $this->autoRender = false; 
                 return;
             }
 
             if (!isset($response['error']) ) {
+
+                // Calculate the number pages by dividing the total blasts by the results per page constant.
                 $total_count = count($response['blasts']);
                 $pages = ceil($total_count/RESULTS_PER_PAGE);  
                
+                // Get the page requested from the URL of this request.
                 $page = isset($this->params['pass'][0]) ? $this->params['pass'][0] : 1;
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
@@ -156,6 +200,7 @@ class AjaxController extends AppController {
                     }
                 }
 
+                // Set variables so they can be accessed by the View, then render the View.
                 $blast_type = 'in_progress';
                 $this->set('blast_type',$blast_type);
                 $this->set('blasts',$results);
@@ -251,7 +296,7 @@ class AjaxController extends AppController {
                     	$revenue_in_cents = $response['rev'];
                     }
                     else{
-                    	$revenue_in_cents = 'unknown';
+                    	$revenue_in_cents = 'n/a';
     				}
     				if(isset($response['optout'])){
     					$optout = $response['optout'];
@@ -274,9 +319,6 @@ class AjaxController extends AppController {
     				$this->set('spam', $spam);
     				
     				$this->layout = 'popup_template';
-
-    				$html = $response['content_html'];
-					$this->set('view_blast_preview', $html);
 			
 					$this->layout = 'popup_template';
 					$this->render('view_campaign_stats');
@@ -382,32 +424,42 @@ class AjaxController extends AppController {
     }
 
 
+    /**    
+    *  Delete Campaign - This function is used to delete a campaign.
+    *
+    *  @param 
+    *      blast_id - The page of sent campaigns to be returned.
+    *  @return
+    *      Returns a string indicating whether or not the campaign was deleted succesfully.
+    */
     public function campaigns_delete() {
 
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
-                
-        try{
-            if (!isset($response['error']) ) {
 
-                if (isset($this->params['pass'][0])){
-                    $blast_id = $this->params['pass'][0];
-                } 
-                else {
-                    exit;
-                }
+            // Get the id of the blast to be deleted from the the URL of this request.
+            if (isset($this->params['pass'][0])){
+                $blast_id = $this->params['pass'][0];
+            } 
+            else {
+                //Exit if no blast id was specified.
+                exit;
+            }
+
+            // Make the API call to delete the blast.  Return an appropriate response string.
+            try{
                 $response = $sailthruClient->deleteBlast($blast_id);
-                if ($response['ok'] == 1){
-                    echo 'Campaign was deleted successfully.';
+                if (!isset($response['error']) ) {
+                    if ($response['ok'] == 1){
+                echo 'Campaign was deleted successfully.';
                 } else {
                     echo 'Campaign could not be deleted.';
                 }
-                $this->autoLayout = $this->autoRender = false; 
-            } 
-            else {
+            $this->autoLayout = $this->autoRender = false; 
+
+            } else {
                 echo 'error';
             }
-        } 
-        catch (Sailthru_Client_Exception $e) {
+        } catch (Sailthru_Client_Exception $e) {
             echo 'exception';
         }            
     }
@@ -440,6 +492,101 @@ class AjaxController extends AppController {
         catch (Sailthru_Client_Exception $e) {
             echo 'exception';
         }            
+    }
+
+    /**    
+    *  Recent Campaigns - This function is used for AJAX requests to obtain information on 
+    *  recent campaigns, or a set of campaigns filtered by date and/or list.
+    *
+    *  @param 
+    *      start_date (optional) - The start date of the campaign information.
+    *                              Defaults to 7 days before end date, or 7 days before current date if end date not set.
+    *      end_date (optional) - The end date of the campaign information. 
+    *                            Defaults to 7 days after the start date, or the current date if start date not set.
+    *      list (optional) - The list used to filter campaigns by.  Defaults to all lists.
+    *      stat_1 - The first statistic queried for the set of campaigns (e.g. open %, click %, bounce % ).
+    *      stat_2 - The second statistic queried for the set of campaigns (e.g. open %, click %, bounce % ).
+    *  @return
+    *      Returns a table of the information requested in html form.
+    */
+    public function reports_recent_campaigns(){
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
+        
+        // If both start and end date are not set, set to default values.
+        if ($this->params['pass'][0] == 'null' && $this->params['pass'][1] == 'null'){
+            $end_date = date("m/d/y");
+            $temp = strtotime($end_date) - DEFAULT_DAYS*86400;
+            $start_date = date("m/d/y",$temp);
+
+        // If start is not set, default it to 7 days prior to end date.
+        } else if ($this->params['pass'][0] == 'null'){
+            $end_date = $this->params['pass'][1];
+            $temp = strtotime($end_date) - DEFAULT_DAYS*86400;
+            $start_date = date("m/d/y",$temp);
+
+        // If end date is not set, default it to 7 days after the start date.
+        } else {
+            $start_date = $this->params['pass'][0];
+            $temp = strtotime($start_date) + DEFAULT_DAYS*86400;
+            $end_date = date("m/d/y",$temp);
+        }
+
+        $options['start_date'] = $start_date;
+        $options['end_date'] = $end_date;
+        $options['status'] = 'sent';
+
+        // If list is specified, add it to the options array.
+        if (isset($this->params['pass'][2])){
+            $options['list'] = $this->params['pass'][2];
+        }
+
+        try{
+            //Retrieve the blast id via API call.
+            $response = $sailthruClient->getBlasts($options);
+            $results = $response['blasts'];
+
+            // Calculate the number pages by dividing the total blasts by the results per page constant.
+            $total_count = count($result['blasts']);
+            $pages = ceil($total_count/RESULTS_PER_PAGE);  
+           
+            // Get the page requested from the URL of this request.
+            $page = isset($this->params['pass'][5]) ? $this->params['pass'][5] : 1;
+            $start = ($page - 1 )*RESULTS_PER_PAGE;
+            $end = $page*RESULTS_PER_PAGE;
+
+            if (!isset($response['error']) ) {
+
+                // Prepare option array for secondary API call.
+                $data['beacon_times'] = 1;
+                $data['click_times'] = 1;
+                $data['engagement'] = 1;
+
+                $toReturn = array();
+
+                // For each of the blasts on the current page
+                for ($i = $start; $i < $end; $i++){
+                    if(array_key_exists($i, $results)){
+
+
+                        $toReturn[$i]['name'] = $results[$i]['name'];
+
+                        //Make the secondary API call to retrieve the stats specified by the $stats_1 and $stats_2 parameters 
+                        $blast_stats = $sailthruClient->stats_blast($results[$i]['name'],null,null,$data);
+                        $toReturn[$i]['stat_1'] = isset($blast_stats[$stat_1]) ? $blast_stats[$stat_1] : 0;
+                        $toReturn[$i]['stat_2'] = isset($blast_stats[$stat_2]) ? $blast_stats[$stat_2] : 0;
+                    }
+                }
+
+               //set variables and render view.
+                $this->set('results', $toReturn);
+                $this->layout = 'campaign_table';               //this layout simply echos the content of the View.
+                $this->render('reports_recent_campaigns');
+            } else {
+                echo 'error';
+            }
+        } catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }   
     }
         
 }
