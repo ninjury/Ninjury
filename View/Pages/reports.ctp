@@ -160,7 +160,7 @@
         <form id = "recent_campaigns_form" onsubmit = "recent_campaigns(this); return false;" data-ajax="false">
         <div data-role="fieldcontain" class="list-template">
             <div id="recent-campaigns-list">
-				<select name="selectmenu0" id="selectmenu1">
+				<select name="selectmenu0" id="selectmenu0">
 					<option value="null">List</option>
 					<option value="null">List1</option>
 					<option value="null">List3</option>
@@ -181,7 +181,7 @@
 					<h5>Campaigns</h5>
 				</div>
 					<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
-						<select name="selectmenu1" >
+						<select name="selectmenu1" id="selectmenu1">
 							<option value="count">Count</option>
 							<option value="estopens">Est. Opens</option>
 							<option value="click">Clicks</option>
@@ -192,7 +192,7 @@
 						</select>
 					</div>
 					<div data-role="fieldcontain" class="ui-block-c" id="recent-campaigns-grid-clicks" >
-						<select name="selectmenu2" >
+						<select name="selectmenu2" id="selectmenu2">
 							<option value="count">Count</option>
 							<option value="estopens">Est. Opens</option>
 							<option value="click">Clicks</option>

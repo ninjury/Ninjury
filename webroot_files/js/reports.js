@@ -44,7 +44,7 @@ function recent_campaigns(form_elt){
 	var insert = $("#recent_campaigns");
 	insert.html(ajax_load);
 
-	var url = "/mobile/ajax/reports/recent_campaigns/" + sdate + "/" + edate + "/" + "null" + "/" + s2 + "/" + s3 + "/" + "null";
+	var url = "/mobile/ajax/reports/recent_campaigns/" + sdate + "/" + edate + "/" + "null" + "/" + s1 + "/" + s2 + "/" + "null";
 	alert(url);
 	$.get(url, {language: "php", version: 5}, function(responseText){ $(insert).html(responseText); $(insert).addClass("loaded");},"html");
 
