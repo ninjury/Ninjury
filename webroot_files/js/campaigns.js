@@ -1,37 +1,19 @@
 $.ajaxSetup ({  
     cache: false  
 });  
-var ajax_load = "<img src='/mobile/img/ajax-loader1.gif' alt='Loading' />";  
+var ajax_load = "<img class='campaignsLoader' src='/mobile/img/ajax-loader1.gif' alt='Loading' />";  
 
 
 function campaigns_sent(page){
-	if (page == null){
-		page = 1;
-	}
-	var loadUrl = "/mobile/ajax/campaigns/sent/" + page;  
-
-    $("#campaigns_sent").html(ajax_load);  
-        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_sent").html(responseText); setStyle();},"html");  
+	campaigns_ajax_helper(page,"#campaigns_sent","/mobile/ajax/campaigns/sent/");
 }
 
 function campaigns_scheduled(page){
-	if (page == null){
-		page = 1;
-	}
-	var loadUrl = "/mobile/ajax/campaigns/scheduled/" + page;   
-
-    $("#campaigns_sent").html(ajax_load);  
-        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_scheduled").html(responseText); setStyle();},"html");  
+	campaigns_ajax_helper(page,"#campaigns_scheduled","/mobile/ajax/campaigns/scheduled/");
 }
 
 function campaigns_in_progress(page){
-	if (page == null){
-		page = 1;
-	}
-	var loadUrl = "/mobile/ajax/campaigns/in_progress/" + page;  
-
-    $("#campaigns_sent").html(ajax_load);  
-        $.get(loadUrl, {language: "php", version: 5}, function(responseText){ $("#campaigns_in_progress").html(responseText); setStyle(); },"html");  
+	campaigns_ajax_helper(page,"#campaigns_in_progress","/mobile/ajax/campaigns/in_progress/");
 }
 
 function view_blast_preview(blastId){
@@ -39,6 +21,25 @@ function view_blast_preview(blastId){
 		$get(loadUrl, {language: "php", version: 5}, function(responseText){
 			
 			});
+}
+
+function checkBeforeLoad(id,loadFunction)
+{
+	if(!$(id).hasClass('loaded'))
+	{
+		loadFunction();
+	}
+}
+
+function campaigns_ajax_helper(page,id,url)
+{
+	if (page == null){
+		page = 1;
+	}
+	var loadUrl = url + page;  
+
+	$(id).html(ajax_load);  
+	$.get(loadUrl, {language: "php", version: 5}, function(responseText){ $(id).html(responseText); setStyle(); $(id).addClass("loaded");},"html");
 }
 
 function campaigns_delete(blast, name, page, type){
@@ -58,5 +59,6 @@ function campaigns_delete(blast, name, page, type){
 	}
 }
 
-
-
+$(document).on("expand","#collapsible_in_progress", function() {checkBeforeLoad('#campaigns_in_progress',campaigns_in_progress);} );
+$(document).on('expand',"#collapsible_sent", function() {checkBeforeLoad('#campaigns_sent',campaigns_sent);} );
+$(document).on('expand',"#collapsible_scheduled",function() {checkBeforeLoad('#campaigns_scheduled',campaigns_scheduled);} );

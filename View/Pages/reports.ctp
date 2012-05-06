@@ -293,17 +293,10 @@
                 </h4>
             </div>
         </div>
-        <script type="text/javascript">
-
-        	function test(){
-	        	var loadUrl = "/mobile/ajax/reports/recent_campaigns/";
-				$.get(loadUrl, function(result){
-	   				alert(result);
-	  			});
-			}
-        </script>
-        <a data-role="button" data-transition="fade" href="#page1" onclick="test()">
+        <a data-role="button" data-transition="fade" href="#page1">
             See More
         </a>
+        <div id="test">
+        </div>
     </div>
 </div>

@@ -22,7 +22,7 @@ function initSlider(elementId)
 *********************************/
 function initPjax()
 {
-	if(typeof pjax === 'undefined')
+	if(typeof $.pjax === 'undefined')
 	{
 		return;
 	}
@@ -104,9 +104,16 @@ $(document).ready(function() {
 function setStyle()
 {
 	var d = $(".description");
-	d.width(d.parent().width()-d.next().width()-6);
+	if(d.size() > 0)
+	{
+		d.width(d.parent().width()-d.next().width()-6);
+	}	
 	var l = $('.list');
-	l.width(l.parent().width()-l.next().width()-4);
+	var pwidth = l.parent().width()-4;
+	if(l.size() > 0)
+	{
+		l.width(l.parent().width()-l.next().width()-4);
+	}
 }
 
 function createChart()
