@@ -536,10 +536,10 @@ class AjaxController extends AppController {
             $temp = strtotime($start_date) + DEFAULT_DAYS*86400;
             $end_date = date("m/d/y",$temp);
         } else {
-            $temp = strtotime($start_date);
+            $temp = strtotime($this->params['pass'][0]);
             $start_date = date("m/d/y",$temp);
 
-            $temp = strtotime($end_date);
+            $temp = strtotime($this->params['pass'][1]);
             $end_date = date("m/d/y",$temp);
         }
 
