@@ -1779,11 +1779,19 @@ padding: 0px;
 }
 
 
-#recent_campaigns_table {
+#recent_campaigns_table, #recent_campaigns_header {
 	font-family: 'IntervalSansPro-RegCond',Helvetica, Arial;
 	width: 100%;
 	border-collapse:collapse;
 	margin: 0px auto;
+}
+
+#recent_campaigns_table td{
+	border:1px solid #404041;
+}
+
+#recent_campaigns_header td{
+	border:1px solid #404041;
 }
 
 .table .ui-link{
