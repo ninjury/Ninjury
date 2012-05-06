@@ -171,19 +171,6 @@
 					</option>
 				</select>
             </div>
-            <div id="recent-campaigns-templates">
-				<select name="selectmenu2" id="selectmenu2">
-					<option value="template1">
-						Template
-					</option>
-					<option value="template2">
-						Template1
-					</option>
-					<option value="template3">
-						Template2
-					</option>
-				</select>
-			</div>
         </div>
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
@@ -230,71 +217,11 @@
 					</div>
 				</form>
 			</div>
-            <div id="cell-top">
-				<div class="ui-block-a cell" >
-					<h4>
-						Total
-					</h4>
-				</div>
-				<div class="ui-block-b cell" >
-					<h4>
-						25%
-					</h4>
-				</div>
-				<div class="ui-block-c cell">
-					<h4>
-						124
-					</h4>
-				</div>
-			</div>
-            <div class="ui-block-a cell">
-                    <a href="#" data-transition="fade">
-                        JuneNew..
-                    </a>
-            </div>
-            <div class="ui-block-b cell" >
-                <h4>
-                    11%
-                </h4>
-            </div>
-            <div class="ui-block-c cell" >
-                <h4>
-                    32
-                </h4>
-            </div>
-            <div class="ui-block-a cell">
-                    <a href="#" data-transition="fade">
-                        Special pro..
-                    </a>
-            </div>
-            <div class="ui-block-b cell" >
-                <h4>
-                    05%
-                </h4>
-            </div>
-            <div class="ui-block-c cell">
-                <h4>
-                    11
-                </h4>
-            </div>
-            <div class="ui-block-a cell" >
-                    <a href="#" data-transition="fade" >
-                        New Cust..
-                    </a>
-            </div>
-            <div class="ui-block-b cell" >
-                <h4>
-                    03%
-                </h4>
-            </div>
-            <div class="ui-block-c cell" >
-                <h4>
-                    17
-                </h4>
+			<div id="recent_campaigns">
             </div>
         </div>
         <a data-role="button" data-transition="fade" href="#page1">
-            See More
+            Refresh
         </a>
         <div id="test">
         </div>

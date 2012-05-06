@@ -1187,7 +1187,7 @@ div.ui-mobile-viewport { overflow-x:hidden; }
 }
 .ui-collapsible-content-collapsed { display: none; }
 
-.ui-collapsible-set { margin: .5em 0; }
+.ui-collapsible-set { margin: .5em 0;}
 .ui-collapsible-set .ui-collapsible { margin: -1px 0 0; }
 .ui-controlgroup, fieldset.ui-controlgroup { padding: 0; margin: .5em 0 1em; }
 .ui-bar .ui-controlgroup { margin: 0 .3em; }
@@ -1595,7 +1595,7 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 }
 
 .ui-content .ui-collapsible-content{
-	background: #ffffff;
+	background: #f0f0f0;
 }
 
 .ui-content .ui-btn-hover-a{
@@ -1670,7 +1670,7 @@ ul.campaign_list {
 
 ul.campaign_list li {
 	list-style: none;
-	
+	background-color: #f0f0f0;
 }
 
 ul.campaign_list li .entry{
@@ -1855,6 +1855,20 @@ padding: 0px;
 	height: 32px;
 }
 
+/*
+#campaigns_scheduled{
+	background: #f0f0f0;
+}
+
+#campaigns_in_progress{
+	background: #f0f0f0;
+}
+
+#campaigns_sent{
+	background: #f0f0f0;
+}
+*/
+
 #campaigns_scheduled .buttons a{
 	background-image: url(../img/delete_small.png);
 }
@@ -1997,11 +2011,11 @@ padding: 0px;
 	border: 1px solid #80e5f5;
 }
 
-#recent-campaigns-list, #recent-campaigns-templates {
-	width: 40%;
+#recent-campaigns-list {
+	width: 75%;
 	display: inline-block;
-	margin-right: 4%;
-	margin-left: 4%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #recent-campaigns-list .ui-btn-up-a, #recent-campaigns-templates .ui-btn-up-a{

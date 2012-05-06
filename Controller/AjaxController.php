@@ -533,16 +533,24 @@ class AjaxController extends AppController {
             $end_date = date("m/d/y",$temp);
         }
 
+        // Check if parameters for the first statistics is set.
         if($this->params['pass'][3] == 'null'){
             $stat_1 = 'click';
         } else {
             $stat_1 = $this->params['pass'][3];
         }
 
-         if($this->params['pass'][4] == 'null'){
+        // Check if parameters for the second statistics is set.
+        if($this->params['pass'][4] == 'null'){
             $stat_2 = 'estopens';
         } else {
             $stat_2 = $this->params['pass'][4];
+        }
+
+        if(strtotime($start_date) > strtotime($end_date)){
+            echo 'invalid';
+            $this->autoLayout = $this->autoRender = false; 
+            return;
         }
 
         $options['start_date'] = $start_date;
@@ -600,6 +608,8 @@ class AjaxController extends AppController {
                 $test2 = ($end_date);
                 $this->set('test',$test);
                 $this->set('test2',$test2);
+                $this->set('page',$page);
+                $this->set('pages',$pages);
                 $this->set('results',array_reverse($toReturn));
                 $this->layout = 'campaign_table';               //this layout simply echos the content of the View.
                 $this->render('reports_recent_campaigns');
