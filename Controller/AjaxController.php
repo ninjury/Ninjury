@@ -502,7 +502,7 @@ class AjaxController extends AppController {
                 }
 
                //set variables and render view.
-                $test = count($toReturn);
+                $test = count($results);
                 $this->set('test',$test);
                 $this->set('results',$toReturn);
                 $this->layout = 'campaign_table';               //this layout simply echos the content of the View.
