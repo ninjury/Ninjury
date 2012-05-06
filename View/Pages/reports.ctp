@@ -204,7 +204,7 @@
 					</div>
 				</div>
 			</div> -->
-			<table id="recent_campaigns">
+			<table id="recent_campaigns_header">
 				<tr>
 					<td class="name"><h5>Campaigns</h5></td>
 					<td class="stat_1">
