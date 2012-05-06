@@ -546,9 +546,6 @@ class AjaxController extends AppController {
         str_replace("-","/",$end_date);
         str_replace("-","/",$start_date);
 
-        echo "start: " . $start_date;
-        echo "end: " . $end_date;
-
         // Check if parameters for the first statistics is set.
         if($this->params['pass'][3] == 'null'){
             $stat_1 = 'click';
@@ -564,7 +561,7 @@ class AjaxController extends AppController {
         }
 
         if(strtotime($start_date) > strtotime($end_date)){
-            echo 'invalid';
+            echo 'Invalid date range.';
             $this->autoLayout = $this->autoRender = false; 
             return;
         }
