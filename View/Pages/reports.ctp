@@ -97,6 +97,16 @@
 				</div>
 				<form action = "#" method = "post" >
 
+<div data-role="fieldcontain">
+	<label for="select-choice-1" class="select">Choose shipping method:</label>
+	<select name="select-choice-1" id="select-choice-1">
+		<option value="standard">Standard: 7 day</option>
+		<option value="rush">Rush: 3 days</option>
+		<option value="express">Express: next day</option>
+		<option value="overnight">Overnight</option>
+	</select>
+</div>
+
 			
 			
 					<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
