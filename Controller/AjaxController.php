@@ -507,7 +507,7 @@ class AjaxController extends AppController {
                 $test2 = ($end_date);
                 $this->set('test',$test);
                 $this->set('test2',$test2);
-                $this->set('results',$toReturn);
+                $this->set('results',array_reverse($toReturn));
                 $this->layout = 'campaign_table';               //this layout simply echos the content of the View.
                 $this->render('reports_recent_campaigns');
             } else {
