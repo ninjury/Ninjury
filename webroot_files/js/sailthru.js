@@ -94,8 +94,9 @@ $(document).ready(function() {
 		setStyle();
 
 		$(window).resize(function () { 
-			setStyle();		
+			setStyle();
 		});
+		$('select').selectmenu();
 });
 
 
