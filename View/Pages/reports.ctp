@@ -222,7 +222,5 @@
         <a data-role="button" data-transition="fade" href="#page1">
             Refresh
         </a>
-        <div id="test">
-        </div>
     </div>
 </div>
