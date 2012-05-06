@@ -20,6 +20,7 @@ window.Swipe = function(element, options) {
   this.callback = this.options.callback || function() {};
   this.delay = this.options.auto || 0;
   this.elnum = this.options.elementsShown || 1;
+  this.twod = this.options.twod || false;
 
   // reference dom elements
   this.container = element;
@@ -95,7 +96,14 @@ Swipe.prototype = {
     style.webkitTransitionDuration = style.MozTransitionDuration = style.msTransitionDuration = style.OTransitionDuration = style.transitionDuration = duration + 'ms';
 
     // translate to given index position
+if(this.two)
+{
     style.webkitTransform = 'translate(' + -(index * this.width/this.elnum) + 'px,0)';
+}
+else
+{
+    style.webkitTransform = 'translate3d(' + -(index * this.width/this.elnum) + 'px,0)';
+}
     style.msTransform = style.MozTransform = style.OTransform = 'translateX(' + -(index * this.width/this.elnum) + 'px)';
 
     // set new index to allow for expression arguments
