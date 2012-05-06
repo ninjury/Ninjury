@@ -172,7 +172,7 @@
 				</select>
             </div>
         </div>
-        <form id = "recent_campaigns_form" action="ajax/reports/recent_campaigns" method="POST" onsubmit = "recent_campaigns(this); return false;" data-ajax="false">
+        <form id = "recent_campaigns_form" method="POST" onsubmit = "recent_campaigns(this); return false;" data-ajax="false">
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
                 <input id="start_date_2" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
