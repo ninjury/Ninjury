@@ -32,13 +32,11 @@ function recent_campaigns(form_elt){
 	var sdate = form_elt.elements['start_date_2'].value;
 	var edate = form_elt.elements['end_date_2'].value;
 	var s0 = form_elt.elements['selectmenu0'].value;
-	var s2 = form_elt.elements['selectmenu1'].value;
-	var s3 = form_elt.elements['selectmenu2'].value;
+	var s1 = form_elt.elements['selectmenu1'].value;
+	var s2 = form_elt.elements['selectmenu2'].value;
 
 	sdate = (sdate == "") ? "null" : sdate;
-	edate = (sdate == "") ? "null" : edate;
-
-	alert("sdate: " + sdate + "  edate: " + edate + "  s2: " + s2 );
+	edate = (edate == "") ? "null" : edate;
 
 	sdate.replace("-","/");
 	edate.replace("-","/");
