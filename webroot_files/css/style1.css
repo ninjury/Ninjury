@@ -1994,7 +1994,7 @@ padding: 0px;
 
 #recent-campaigns-list {
 	width: 75%;
-	display: inline-block;
+	display: block;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -2007,6 +2007,12 @@ padding: 0px;
 #recent-campaigns-list .ui-btn-hover-a, #recent-campaigns-templates .ui-btn-hover-a {
 	background: #c2a3bf;
 	border: 1px solid #c2a3bf;
+}
+
+.reports-refresh-button {
+	width: 75%;
+	margin:0px auto;
+	display:block;
 }
 
 #recent-campaigns-grid {
