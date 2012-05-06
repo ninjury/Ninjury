@@ -1,18 +1,30 @@
 $.ajaxSetup ({  
     cache: false  
 });  
-function aggregate_trends(form_id){
+
+var ajax_load = "<img class='campaignsLoader' src='/mobile/img/ajax-loader1.gif' alt='Loading' />";  
+
+
+function aggregate_trends(form_elt){
 	
-	var sdate = $(form_id + ' #start_date').val();
-	var edate = $(form_id + ' #end_date').val();
-	var s1 = $(form_id + ' #selectmenu3').val();
-	var s2 = $(form_id + ' #selectmenu4').val();
-	var s3 = $(form_id + ' #selectmenu5').val();
-	var s4 = $(form_id + ' #selectmenu6').val();
+	var sdate = form_elt.elements['start_date'].value;
+	var edate = form_elt.elements['end_date'].value;
+	var s1 = form_elt.elements['selectmenu3'].value;
+	var s2 = form_elt.elements['selectmenu4'].value;
+	var s3 = form_elt.elements['selectmenu5'].value;
+	var s4 = form_elt.elements['selectmenu6'].value;
 	
+	var hc = $("#highchartcontainer");
+	hc.html(ajax_load);
 	
-	$.post($(form_id).attr('action'), {start_date: sdate, end_date: edate, selectmenu3: s1, 
-		selectmenu4: s2, selectmenu5: s3, selectmenu6: s4}, function(response){
+	$.post('ajax/reports/trends', {"start_date": sdate, "end_date": edate, "selectmenu3": s1, 
+		"selectmenu4": s2, "selectmenu5": s3, "selectmenu6": s4}, function(response){
+			//$("#highchartcontainer").html(response);
+			console.log(response);
+			createChart(response);
 			
-	
-	var loadUrl = 
+		});
+	return false;
+		
+}
+

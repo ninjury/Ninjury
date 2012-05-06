@@ -247,6 +247,7 @@ class AjaxController extends AppController {
 			} 
         
     }
+    
     public function view_campaigns_stats() {
         $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
         
@@ -332,6 +333,98 @@ class AjaxController extends AppController {
         
     }
 
+    public function aggregate_trends() {
+        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET); 
+        
+        try {
+            if(!isset($response['error'])) {
+                // get post params
+                $start_date = $this->request->data('start_date');
+                $end_date = $this->request->data('end_date');
+                $start_date = ($start_date == NULL ? @date('Y-m-d') : $start_date);
+                $end_date = ($end_date == NULL ? @date('Y-m-d') : $end_date);
+
+                $key1 = $this->request->data('selectmenu3');
+                $key2 = $this->request->data('selectmenu4');
+                $key3 = $this->request->data('selectmenu5');
+                $key4 = $this->request->data('selectmenu6');
+                $key1 = ($key1 == NULL ? 'count' : $key1);
+                $key2 = ($key2 == NULL ? 'click_total' : $key2);
+                $key3 = ($key3 == NULL ? 'estopens' : $key3);
+                $key4 = ($key4 == NULL ? 'pv' : $key4);
+
+                $key1_values = array();
+                $key2_values = array();
+                $key3_values = array();
+                $key4_values = array();
+
+                $options['beacon_times'] = 1;
+                $options['click_times'] = 1;
+                $options['clickmap'] = 1;
+                $options['engagement'] = 1;
+                $options['signup'] = 1;
+                $options['subject'] = 1;
+                $options['urls'] = 1;
+                
+                $current_datetime = @strtotime($start_date);
+                $last_datetime = @strtotime($end_date);
+                do {
+                    $current_date = @date('Y-m-d', $current_datetime);
+                    $response = $sailthruClient->stats_blast($current_date, $current_date, $options);
+                    if(isset($response[$key1])) {
+                	    array_push($key1_values, $response[$key1]);
+                    } else {
+                	    array_push($key1_values, 0);
+                    }
+                    if(isset($reponse[$key2])) {
+                  	    array_push($key2_values, $reponse[$key2]);
+                    } else{
+                   	    array_push($key2_values, 0);
+                    }
+                    if(isset($response[$key3])) {
+                        array_push($key3_values, $response[$key3]);
+                    } else {
+                        array_push($key3_values, 0);
+                    }
+                    if(isset($response[$key4])) {
+                        array_push($key4_values, $response[$key4]);
+                    } else {
+                        array_push($key4_values, 0);
+                    }
+                    $current_datetime = @strtotime('+1 day', $current_datetime);
+                }while(false);
+                //} while($current_datetime < $last_datetime);
+    		    
+                $seriesData = array(
+                                array(
+                                    'name' => $key1,
+                                    'data' => $key1_values
+                                ),
+                                array(
+                                    'name' => $key2,
+                                    'data' => $key2_values
+                                ),
+                                array(
+                                    'name' => $key3,
+                                    'data' => $key3_values
+                                ),
+                                array(
+                                    'name' => $key4,
+                                    'data' => $key4_values
+                                )
+                              );
+            	$this->layout='campaign_table';
+            	$this->set('seriesData', $seriesData);
+            	$this->render('trends_graph');
+            } else {
+                echo 'error';
+            }
+        } catch (Sailthru_Client_Exception $e) {
+            echo 'exception';
+        }
+    }
+
+
     /**    
     *  Delete Campaign - This function is used to delete a campaign.
     *
@@ -414,6 +507,7 @@ class AjaxController extends AppController {
     *      list (optional) - The list used to filter campaigns by.  Defaults to all lists.
     *      stat_1 - The first statistic queried for the set of campaigns (e.g. open %, click %, bounce % ).
     *      stat_2 - The second statistic queried for the set of campaigns (e.g. open %, click %, bounce % ).
+    *      page - the page to request information for.
     *  @return
     *      Returns a table of the information requested in html form.
     */
@@ -446,20 +540,20 @@ class AjaxController extends AppController {
         }
 
          if($this->params['pass'][4] == 'null'){
-            $stat_1 = 'estopens';
+            $stat_2 = 'estopens';
         } else {
-            $stat_1 = $this->params['pass'][4];
+            $stat_2 = $this->params['pass'][4];
         }
 
         $options['start_date'] = $start_date;
         $options['end_date'] = $end_date;
         $options['status'] = 'sent';
 
-        // If list is specified, add it to the options array.
-        if (isset($this->params['pass'][2])){
+        // If list is specified, add it to the options array. 
+        if ($this->params['pass'][2] != 'null'){
             $options['list'] = $this->params['pass'][2];
         }
-
+        
         try{
             //Retrieve the blast id via API call.
             $response = $sailthruClient->getBlasts($options);
@@ -495,23 +589,25 @@ class AjaxController extends AppController {
                         $toReturn[$i]['name'] = $results[$i]['name'];
 
                         //Make the secondary API call to retrieve the stats specified by the $stats_1 and $stats_2 parameters 
-                        $blast_stats = $sailthruClient->stats_blast($results[$i]['name'],null,null,$data);
+                        $blast_stats = $sailthruClient->stats_blast($results[$i]['blast_id'],null,null,$data);
                         $toReturn[$i]['stat_1'] = isset($blast_stats[$stat_1]) ? $blast_stats[$stat_1] : 0;
                         $toReturn[$i]['stat_2'] = isset($blast_stats[$stat_2]) ? $blast_stats[$stat_2] : 0;
                     }
                 }
 
                //set variables and render view.
-                $test = 'test';
+                $test = ($start_date);
+                $test2 = ($end_date);
                 $this->set('test',$test);
-                $this->set('results',$toReturn);
+                $this->set('test2',$test2);
+                $this->set('results',array_reverse($toReturn));
                 $this->layout = 'campaign_table';               //this layout simply echos the content of the View.
                 $this->render('reports_recent_campaigns');
             } else {
                 echo 'error';
             }
         } catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
+            echo $e->getMessage();
         }   
     }
         
