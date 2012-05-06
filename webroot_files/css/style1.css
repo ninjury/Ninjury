@@ -1595,7 +1595,7 @@ span.ui-slider-label-b { right: -100%;  margin-left: -1px }
 }
 
 .ui-content .ui-collapsible-content{
-	background: #ffffff;
+	background: #f0f0f0;
 }
 
 .ui-content .ui-btn-hover-a{
@@ -1709,8 +1709,7 @@ ul.campaign_list div.list{
 ul.campaign_list .name a {
 	font-size: 20px;
 	font-family: 'IntervalSansPro-BoldCond',Helvetica,Arial;
-	/* color: #00cced; */
-	color: #ffffff;
+	color: #00cced;
 	text-decoration:none;
 }
 
@@ -1856,6 +1855,7 @@ padding: 0px;
 	height: 32px;
 }
 
+/*
 #campaigns_scheduled{
 	background: #f0f0f0;
 }
@@ -1867,6 +1867,7 @@ padding: 0px;
 #campaigns_sent{
 	background: #f0f0f0;
 }
+*/
 
 #campaigns_scheduled .buttons a{
 	background-image: url(../img/delete_small.png);
@@ -1952,6 +1953,22 @@ padding: 0px;
 	cursor: pointer;
 }
 
+#reset_graph_button{
+	width: 90%;
+	margin: auto;
+	}
+#graph_options_container{
+	border-bottom: none;
+}
+#graph_options_container_left{
+	width: 50%;
+	float: left;
+}
+#graph_options_container_right{
+	width: 50%;
+	float: right;
+}
+
 #graph-options1 .ui-btn-up-a{
 	background: #864A7F;
 	border: 1px solid #864A7F;
@@ -1962,12 +1979,12 @@ padding: 0px;
 	border: 1px solid #c2a3bf;
 }
 
-#graph-options3 .ui-btn-up-a{
+#graph-options2 .ui-btn-up-a{
 	background: #6D6E70;
 	border: 1px solid #6D6E70;
 }
 
-#graph-options3 .ui-btn-hover-a{
+#graph-options2 .ui-btn-hover-a{
 	background: #b5b5b8;
 	border: 1px solid #b5b5b8;
 }
@@ -1982,12 +1999,12 @@ padding: 0px;
 	border: 1px solid #faf580;
 }
 
-#graph-options2 .ui-btn-up-a{
+#graph-options3 .ui-btn-up-a{
 	background: #00CCED;
 	border: 1px solid #00CCED;
 }
 
-#graph-options2 .ui-btn-hover-a{
+#graph-options3 .ui-btn-hover-a{
 	background: #80e5f5;
 	border: 1px solid #80e5f5;
 }
