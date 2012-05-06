@@ -1982,8 +1982,8 @@ padding: 0px;
 #recent-campaigns-list {
 	width: 40%;
 	display: inline-block;
-	margin-right: 10%;
-	margin-left: 10%;
+	/*margin-right: 10%;
+	margin-left: 10%;*/
 }
 
 #recent-campaigns-list .ui-btn-up-a, #recent-campaigns-templates .ui-btn-up-a{
