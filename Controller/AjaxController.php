@@ -340,18 +340,18 @@ class AjaxController extends AppController {
             if(!isset($response['error'])) {
                 // get post params
                 $start_date = $this->request->data('start_date');
-                $end_date = $this->request->data('start_date');
-                $start_date = ($start_date == NULL ? 'default_start' : $start_date);
-                $end_date = ($end_date = NULL ? 'default_end' : $end_date);
+                $end_date = $this->request->data('end_date');
+                $start_date = ($start_date == NULL ? @date('Y-m-d') : $start_date);
+                $end_date = ($end_date = NULL ? @date('Y-m-d') : $end_date);
 
-                $key1 = $this->request->data('select1name');
-                $key2 = $this->request->data('select2name');
-                $key3 = $this->request->data('select3name');
-                $key4 = $this->request->data('select4name');
-                $key1 = ($key1 == NULL ? 'default1' : $key1);
-                $key2 = ($key2 == NULL ? 'default2' : $key2);
-                $key3 = ($key3 == NULL ? 'default3' : $key3);
-                $key4 = ($key4 == NULL ? 'default4' : $key4);
+                $key1 = $this->request->data('selectmenu3');
+                $key2 = $this->request->data('selectmenu4');
+                $key3 = $this->request->data('selectmenu5');
+                $key4 = $this->request->data('selectmenu6');
+                $key1 = ($key1 == NULL ? 'count' : $key1);
+                $key2 = ($key2 == NULL ? 'click_total' : $key2);
+                $key3 = ($key3 == NULL ? 'estopens' : $key3);
+                $key4 = ($key4 == NULL ? 'pv' : $key4);
 
                 $key1_values = array();
                 $key2_values = array();
@@ -412,9 +412,7 @@ class AjaxController extends AppController {
                                     'data' => $key4_values
                                 )
                               );
-                $this->set('seriesData', $seriesData);
-    			$this->layout = 'popup_template';
-		        $this->render('view_campaign_stats');
+                echo json_encode($seriesData);
             } else {
                 echo 'error';
             }
