@@ -2149,7 +2149,7 @@ div.loader img {
 	/*border: 3px solid blue; */
 	margin: 5px auto;
 	min-width: 30em;
-	width: 70%;
+	width: 100%;
 }
 #view_campaign_stats_div_left{
 	float: left;
