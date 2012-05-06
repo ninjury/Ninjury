@@ -184,64 +184,31 @@
         <div class="ui-grid-b" id="recent-campaigns-grid">
         	<div id="grid-top" >
 				<div class="ui-block-a cell" id="recent-campaigns-grid-campaigns">
-					<h5>
-						Campaigns
-					</h5>
+					<h5>Campaigns</h5>
 				</div>
-				<form action = "#" method = "post" >
-
 					<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
 						<select name="selectmenu1" >
-							<option value="count">
-								Count
-							</option>
-							<option value="estopens">
-								Est. Opens
-							</option>
-							<option value="click">
-								Clicks
-							</option>
-							<option value="pv">
-								Pageviews
-							</option>
-							<option value="rev">
-								Revenue
-							</option>
-							<option value="softbounce">
-								Softbounce
-							</option>
-							<option value="hardbounce">
-								Softbounce
-							</option>
+							<option value="count">Count</option>
+							<option value="estopens">Est. Opens</option>
+							<option value="click">Clicks</option>
+							<option value="pv">Pageviews</option>
+							<option value="rev">Revenue</option>
+							<option value="softbounce">Softbounce</option>
+							<option value="hardbounce">Softbounce</option>
 						</select>
 					</div>
 					<div data-role="fieldcontain" class="ui-block-c" id="recent-campaigns-grid-clicks" >
 						<select name="selectmenu2" >
-							<option value="count">
-								Count
-							</option>
-							<option value="estopens">
-								Est. Opens
-							</option>
-							<option value="click">
-								Clicks
-							</option>
-							<option value="pv">
-								Pageviews
-							</option>
-							<option value="rev">
-								Revenue
-							</option>
-							<option value="softbounce">
-								Softbounce
-							</option>
-							<option value="hardbounce">
-								Softbounce
-							</option>
+							<option value="count">Count</option>
+							<option value="estopens">Est. Opens</option>
+							<option value="click">Clicks</option>
+							<option value="pv">Pageviews</option>
+							<option value="rev">Revenue</option>
+							<option value="softbounce">Softbounce</option>
+							<option value="hardbounce">Softbounce</option>
 						</select>
 					</div>
-				</form>
-			</div>
+				</div>
 			<div id="recent_campaigns">
             </div>
         </div>
