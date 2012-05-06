@@ -157,22 +157,16 @@
         <h3>
             Recent Campaigns
         </h3>
+        <form id = "recent_campaigns_form" onsubmit = "recent_campaigns(this); return false;" data-ajax="false">
         <div data-role="fieldcontain" class="list-template">
             <div id="recent-campaigns-list">
 				<select name="selectmenu0" id="selectmenu1">
-					<option value="null">
-						List
-					</option>
-					<option value="null">
-						List1
-					</option>
-					<option value="null">
-						List3
-					</option>
+					<option value="null">List</option>
+					<option value="null">List1</option>
+					<option value="null">List3</option>
 				</select>
             </div>
         </div>
-        <form id = "recent_campaigns_form" onsubmit = "recent_campaigns(this); return false;" data-ajax="false">
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
                 <input id="start_date_2" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>

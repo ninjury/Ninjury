@@ -35,6 +35,9 @@ function recent_campaigns(form_elt){
 	var s2 = form_elt.elements['selectmenu1'].value;
 	var s3 = form_elt.elements['selectmenu2'].value;
 
+	sdate = (sdate == "") ? "null" : sdate;
+	edate = (sdate == "") ? "null" : edate;
+
 	alert("sdate: " + sdate + "  edate: " + edate + "  s2: " + s2 );
 
 	sdate.replace("-","/");
