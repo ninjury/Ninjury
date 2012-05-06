@@ -175,7 +175,7 @@
                 <input id="end_date_2" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
         </div>
-        <!-- <div class="ui-grid-b" id="recent-campaigns-grid">
+        <div class="ui-grid-b" id="recent-campaigns-grid">
         	<div id="grid-top" >
 				<div class="ui-block-a cell" id="recent-campaigns-grid-campaigns">
 					<h5>Campaigns</h5>
@@ -203,8 +203,8 @@
 						</select>
 					</div>
 				</div>
-			</div> -->
-			<table id="recent_campaigns_header">
+			</div> 
+			<!-- <table id="recent_campaigns_header">
 				<tr>
 					<td class="name"><h5>Campaigns</h5></td>
 					<td class="stat_1">
@@ -234,7 +234,7 @@
 						</div>
 					</td>
 				</tr>
-			</table>
+			</table> -->
 			<div id="recent_campaigns">
 			</div>
         <input type='submit' class="reports-refresh-button" value='Refresh' data-role="button">   
