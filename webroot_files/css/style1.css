@@ -1952,7 +1952,7 @@ padding: 0px;
 	text-align: left;
 	cursor: pointer;
 }
-<<<<<<< HEAD
+
 #reset_graph_button{
 	width: 90%;
 	margin: auto;
@@ -1968,9 +1968,7 @@ padding: 0px;
 	width: 50%;
 	float: right;
 }
-=======
 
->>>>>>> b44281d71cac686fc433b0751d4b0c23000f226e
 #graph-options1 .ui-btn-up-a{
 	background: #864A7F;
 	border: 1px solid #864A7F;
@@ -2013,7 +2011,7 @@ padding: 0px;
 
 #recent-campaigns-list {
 	width: 75%;
-	display: inline-block;
+	display: block;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -2026,6 +2024,12 @@ padding: 0px;
 #recent-campaigns-list .ui-btn-hover-a, #recent-campaigns-templates .ui-btn-hover-a {
 	background: #c2a3bf;
 	border: 1px solid #c2a3bf;
+}
+
+.reports-refresh-button {
+	width: 75%;
+	margin:0px auto;
+	display:block;
 }
 
 #recent-campaigns-grid {

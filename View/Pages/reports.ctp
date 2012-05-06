@@ -245,7 +245,7 @@
 			<div id="recent_campaigns">
             </div>
         </div>
-        <a data-role="button" data-transition="fade" href="#page1">
+        <a class="reports-refresh-button" data-role="button" data-transition="fade" href="#page1">
             Refresh
         </a>
         </form>
