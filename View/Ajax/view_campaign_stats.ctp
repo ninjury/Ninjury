@@ -3,7 +3,7 @@
 		<div class="close" >
 			<a id = "close-dialog" href="#" data-rel = "back"> X </a>
 		</div>
-		<center> <p style = "font-size: 1.5em; margin: 0; margin-bottom: 10px;" >  Campaign Statistics for <?php echo('"' . $name . '"'); ?></p> </center> 
+		<center> <p style = "font-size: 1em; margin: 0; margin-bottom: 10px;" >  Campaign Statistics for <?php echo('"' . $name . '"'); ?></p> </center> 
 	
 	</div>
 
@@ -11,22 +11,22 @@
 		<div id = 'view_campaign_stats_div' >
 			<div id = 'view_campaign_stats_div_left' >
 				<h3>
-					total number of users:
+					total users:
 				</h3>	
 				<h3>
-					estimated opens:
+					est opens:
 				</h3>
 				<h3>
-					total number of clicks: 
+					total clicks: 
 				</h3>
 				<h3>	
-					total revenue (in cents):
+					revenue (in cents):
 				</h3>
 				<h3>
-					number of users who opted out:
+					users who opted out:
 				</h3>
 				<h3>
-					number of users who reported spam:
+					users who reported spam:
 				</h3>
 			</div>
 			<div id = 'view_campaign_stats_div_right' >

@@ -4,7 +4,7 @@
 	<div class="close" >
 		<a id = "close-dialog" href="#" data-rel = "back"> X </a>
 	</div>
-	<center> <p style = "font-size: 2em; margin: 0; margin-bottom: 10px;" >  Preview for <?php echo('"' . $name . '"'); ?></p> </center> 
+	<center> <p style = "font-size: 1em; margin: 0; margin-bottom: 10px;" >  Preview for <?php echo('"' . $name . '"'); ?></p> </center> 
 
 </div>
 	<div data-role="content">

@@ -2093,8 +2093,7 @@ div.loader img {
 	display: block;
 	/*border: 3px solid blue; */
 	margin: 5px auto;
-	max-width: 90%;
-	min-width: 28em;
+	min-width: 30em;
 	width: 70%;
 }
 #view_campaign_stats_div_left{
