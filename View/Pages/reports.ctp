@@ -153,31 +153,32 @@
         </div>
 		</form>
     </div>
-    <div data-role="collapsible" data-collapsed="true" class="recent-campaigns">
+    <div id="collapsible_recent_campaigns" data-role="collapsible" data-collapsed="true" class="recent-campaigns">
         <h3>
             Recent Campaigns
         </h3>
         <div data-role="fieldcontain" class="list-template">
             <div id="recent-campaigns-list">
-				<select name="selectmenu1" id="selectmenu1">
-					<option value="list1">
+				<select name="selectmenu0" id="selectmenu1">
+					<option value="null">
 						List
 					</option>
-					<option value="list2">
+					<option value="null">
 						List1
 					</option>
-					<option value="list3">
+					<option value="null">
 						List3
 					</option>
 				</select>
             </div>
         </div>
+        <form id = "recent_campaigns_form" method="POST" onsubmit = "recent_campaigns(this); return false;" data-ajax="false">
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
-                <input id="textinput7" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                <input id="start_date_2" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
             <fieldset data-role="controlgroup">
-                <input id="textinput8" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
+                <input id="end_date_2" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
         </div>
         <div class="ui-grid-b" id="recent-campaigns-grid">
@@ -191,27 +192,51 @@
 
 					<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
 						<select name="selectmenu1" >
-							<option value="option1">
-								Opens
+							<option value="count">
+								Count
 							</option>
-							<option value="list2">
+							<option value="estopens">
+								Est. Opens
+							</option>
+							<option value="click">
 								Clicks
 							</option>
-							<option value="list3">
-								PV/M
+							<option value="pv">
+								Pageviews
+							</option>
+							<option value="rev">
+								Revenue
+							</option>
+							<option value="softbounce">
+								Softbounce
+							</option>
+							<option value="hardbounce">
+								Softbounce
 							</option>
 						</select>
 					</div>
 					<div data-role="fieldcontain" class="ui-block-c" id="recent-campaigns-grid-clicks" >
-						<select name="selectmenu1" >
-							<option value="option1">
+						<select name="selectmenu2" >
+							<option value="count">
+								Count
+							</option>
+							<option value="estopens">
+								Est. Opens
+							</option>
+							<option value="click">
 								Clicks
 							</option>
-							<option value="list2">
-								PV/M
+							<option value="pv">
+								Pageviews
 							</option>
-							<option value="list3">
-								Bounce %
+							<option value="rev">
+								Revenue
+							</option>
+							<option value="softbounce">
+								Softbounce
+							</option>
+							<option value="hardbounce">
+								Softbounce
 							</option>
 						</select>
 					</div>
@@ -220,10 +245,7 @@
 			<div id="recent_campaigns">
             </div>
         </div>
-        <a class="reports-refresh-button" data-role="button" data-transition="fade" href="#page1">
-            Refresh
-        </a>
-        <div id="test">
-        </div>
+        <input type='submit' class="reports-refresh-button" value='Refresh' data-role="button" data-transition="fade" href="#page1">   
+        </form>
     </div>
 </div>
