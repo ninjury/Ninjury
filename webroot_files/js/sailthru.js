@@ -11,8 +11,12 @@ function initSlider(elementId)
 		return;
 	}
 
+	var ua = navigator.userAgent.toLowerCase();
+	var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+
 	var slider = new Swipe(document.getElementById(elementId), {
 		    elementsShown: 3,
+		    twod: isAndroid
 		});
 	return slider;
 }
