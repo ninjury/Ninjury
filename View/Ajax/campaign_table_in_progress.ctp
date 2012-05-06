@@ -4,7 +4,7 @@
             <div class="entry">
                 <div class="description">
                     <div class="name">
-                        <a href = "ajax/campaigns/preview/<?php echo($blast['blast_id']); ?>" data-rel = "dialog" ><?php echo($blast['name']); ?></a>
+                        <a href = "/mobile/ajax/campaigns/preview/<?php echo($blast['blast_id']); ?>" data-rel = "dialog" ><?php echo($blast['name']); ?></a>
                     </div>
                     <div class="inline info">
                         <div class="list"><?php echo($blast['list']); ?></div>
