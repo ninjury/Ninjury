@@ -102,7 +102,7 @@ if(this.two)
 }
 else
 {
-    style.webkitTransform = 'translate3d(' + -(index * this.width/this.elnum) + 'px,0)';
+    style.webkitTransform = 'translate3d(' + -(index * this.width/this.elnum) + 'px,0,0)';
 }
     style.msTransform = style.MozTransform = style.OTransform = 'translateX(' + -(index * this.width/this.elnum) + 'px)';
 
