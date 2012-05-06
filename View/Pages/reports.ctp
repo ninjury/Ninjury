@@ -95,32 +95,37 @@
 						Campaigns
 					</h5>
 				</div>
-				<div data-role="fieldcontain" class="ui-block-b" id="recent-campaigns-grid-open" >
-					<select name="selectmenu1" >
-						<option value="option1">
-							Open%
-						</option>
-						<option value="list2">
-							Clicks
-						</option>
-						<option value="list3">
-							PV/M
-						</option>
-					</select>
-				</div>
-				<div data-role="fieldcontain" class="ui-block-c" id="recent-campaigns-grid-clicks" >
-					<select name="selectmenu1" >
-						<option value="option1">
-							Clicks
-						</option>
-						<option value="list2">
-							PV/M
-						</option>
-						<option value="list3">
-							Bounce %
-						</option>
-					</select>
-				</div>
+				<form action = "#" method = "post" >
+
+			
+			
+					<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
+						<select name="selectmenu1" >
+							<option value="option1">
+								Open%
+							</option>
+							<option value="list2">
+								Clicks
+							</option>
+							<option value="list3">
+								PV/M
+							</option>
+						</select>
+					</div>
+					<div data-role="fieldcontain" class="ui-block-c" id="recent-campaigns-grid-clicks" >
+						<select name="selectmenu1" >
+							<option value="option1">
+								Clicks
+							</option>
+							<option value="list2">
+								PV/M
+							</option>
+							<option value="list3">
+								Bounce %
+							</option>
+						</select>
+					</div>
+				</form>
 			</div>
             <div id="cell-top">
 				<div class="ui-block-a cell" >
