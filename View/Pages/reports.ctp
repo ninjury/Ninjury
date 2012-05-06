@@ -11,10 +11,8 @@
                 <input id="textinput6" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
         </div>
-        <div id="highchartcontainer" style="width: 100%; height: 90%">
-        </div>
         <div data-role="fieldcontain" class="graph-options" data-theme="a" data-content-theme="a">
-
+	    <?php echo $this->element('reports_graph', array('seriesData' => $seriesData)); ?>
             <div id="graph-options1">
 				<select name="selectmenu3" id="selectmenu3">
 					<option value="option1">
