@@ -147,6 +147,9 @@ function createChart(seriesData, xaxis)
                 tickInterval: 7,
                 categories: xaxis,
 		    },
+            yAxis: {
+                title: ''
+            }
 		    tooltip: {
 		        formatter: function() {
 		            return this.series.name +' = <b>'+
