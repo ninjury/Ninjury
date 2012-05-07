@@ -2027,10 +2027,8 @@ padding: 0px;
 	width: 33%;
 }
 
-#recent-campaigns-grid-campaigns {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+#recent-campaigns-title {
+	padding-bottom: 10px;
 }
 
 #recent-campaigns-grid #recent-campaigns-grid-open, #recent-campaigns-grid #recent-campaigns-grid-clicks {
