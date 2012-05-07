@@ -49,7 +49,8 @@ class AjaxController extends AppController {
             /*  If the response from the API contains no value for blasts, there is nothing to display.
                 Send a message to the front end and return. */
             if (count($response['blasts']) == 0){
-                echo "Nothing to display.";
+                $results = array();
+                $this->set('blasts',$results);
                 $this->autoLayout = $this->autoRender = false; 
                 return;
             }
@@ -113,7 +114,8 @@ class AjaxController extends AppController {
             /*  If the response from the API contains no value for blasts, there is nothing to display.
                 Send a message to the front end and return. */
             if (count($response['blasts']) == 0){
-                echo "Nothing to display.";
+                $results = array();
+                $this->set('blasts',$results);
                 $this->autoLayout = $this->autoRender = false; 
                 return;
             }
@@ -176,7 +178,8 @@ class AjaxController extends AppController {
             /*  If the response from the API contains no value for blasts, there is nothing to display.
                 Send a message to the front end and return. */
             if (count($response['blasts']) == 0){
-                echo "Nothing to display.";
+                $results = array();
+                $this->set('blasts',$results);
                 $this->autoLayout = $this->autoRender = false; 
                 return;
             }

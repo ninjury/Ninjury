@@ -1,5 +1,13 @@
 <ul class="campaign_list" id="sent">
-    <?php foreach ($blasts as $blast){ ?>
+    <?php if (empty($blasts)){ ?>
+        <li>
+            <div class="entry">
+                <div class="name">
+                    Nothing to Display.
+                </div>
+            </div>
+        </li>
+    <?php } else { foreach ($blasts as $blast){ ?>
         <li>
             <div class="entry">
                 <div class="description">
@@ -16,6 +24,6 @@
                 </div>
             </div>
         </li>
-    <?php } ?>
+    <?php }} ?>
 </ul>
 <?php echo $this->element('campaign_pagination_sent'); ?>
