@@ -99,6 +99,10 @@ $(document).ready(function() {
 		$(window).resize(function () { 
 			setStyle();
 		});
+    
+        if(document.getElementById('trends_form')) {
+            aggregate_trends(document.getElementById('trends_form'));
+        }
 });
 
 
@@ -152,7 +156,7 @@ function createChart(seriesData)
 		        },
 		        labels: {
 		            formatter: function() {
-		                return this.value / 1000 +'k';
+		                return this.value;
 		            }
 		        }
 		    },
