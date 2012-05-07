@@ -171,8 +171,20 @@ function createChart(seriesData, xaxis)
 		    },
 		    plotOptions: {
 		    	series: {
-                    connectNulls: true,
-                }
+                connectNulls: true,
+            },
+		        area: {
+		            marker: {
+		                enabled: false,
+		                symbol: 'circle',
+		                radius: 2,
+		                states: {
+		                    hover: {
+		                        enabled: true
+		                    }
+		                }
+		            }
+		        }
 		    },
 		    series: seriesData
 		});
