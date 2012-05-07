@@ -6,16 +6,21 @@ var ajax_load = "<img class='campaignsLoader' src='/mobile/img/ajax-loader1.gif'
 function aggregate_trends(form_elt){
 	var sdate = form_elt.elements['start_date'].value;
 	var edate = form_elt.elements['end_date'].value;
-    if(sdate == '' && edate == '') {
+    if((typeof sdate == 'undefined' || sdate === null || sdate === '') &&
+       (typeof edate == 'undefined' || edate === null || edate === '')) {
         var d = new Date();
         var month, day, output;
         month = d.getMonth()+1;
         day = d.getDate();
         output = d.getFullYear() + '-' + ((''+month).length<2 ? '0' : '') + month + '-' + ((''+day).length<2 ? '0' : '') + day;
         edate = output;
-        d.setDate(d.getDate() - 30);
+        d = new Date(d.getTime() - (30 * 24 * 60 * 60 * 1000));
+        month = d.getMonth()+1;
+        day = d.getDate();
         output = d.getFullYear() + '-' + ((''+month).length<2 ? '0' : '') + month + '-' + ((''+day).length<2 ? '0' : '') + day;
         sdate = output;
+        console.log(sdate);
+        console.log(edate);
     }
 	var s1 = form_elt.elements['selectmenu3'].value;
 	var s2 = form_elt.elements['selectmenu4'].value;
