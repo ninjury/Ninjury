@@ -1673,6 +1673,10 @@ ul.campaign_list li {
 	background-color: #f0f0f0;
 }
 
+ul.nothing-to-display{
+	text-align: center;
+}
+
 ul.campaign_list li .entry{
 	border-bottom: 1px solid #404041;
 	padding:5px;
