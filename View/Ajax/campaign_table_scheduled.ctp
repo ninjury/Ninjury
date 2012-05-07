@@ -1,5 +1,5 @@
 <ul class="campaign_list" id="scheduled">
-     <?php if (empty($blasts)){ ?>
+     <?php if (empty($blasts)){ echo 'test'; ?>
         <li>
             <div class="entry">
                 <div class="name">
