@@ -2046,9 +2046,9 @@ padding: 0px;
 }
 
 #recent-campaigns-grid #recent-campaigns-grid-campaigns {
-	border: 1px solid white;
-	background-color: white;
+	background-color: #f0f0f0;
 	float: left;
+	font-size: 18pt;
 }
 
 #recent-campaigns-grid #recent-campaigns-grid-open, #recent-campaigns-grid #recent-campaigns-grid-clicks {
