@@ -2221,17 +2221,29 @@ div.loader img {
 /* CONTACT PAGE */
 
 #contact{
+}
+
+#contact_title{
 	display: block;
 	margin: 0px auto;
 }
 
-#contact_title h3 {
-	
+#contact_email{
+	display: block;
+	margin: 0px auto;
 }
 
-#contact_email h3{
-
+#contact_phone {
+	display: block;
+	margin: 0px auto;
 }
+
+
+#contact_address {
+	display: block;
+	margin: 0px auto;
+}
+
 
 
 
