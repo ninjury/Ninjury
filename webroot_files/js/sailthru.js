@@ -129,10 +129,10 @@ function createChart(seriesData, xaxis)
 	{
 		var hc = $("#highchartcontainer");
 		var width = hc.parent().width()*.9;
-		if(width/2 < 150) {
+		if(width/2 < 200) {
 			hc.height(width);
 		} else {
-			hc.width(width/2);
+			hc.height(width/2);
 		}
 
 		chart = new Highcharts.Chart({
