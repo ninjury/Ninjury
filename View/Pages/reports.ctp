@@ -4,7 +4,7 @@
             Visualizer
         </h3>
         
-		<form id = "trends_form" action="ajax/reports/trends" method="POST" onsubmit = "aggregate_trends(this); return false;" data-ajax="false">
+		<form id="trends_form" action="ajax/reports/trends" method="POST" onsubmit="aggregate_trends(this); return false;" data-ajax="false">
         <div data-role="fieldcontain" id="graph-dates">
             <fieldset data-role="controlgroup">
                 <input id="start_date" name="start_date" placeholder="Start" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
@@ -16,7 +16,6 @@
         <div id="highchartcontainer" style="width: 100%; height: 90%">
         </div>
         <div data-role="fieldcontain" class="graph-options" data-theme="a" data-content-theme="a" id="graph_options_container">
-
         	<div id="graph_options_container_left">
 				<div id="graph-options1">
 					<select name="selectmenu3" id="selectmenu3">

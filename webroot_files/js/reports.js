@@ -6,7 +6,6 @@ var ajax_load = "<img class='campaignsLoader' src='/mobile/img/ajax-loader1.gif'
 
 
 function aggregate_trends(form_elt){
-	
 	var sdate = form_elt.elements['start_date'].value;
 	var edate = form_elt.elements['end_date'].value;
 	var s1 = form_elt.elements['selectmenu3'].value;
@@ -19,13 +18,10 @@ function aggregate_trends(form_elt){
 	
 	$.post('ajax/reports/trends', {"start_date": sdate, "end_date": edate, "selectmenu3": s1, 
 		"selectmenu4": s2, "selectmenu5": s3, "selectmenu6": s4}, function(response){
-			//$("#highchartcontainer").html(response);
 			console.log(response);
 			createChart(response);
-			
-		});
+		}, "json");
 	return false;
-		
 }
 
 function recent_campaigns(form_elt){
