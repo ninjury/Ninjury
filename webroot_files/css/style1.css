@@ -1940,7 +1940,7 @@ padding: 0px;
 }
 
 #recent_campaigns_table td {
-	color: #ffffff;
+	color: #040401;
 	border:1px solid #040401;
 	height: 1.5em;
 }
@@ -1955,7 +1955,7 @@ padding: 0px;
 
 
 #recent_campaigns_table a {
-	color: #ffffff;
+	color: #040401;
 	font-weight: bold;
 	text-decoration: none;
 }
