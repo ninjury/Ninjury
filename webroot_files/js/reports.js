@@ -19,8 +19,6 @@ function aggregate_trends(form_elt){
         day = d.getDate();
         output = d.getFullYear() + '-' + ((''+month).length<2 ? '0' : '') + month + '-' + ((''+day).length<2 ? '0' : '') + day;
         sdate = output;
-        console.log(sdate);
-        console.log(edate);
     }
 	var s1 = form_elt.elements['selectmenu3'].value;
 	var s2 = form_elt.elements['selectmenu4'].value;
@@ -32,8 +30,7 @@ function aggregate_trends(form_elt){
 	
 	$.post('ajax/reports/trends', {"start_date": sdate, "end_date": edate, "selectmenu3": s1, 
 		"selectmenu4": s2, "selectmenu5": s3, "selectmenu6": s4}, function(response){
-			console.log(response);
-			createChart(response);
+			createChart(response[0], response[1]);
 		}, "json");
 	return false;
 }
