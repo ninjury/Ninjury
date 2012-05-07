@@ -1779,13 +1779,14 @@ padding: 0px;
 }
 
 
-#recent_campaigns_table, #recent_campaigns_header {
+#recent_campaigns_header {
 	font-family: 'IntervalSansPro-RegCond',Helvetica, Arial;
 	width: 100%;
 	border-collapse:collapse;
 	margin: 0px auto;
 }
 
+/*
 #recent_campaigns_table{
 	background: #e5fafc;
 	border: 1px solid #000000;
@@ -1795,7 +1796,7 @@ padding: 0px;
 #recent_campaigns_table a {
 	color: #040401;
 	text-decoration: none;
-}
+}*/
 
 #campaigns_scheduled .buttons a{
 	background-image: url(../img/delete_small.png);
@@ -1939,9 +1940,19 @@ padding: 0px;
 }
 
 #recent_campaigns_table td {
+	color: #ffffff;
 	border:1px solid #040401;
 	height: 1.5em;
 }
+
+#recent_campaigns_table tr {
+	color: #e5fafc;
+}
+
+#recent_campaigns_table tr.alt {
+	color: #80e5f5;
+}
+
 
 #recent_campaigns_table a {
 	text-decoration: none;
