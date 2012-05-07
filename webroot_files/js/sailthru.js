@@ -147,16 +147,6 @@ function createChart(seriesData, xaxis)
                 tickInterval: 7,
                 categories: xaxis,
 		    },
-		    yAxis: {
-		        title: {
-		            text: ''
-		        },
-		        labels: {
-		            formatter: function() {
-		                return this.value;
-		            }
-		        }
-		    },
 		    tooltip: {
 		        formatter: function() {
 		            return this.series.name +' = <b>'+
@@ -166,7 +156,7 @@ function createChart(seriesData, xaxis)
 		    plotOptions: {
 		    	series: {
                 connectNulls: true,
-            },
+                },
 		        area: {
 		            marker: {
 		                enabled: false,
