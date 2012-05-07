@@ -100,10 +100,10 @@
                 <input id="end_date_2" placeholder="End" value="" type="date" data-role="datebox" data-options='{"mode": "calbox"}'/>
             </fieldset>
         </div>
-        <div class="ui-grid-b" id="recent-campaigns-grid">
-        	<div id="grid-top" >
+        <div class="ui-grid-b" id="recent-campaigns-header">
+        	<div id="grid-top">
 				<div class="ui-block-a cell" id="recent-campaigns-grid-campaigns">
-					<h5>Campaigns</h5>
+					Campaigns
 				</div>
 					<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
 						<select name="selectmenu1" id="selectmenu1">
