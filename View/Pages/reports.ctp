@@ -102,8 +102,8 @@
         </div>
         <div class="ui-grid-b" id="recent-campaigns-header">
         	<div id="grid-top">
-				<div class="ui-block-a cell" id="recent-campaigns-grid-campaigns">
-					Campaigns
+				<div class="ui-block-a cell">
+					<div id="recent-campaigns-grid-campaigns">Campaigns</div>
 				</div>
 					<div data-role="fieldcontain" class="ui-field-contain ui-block-b" id="recent-campaigns-grid-open" >
 						<select name="selectmenu1" id="selectmenu1">

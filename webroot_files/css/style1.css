@@ -1966,7 +1966,7 @@ padding: 0px;
 
 #recent-campaigns-header .cell {
 	display: inline-block;
-	width: 32%;
+	width: 33%;
 	height: 40px;
 	background-color: #f0f0f0;
 }
@@ -1982,7 +1982,7 @@ padding: 0px;
 #recent-campaigns-grid .cell {
 	display: inline-block;
 	border: 1px solid black;
-	width: 32%;
+	width: 33%;
 	height: 40px;
 	background-color: #f0f0f0;
 }
@@ -1990,16 +1990,18 @@ padding: 0px;
 #recent-campaigns-grid #cell-top .cell {
 	border: 1px solid black;
 	background-color: #9e9ea1;
-	width: 32%;
+	width: 33%;
 }
 
-#recent-campaigns-grid #recent-campaigns-grid-campaigns {
-	background-color: #f0f0f0;
-	float: left;
+#recent-campaigns-grid-campaigns {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
 }
 
 #recent-campaigns-grid #recent-campaigns-grid-open, #recent-campaigns-grid #recent-campaigns-grid-clicks {
-	width: 32%;
+	width: 33%;
 	float: left;
 	min-height: .5em;
 	font-size: .65em;
