@@ -357,7 +357,7 @@ class AjaxController extends AppController {
         $key3_values = array();
         $key4_values = array();
 
-        $dates_array();
+        $dates_array = array();
 
         $options['beacon_times'] = 1;
         $options['click_times'] = 1;
