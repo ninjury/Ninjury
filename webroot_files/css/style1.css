@@ -2226,22 +2226,26 @@ div.loader img {
 #contact_title{
 	display: block;
 	margin: 0px auto;
+	text-align: center;
 }
 
 #contact_email{
 	display: block;
 	margin: 0px auto;
+	text-align: center;
 }
 
 #contact_phone {
 	display: block;
 	margin: 0px auto;
+	text-align: center;
 }
 
 
 #contact_address {
 	display: block;
 	margin: 0px auto;
+	text-align: center;
 }
 
 
