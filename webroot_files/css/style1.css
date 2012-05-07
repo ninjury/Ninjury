@@ -1955,6 +1955,8 @@ padding: 0px;
 
 
 #recent_campaigns_table a {
+	color: #ffffff;
+	font-weight: bold;
 	text-decoration: none;
 }
 
