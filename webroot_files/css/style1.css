@@ -1925,6 +1925,8 @@ padding: 0px;
 #recent_campaigns_table {
 	width: 98%;
 	border-collapse:collapse;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #recent_campaigns_table td {
