@@ -2032,7 +2032,6 @@ padding: 0px;
 	text-align: center;
 }
 
-
 #recent-campaigns-grid .cell {
 	border: 1px solid black;
 	width: 32%;
@@ -2046,10 +2045,10 @@ padding: 0px;
 	width: 32%;
 }
 
-#recent-campaigns-grid, #recent-campaigns-grid-campaigns {
+#recent-campaigns-grid #recent-campaigns-grid-campaigns {
+	border: 1px solid white;
 	background-color: #f0f0f0;
 	float: left;
-	font-size: 18pt;
 }
 
 #recent-campaigns-grid #recent-campaigns-grid-open, #recent-campaigns-grid #recent-campaigns-grid-clicks {
