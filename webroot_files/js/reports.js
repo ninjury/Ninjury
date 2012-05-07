@@ -40,6 +40,10 @@ function recent_campaigns(page){
 
 	var form_elt = document.getElementById("recent_campaigns_form");
 
+	if (page == 'undefined'){
+		page = 1;
+	}
+
 	var sdate = form_elt.elements['start_date_2'].value;
 	var edate = form_elt.elements['end_date_2'].value;
 	var s0 = form_elt.elements['selectmenu0'].value;
