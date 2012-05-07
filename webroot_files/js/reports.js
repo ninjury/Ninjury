@@ -63,7 +63,7 @@ function checkBeforeLoad(id,loadFunction)
 {
 	if(!$(id).hasClass('loaded'))
 	{
-		loadFunction();
+		loadFunction(document.getElementById("recent_campaigns_form"));
 	}
 }
 
