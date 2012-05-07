@@ -2235,6 +2235,7 @@ div.loader img {
 	margin: 0px auto;
 	text-align: center;
 	border-bottom: 1px solid #00cced;
+	border-top: 1px solid #00cced;
 }
 
 #contact_phone {
