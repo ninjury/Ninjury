@@ -2045,7 +2045,7 @@ padding: 0px;
 	width: 32%;
 }
 
-#recent-campaigns-grid #recent-campaigns-grid-campaigns {
+#recent-campaigns-grid, #recent-campaigns-grid-campaigns {
 	background-color: #f0f0f0;
 	float: left;
 	font-size: 18pt;
