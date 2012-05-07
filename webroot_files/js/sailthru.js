@@ -144,24 +144,8 @@ function createChart(seriesData, xaxis)
 		        text: 'Campaign Statistics'
 		    },
 		    xAxis: {
-                type: 'datetime',
                 tickInterval: 7,
                 categories: xaxis,
-		        labels: {
-		            formatter: function() {
-		                return this.value; // clean, unformatted number for year
-		            }
-		        }
-		    },
-		    yAxis: {
-		        title: {
-		            text: ''
-		        },
-		        labels: {
-		            formatter: function() {
-		                return this.value;
-		            }
-		        }
 		    },
 		    tooltip: {
 		        formatter: function() {
@@ -171,8 +155,20 @@ function createChart(seriesData, xaxis)
 		    },
 		    plotOptions: {
 		    	series: {
-                    connectNulls: true,
-                }
+                connectNulls: true,
+                },
+		        area: {
+		            marker: {
+		                enabled: false,
+		                symbol: 'circle',
+		                radius: 2,
+		                states: {
+		                    hover: {
+		                        enabled: true
+		                    }
+		                }
+		            }
+		        }
 		    },
 		    series: seriesData
 		});
