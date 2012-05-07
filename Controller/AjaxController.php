@@ -357,6 +357,8 @@ class AjaxController extends AppController {
         $key3_values = array();
         $key4_values = array();
 
+        $dates_array = array();
+
         $options['beacon_times'] = 1;
         $options['click_times'] = 1;
         $options['clickmap'] = 1;
@@ -369,6 +371,7 @@ class AjaxController extends AppController {
         $last_datetime = @strtotime($end_date);
         do {
             $current_date = @date('Y-m-d', $current_datetime);
+            array_push($dates_array, $current_date);
                 try {
                     $response = $sailthruClient->stats_blast(null, $current_date, $current_date, $options);
                     if(isset($response[$key1])) {
@@ -392,30 +395,35 @@ class AjaxController extends AppController {
                         array_push($key4_values, 0);
                     }
                 } catch(Sailthru_Client_Exception $e) {
-                    array_push($key1_values, 1);
-                    array_push($key2_values, 1);
-                    array_push($key3_values, 1);
-                    array_push($key4_values, 1);
+                    array_push($key1_values, 0);
+                    array_push($key2_values, 0);
+                    array_push($key3_values, 0);
+                    array_push($key4_values, 0);
                 }
             $current_datetime = @strtotime('+1 day', $current_datetime);
         } while($current_datetime < $last_datetime);
 
         $seriesData = array(
                         array(
-                            'name' => $key1,
-                            'data' => $key1_values
+                            array(
+                                'name' => $key1,
+                                'data' => $key1_values
+                            ),
+                            array(
+                                'name' => $key2,
+                                'data' => $key2_values
+                            ),
+                            array(
+                                'name' => $key3,
+                                'data' => $key3_values
+                            ),
+                            array(
+                                'name' => $key4,
+                                'data' => $key4_values
+                            )
                         ),
                         array(
-                            'name' => $key2,
-                            'data' => $key2_values
-                        ),
-                        array(
-                            'name' => $key3,
-                            'data' => $key3_values
-                        ),
-                        array(
-                            'name' => $key4,
-                            'data' => $key4_values
+                            $dates_array
                         )
                       );
         $this->set('seriesData', $seriesData);

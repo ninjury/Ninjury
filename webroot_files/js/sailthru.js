@@ -123,7 +123,7 @@ function setStyle()
 	}
 }
 
-function createChart(seriesData)
+function createChart(seriesData, xaxis)
 {
 	if(!($("#highchartcontainer").length == 0))
 	{
@@ -144,6 +144,7 @@ function createChart(seriesData)
 		        text: 'Campaign Statistics'
 		    },
 		    xAxis: {
+                categories: xaxis,
 		        labels: {
 		            formatter: function() {
 		                return this.value; // clean, unformatted number for year
@@ -171,7 +172,7 @@ function createChart(seriesData)
                 connectNulls: true,
             },
 		        area: {
-		            pointStart: 1940,
+		            pointStart: 2012-05-06,
 		            marker: {
 		                enabled: false,
 		                symbol: 'circle',
