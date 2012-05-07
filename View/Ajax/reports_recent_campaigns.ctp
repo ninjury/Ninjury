@@ -1,5 +1,5 @@
 <!-- <div class="ui-grid-b" id="recent-campaigns-grid"> -->
-<table>
+<table id="recent_campaigns_table">
 <?php foreach ($results as $blast){ ?>
     <tr>
         <td class="name"><a href="/mobile/ajax/campaigns/preview/<?php echo($blast['blast_id']); ?>"><?php echo ($blast['name']); ?></a></td>

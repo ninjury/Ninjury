@@ -1933,22 +1933,35 @@ padding: 0px;
 }
 
 /* REPORTS PAGE - RECENT CAMPAIGNS */
-table {
+#recent_campaigns_table {
 	width: 98%;
+	border-collapse:collapse;
 }
 
-table .name{
+#recent_campaigns_table td {
+	border:1px solid #040401;
+	height: 1.5em;
+}
+
+#recent_campaigns_table a {
+	text-decoration: none;
+}
+
+#recent_campaigns_table  .name{
 	width: 33%;
+	max-width: 33%;
 	text-align: center;
 }
 
-table .stat_1{
+#recent_campaigns_table  .stat_1{
 	width: 33%;
+	max-width: 33%;
 	text-align: center;
 }
 
-table .stat_2{
+#recent_campaigns_table  .stat_2{
 	width: 33%;
+	max-width: 33%;
 	text-align: center;
 }
 
