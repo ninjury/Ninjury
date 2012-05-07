@@ -76,4 +76,8 @@ class PagesController extends AppController {
 		$this->render('campaigns');
 	}
 
+	public function contact(){
+		$this->render('contact');
+	}
+
 }
