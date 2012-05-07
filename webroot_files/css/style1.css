@@ -1949,16 +1949,19 @@ padding: 0px;
 
 #recent_campaigns_table  .name{
 	width: 33%;
+	max-width: 33%;
 	text-align: center;
 }
 
 #recent_campaigns_table  .stat_1{
 	width: 33%;
+	max-width: 33%;
 	text-align: center;
 }
 
 #recent_campaigns_table  .stat_2{
 	width: 33%;
+	max-width: 33%;
 	text-align: center;
 }
 
