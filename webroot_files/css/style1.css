@@ -1967,7 +1967,7 @@ padding: 0px;
 #recent-campaigns-header .cell {
 	display: inline-block;
 	width: 33%;
-	height: 40px;
+	/*height: 40px;*/
 	background-color: #f0f0f0;
 }
 
@@ -1983,7 +1983,7 @@ padding: 0px;
 	display: inline-block;
 	border: 1px solid black;
 	width: 33%;
-	height: 40px;
+	/*height: 40px;*/
 	background-color: #f0f0f0;
 }
 
