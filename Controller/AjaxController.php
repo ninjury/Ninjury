@@ -178,7 +178,7 @@ class AjaxController extends AppController {
             /*  If the response from the API contains no value for blasts, there is nothing to display.
                 Send a message to the front end and return. */
             if (count($response['blasts']) == 0){
-                echo '<li><div class="entry"><div class="name">Nothing to Display</div></div></li>';
+                echo '<ul class="campaign_list" id="in_progress"><li><div class="entry"><div class="name">Nothing to Display</div></div></li></ul>';
                 $results = array();
                 $this->set('blasts',$results);
                 $this->autoLayout = $this->autoRender = false; 
