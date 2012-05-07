@@ -370,7 +370,7 @@ class AjaxController extends AppController {
         do {
             $current_date = @date('Y-m-d', $current_datetime);
                 try {
-                    $response = $sailthruClient->stats_blast($current_date, $current_date, $options);
+                    $response = $sailthruClient->stats_blast(null, $current_date, $current_date, $options);
                     if(isset($response[$key1])) {
                 	    array_push($key1_values, $response[$key1]);
                     } else {
@@ -392,10 +392,10 @@ class AjaxController extends AppController {
                         array_push($key4_values, 0);
                     }
                 } catch(Sailthru_Client_Exception $e) {
-                    array_push($key1_values, 0);
-                    array_push($key2_values, 0);
-                    array_push($key3_values, 0);
-                    array_push($key4_values, 0);
+                    array_push($key1_values, 1);
+                    array_push($key2_values, 1);
+                    array_push($key3_values, 1);
+                    array_push($key4_values, 1);
                 }
             $current_datetime = @strtotime('+1 day', $current_datetime);
         } while($current_datetime < $last_datetime);
