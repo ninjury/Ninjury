@@ -149,7 +149,7 @@ function createChart(seriesData, xaxis)
 		    },
             yAxis: {
                 title: ''
-            }
+            },
 		    tooltip: {
 		        formatter: function() {
 		            return this.series.name +' = <b>'+
