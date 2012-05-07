@@ -2002,7 +2002,7 @@ padding: 0px;
 }
 
 #recent-campaigns-list {
-	width: 95%;
+	width: 98%;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -2025,7 +2025,7 @@ padding: 0px;
 }
 
 #recent-campaigns-grid {
-	width: 95%;
+	width: 98%;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -2060,14 +2060,6 @@ padding: 0px;
 #recent-campaigns-grid .ui-bar, #recent-campaigns-grid .ui-body {
 	display: inline-block;
 	float: left;
-}
-
-#recent_campaigns_title {
-	display: block;
-	margin-bottom: 5px;
-	font-size: 18pt;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 #grid-top {
