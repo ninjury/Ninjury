@@ -1851,9 +1851,9 @@ padding: 0px;
 
 #graph-options1, #graph-options2, #graph-options3, #graph-options4 {
 	width:40%;
-	display: inline-block;
-	margin-left: 3%;
-	margin-right: 3%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .graph-options .ui-select .ui-btn-icon-right .ui-btn-inner {
