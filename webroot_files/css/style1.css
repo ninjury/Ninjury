@@ -2218,6 +2218,23 @@ div.loader img {
 	margin: 0px auto;
 }
 
+/* CONTACT PAGE */
+
+#contact{
+	display: block;
+	margin: 0px auto;
+}
+
+#contact_title h3 {
+	
+}
+
+#contact_email h3{
+
+}
+
+
+
 /* Hex Colors
 00cced
 80e5f5
