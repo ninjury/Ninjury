@@ -84,6 +84,9 @@ function init()
 function pjaxLoadInit()
 {
 	$("input[data-role='datebox']").click(function(){ $(this).datebox("open"); });
+        if(document.getElementById('trends_form')) {
+            aggregate_trends(document.getElementById('trends_form'));
+        }
 }
 
 
@@ -100,9 +103,6 @@ $(document).ready(function() {
 			setStyle();
 		});
     
-        if(document.getElementById('trends_form')) {
-            aggregate_trends(document.getElementById('trends_form'));
-        }
 });
 
 
