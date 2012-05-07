@@ -171,21 +171,8 @@ function createChart(seriesData, xaxis)
 		    },
 		    plotOptions: {
 		    	series: {
-                connectNulls: true,
-            },
-		        area: {
-		            pointStart: 2012-05-06,
-		            marker: {
-		                enabled: false,
-		                symbol: 'circle',
-		                radius: 2,
-		                states: {
-		                    hover: {
-		                        enabled: true
-		                    }
-		                }
-		            }
-		        }
+                    connectNulls: true,
+                }
 		    },
 		    series: seriesData
 		});
