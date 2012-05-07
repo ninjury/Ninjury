@@ -82,7 +82,7 @@
         <h3>
             Recent Campaigns
         </h3>
-        <form id = "recent_campaigns_form" onsubmit = "recent_campaigns(this); return false;" data-ajax="false">
+        <form id = "recent_campaigns_form" onsubmit = "recent_campaigns('recent_campaigns_form',1); return false;" data-ajax="false">
         <div data-role="fieldcontain" class="list-template">
             <div id="recent-campaigns-list">
 				<select name="selectmenu0" id="selectmenu0">
