@@ -1996,6 +1996,7 @@ padding: 0px;
 	border: 1px solid #80e5f5;
 }
 
+
 #recent-campaigns-list {
 	width: 98%;
 	display: block;
@@ -2032,6 +2033,7 @@ padding: 0px;
 }
 
 #recent-campaigns-grid .cell {
+	display: inline-block;
 	border: 1px solid black;
 	width: 32%;
 	height: 40px;
