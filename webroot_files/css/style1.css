@@ -1779,22 +1779,11 @@ padding: 0px;
 }
 
 
-#recent_campaigns_table, #recent_campaigns_header {
+#recent_campaigns_header {
 	font-family: 'IntervalSansPro-RegCond',Helvetica, Arial;
 	width: 100%;
 	border-collapse:collapse;
 	margin: 0px auto;
-}
-
-#recent_campaigns_table{
-	background: #e5fafc;
-	border: 1px solid #000000;
-	text-align: center;
-}
-
-#recent_campaigns_table a {
-	color: #040401;
-	text-decoration: none;
 }
 
 #campaigns_scheduled .buttons a{
@@ -1936,14 +1925,27 @@ padding: 0px;
 #recent_campaigns_table {
 	width: 98%;
 	border-collapse:collapse;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #recent_campaigns_table td {
-	border:1px solid #040401;
+	color: #404041;
+	border:1px solid #404041;
 	height: 1.5em;
 }
 
+#recent_campaigns_table tr {
+	background-color: #e5fafc;
+}
+
+#recent_campaigns_table tr.alt {
+	background-color: #80e5f5;
+}
+
+
 #recent_campaigns_table a {
+	color: #404041;
 	text-decoration: none;
 }
 
