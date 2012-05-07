@@ -10,7 +10,7 @@
 	</div>
 	<div id="contact_address">
 		<h2>Street Address</h2>
-		<h3>160 Varick St., 12th floor</h3>
-		<h3>New York, NY 10013</h3>
+		<p>160 Varick St., 12th floor</p>
+		<p>New York, NY 10013</p>
 	</div>
 </div>
