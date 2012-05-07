@@ -371,7 +371,7 @@ class AjaxController extends AppController {
         $last_datetime = @strtotime($end_date);
         do {
             $current_date = @date('Y-m-d', $current_datetime);
-            array_push($dates_array, $current_date);
+            array_push($dates_array, "'$current_date'");
                 try {
                     $response = $sailthruClient->stats_blast(null, $current_date, $current_date, $options);
                     if(isset($response[$key1])) {
