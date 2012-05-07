@@ -2002,7 +2002,7 @@ padding: 0px;
 }
 
 #recent-campaigns-list {
-	width: 90%;
+	width: 95%;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -2018,14 +2018,14 @@ padding: 0px;
 	border: 1px solid #c2a3bf;
 }
 
-.reports-refresh-button {
+#reports-refresh-button {
 	width: 75%;
 	margin:0px auto;
 	display:block;
 }
 
 #recent-campaigns-grid {
-	width: 90%;
+	width: 95%;
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
@@ -2046,7 +2046,6 @@ padding: 0px;
 }
 
 #recent-campaigns-grid #recent-campaigns-grid-campaigns {
-	border: 1px solid white;
 	background-color: #f0f0f0;
 	float: left;
 }
