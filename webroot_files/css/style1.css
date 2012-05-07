@@ -1797,6 +1797,7 @@ padding: 0px;
 	text-decoration: none;
 }
 
+/*
 .table .ui-link{
 	text-decoration: none; 
 	font-weight: normal;
@@ -1826,41 +1827,35 @@ padding: 0px;
 
 
 #recent_campaigns_table td.name{
-	/*padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
 #recent_campaigns_table td.stat_1{
-	/* padding: 8x 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
 #recent_campaigns_table td.stat_2{
-	/* padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
-#recent_campaigns_header td.name{
-	/*padding: 8px 0px 8px 0px; */
+#recent_campaigns_header td.name{}
 	text-align: center;
 	width: 33%;
 }
 
 #recent_campaigns_header td.stat_1{
-	/* padding: 8x 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
 
 #recent_campaigns_header td.stat_2{
-	/* padding: 8px 0px 8px 0px; */
 	text-align: center;
 	width: 33%;
 }
-
+*/
 #campaigns_scheduled .buttons a{
 	background-image: url(../img/delete_small.png);
 }
@@ -1885,11 +1880,11 @@ padding: 0px;
 	background-position: -32px 0px;
 }
 
-/* Delete/Pause Buttons background. */
+/* Delete/Pause Buttons background.
 .table tr.alt .buttons{
 	background: #ffffff;
 }
-
+*/
 .page_numbers {
 	text-align: center;
 	font-size: 14pt;
@@ -2022,6 +2017,14 @@ padding: 0px;
 	width: 75%;
 	margin:0px auto;
 	display:block;
+}
+
+#recent-campaigns-header{
+	width: 98%;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
 }
 
 #recent-campaigns-grid {
