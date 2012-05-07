@@ -1946,11 +1946,11 @@ padding: 0px;
 }
 
 #recent_campaigns_table tr {
-	color: #e5fafc;
+	background-color: #e5fafc;
 }
 
 #recent_campaigns_table tr.alt {
-	color: #80e5f5;
+	background-color: #80e5f5;
 }
 
 
