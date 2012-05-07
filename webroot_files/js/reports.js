@@ -35,22 +35,27 @@ function aggregate_trends(form_elt){
 	return false;
 }
 
-function recent_campaigns(form_elt){
+function recent_campaigns(page){
+
+	var form_elt = document.getElementById("recent_campaigns_form");
+
+	if (page == 'undefined'){
+		page = 1;
+	}
+
 	var sdate = form_elt.elements['start_date_2'].value;
 	var edate = form_elt.elements['end_date_2'].value;
 	var s0 = form_elt.elements['selectmenu0'].value;
 	var s1 = form_elt.elements['selectmenu1'].value;
 	var s2 = form_elt.elements['selectmenu2'].value;
 
-	//s0 = (s0 == "all") ? "null" : s0;
 	sdate = (sdate == "") ? "null" : sdate;
 	edate = (edate == "") ? "null" : edate;
 
 	var insert = $("#recent_campaigns");
 	insert.html(ajax_load);
 
-	var url = "/mobile/ajax/reports/recent_campaigns/" + sdate + "/" + edate + "/" + s0 + "/" + s1 + "/" + s2 + "/" + "null";
-	//alert(url);
+	var url = "/mobile/ajax/reports/recent_campaigns/" + sdate + "/" + edate + "/" + s0 + "/" + s1 + "/" + s2 + "/" + page;
 	$.get(url, {language: "php", version: 5}, function(responseText){ $(insert).html(responseText); $(insert).addClass("loaded");},"html");
 
 	return false;
@@ -60,7 +65,7 @@ function checkBeforeLoad(id,loadFunction)
 {
 	if(!$(id).hasClass('loaded'))
 	{
-		loadFunction();
+		loadFunction(1);
 	}
 }
 
