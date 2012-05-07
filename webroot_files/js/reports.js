@@ -30,8 +30,7 @@ function aggregate_trends(form_elt){
 	
 	$.post('ajax/reports/trends', {"start_date": sdate, "end_date": edate, "selectmenu3": s1, 
 		"selectmenu4": s2, "selectmenu5": s3, "selectmenu6": s4}, function(response) {
-            console.log(response);
-			createChart(response[0], response[1]);
+			createChart(response[0], response[1][0]);
 		}, "json");
 	return false;
 }
