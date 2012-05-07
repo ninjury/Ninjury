@@ -2064,8 +2064,9 @@ padding: 0px;
 
 #recent_campaigns_title {
 	display: block;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	font-size: 18pt;
+	margin: 0px auto;
 }
 
 #grid-top {
