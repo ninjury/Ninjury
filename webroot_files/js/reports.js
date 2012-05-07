@@ -62,4 +62,4 @@ function checkBeforeLoad(id,loadFunction)
 	}
 }
 
-//$(document).on("expand","#collapsible_recent_campaigns", function() {checkBeforeLoad('#recent_campaigns',recent_campaigns);} );
+$(document).on("expand","#collapsible_recent_campaigns", function() {checkBeforeLoad('#recent_campaigns',recent_campaigns);} );
