@@ -144,6 +144,8 @@ function createChart(seriesData, xaxis)
 		        text: 'Campaign Statistics'
 		    },
 		    xAxis: {
+                type: 'datetime',
+                tickInterval: 7,
                 categories: xaxis,
 		        labels: {
 		            formatter: function() {
