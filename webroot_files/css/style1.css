@@ -1933,7 +1933,7 @@ padding: 0px;
 }
 
 /* REPORTS PAGE - RECENT CAMPAIGNS */
-table {
+#recent_campaigns_table {
 	width: 98%;
 }
 
