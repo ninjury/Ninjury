@@ -2227,18 +2227,21 @@ div.loader img {
 	display: block;
 	margin: 0px auto;
 	text-align: center;
+	color: #00cced;
 }
 
 #contact_email{
 	display: block;
 	margin: 0px auto;
 	text-align: center;
+	border-bottom: 1px solid #00cced;
 }
 
 #contact_phone {
 	display: block;
 	margin: 0px auto;
 	text-align: center;
+	border-bottom: 1px solid #00cced;
 }
 
 
@@ -2246,6 +2249,7 @@ div.loader img {
 	display: block;
 	margin: 0px auto;
 	text-align: center;
+	border-bottom: 1px solid #00cced;
 }
 
 
