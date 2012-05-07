@@ -36,9 +36,9 @@ function aggregate_trends(form_elt){
 	return false;
 }
 
-function recent_campaigns(id, page){
+function recent_campaigns(page){
 
-	document.getElementById(id);
+	document.getElementById("recent_campaigns_form");
 
 	var sdate = form_elt.elements['start_date_2'].value;
 	var edate = form_elt.elements['end_date_2'].value;
@@ -62,7 +62,7 @@ function checkBeforeLoad(id,loadFunction)
 {
 	if(!$(id).hasClass('loaded'))
 	{
-		loadFunction("recent_campaigns_form",1);
+		loadFunction(1);
 	}
 }
 
