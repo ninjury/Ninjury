@@ -43,7 +43,7 @@ class AjaxController extends AppController {
         $options['status'] = 'sent';
 
         // Only display Sent campaigns from the past number of days defined by the DEFAULT_DAYS constant.
-        $temp = $time();
+        $temp = time();
         $end_date = date("m/d/y",$temp);
         $temp = strtotime($end_date) - DEFAULT_DAYS*86400; 
         $start_date = date("m/d/y",$temp);
