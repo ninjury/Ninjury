@@ -1817,6 +1817,7 @@ padding: 0px;
 .page_numbers {
 	text-align: center;
 	font-size: 14pt;
+	margin-bottom: 10px;
 }
 
 .ui-body-a .page_numbers .ui-link{
