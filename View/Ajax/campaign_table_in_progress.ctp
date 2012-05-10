@@ -1,6 +1,6 @@
 <ul class="campaign_list" id="in_progress">
-    <?php if empty($blasts){ ?>
-    <p>Nothing to Display</p>
+    <?php if (count($blasts) == 0){ ?>
+        <p>Nothing to Display</p>
     <?php } else { foreach ($blasts as $blast){ ?>
         <li>
             <div class="entry">
