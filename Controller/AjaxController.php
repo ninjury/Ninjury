@@ -120,7 +120,7 @@ class AjaxController extends AppController {
         $options['status'] = 'scheduled';
 
         // Only display Scheduled campaigns from the following number of days defined by the DEFAULT_DAYS constant.
-        $temp = $time();
+        $temp = time();
         $start_date = date("m/d/y",$temp);
         $temp = strtotime($start_date) + DEFAULT_DAYS*86400; 
         $end_date = date("m/d/y",$temp);
