@@ -41,14 +41,26 @@ class AjaxController extends AppController {
         
         // Create of array of options and specify that sent campaigns are being requested.
         $options['status'] = 'sent';
+
+        // Only display Sent campaigns from the past number of days defined by the DEFAULT_DAYS constant.
+        $temp = $time();
+        $end_date = date("m/d/y",$temp);
+        $temp = strtotime($end_date) - DEFAULT_DAYS*86400; 
+        $start_date = date("m/d/y",$temp);
+
+        $options['start_date'] = $start_date;
+        $options['end_date'] = $end_date;
+
         try{
 
-            // API call to obtain information on blasts, passing in the options array.
+
+             // API call to obtain information on blasts, passing in the options array.
             $response = $sailthruClient->getBlasts($options);
 
             /*  If the response from the API contains no value for blasts, there is nothing to display.
                 Send a message to the front end and return. */
             if (count($response['blasts']) == 0){
+                echo 'Nothing to Display';
                 $results = array();
                 $this->set('blasts',$results);
                 $this->autoLayout = $this->autoRender = false; 
@@ -67,7 +79,7 @@ class AjaxController extends AppController {
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
-                
+                //Create an array of blast results to be accessed by the View.
                 $results = array();
                 for ($i = $start; $i < $end; $i++){
                     if(array_key_exists($i, $response['blasts'])){
@@ -106,6 +118,15 @@ class AjaxController extends AppController {
         
         // Create of array of options and specify that scheduled campaigns are being requested.
         $options['status'] = 'scheduled';
+
+        // Only display Scheduled campaigns from the following number of days defined by the DEFAULT_DAYS constant.
+        $temp = $time();
+        $start_date = date("m/d/y",$temp);
+        $temp = strtotime($start_date) + DEFAULT_DAYS*86400; 
+        $end_date = date("m/d/y",$temp);
+
+        $options['start_date'] = $start_date;
+        $options['end_date'] = $end_date;
         try{
 
             // API call to obtain information on blasts, passing in the options array.
@@ -115,6 +136,7 @@ class AjaxController extends AppController {
                 Send a message to the front end and return. */
             if (count($response['blasts']) == 0){
                 $results = array();
+                echo 'Nothing to Display';
                 $this->set('blasts',$results);
                 $this->autoLayout = $this->autoRender = false; 
                 return;
@@ -131,7 +153,7 @@ class AjaxController extends AppController {
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
-                
+                //Create an array of blast results to be accessed by the View.
                 $results = array();
                 for ($i = $start; $i < $end; $i++){
                     if(array_key_exists($i, $response['blasts'])){
@@ -178,7 +200,8 @@ class AjaxController extends AppController {
             /*  If the response from the API contains no value for blasts, there is nothing to display.
                 Send a message to the front end and return. */
             if (count($response['blasts']) == 0){
-                echo '<ul class="campaign_list" id="in_progress"><li><div class="entry"><div id="nothing-to-display">Nothing to Display</div></div></li></ul>';
+                //echo '<ul class="campaign_list" id="in_progress"><li><div class="entry"><div id="nothing-to-display">Nothing to Display</div></div></li></ul>';
+                echo 'Nothing to Display';
                 $results = array();
                 $this->set('blasts',$results);
                 $this->autoLayout = $this->autoRender = false; 
@@ -196,7 +219,7 @@ class AjaxController extends AppController {
                 $start = ($page - 1 )*RESULTS_PER_PAGE;
                 $end = $page*RESULTS_PER_PAGE;
                 
-                
+                //Create an array of blast results to be accessed by the View.
                 $results = array();
                 for ($i = $start; $i < $end; $i++){
                     if(array_key_exists($i, $response['blasts'])){
@@ -475,36 +498,6 @@ class AjaxController extends AppController {
         }            
     }
 
-    public function reports_stats() {
-
-        $sailthruClient = new Sailthru_Client(API_KEY, API_SECRET);  
-                
-        try{
-            if (!isset($response['error']) ) {
-
-                if (isset($this->params['pass'][0])){
-                    $blast_id = $this->params['pass'][0];
-                } 
-                else {
-                    exit;
-                }
-                $response = $sailthruClient->deleteBlast($blast_id);
-                if ($response['ok'] == 1){
-                    echo 'Campaign was deleted successfully.';
-                } else {
-                    echo 'Campaign could not be deleted.';
-                }
-                $this->autoLayout = $this->autoRender = false; 
-            } 
-            else {
-                echo 'error';
-            }
-        } 
-        catch (Sailthru_Client_Exception $e) {
-            echo 'exception';
-        }            
-    }
-
     /**    
     *  Recent Campaigns - This function is used for AJAX requests to obtain information on 
     *  recent campaigns, or a set of campaigns filtered by date and/or list.
@@ -527,7 +520,7 @@ class AjaxController extends AppController {
         // If both start and end date are not set, set to default values.
         if ($this->params['pass'][0] == 'null' && $this->params['pass'][1] == 'null'){
             $end_date = date("m/d/y");
-            $temp = strtotime($end_date) - DEFAULT_DAYS*86400;
+            $temp = strtotime($end_date) - DEFAULT_DAYS*86400; // 86400 = seconds in a day
             $start_date = date("m/d/y",$temp);
 
         // If start is not set, default it to 7 days prior to end date.
@@ -543,8 +536,9 @@ class AjaxController extends AppController {
             $temp = strtotime($this->params['pass'][0]);
             $start_date = date("m/d/y",$temp);
 
-            $temp = strtotime($start_date) + DEFAULT_DAYS*86400;
+            $temp = strtotime($start_date) + DEFAULT_DAYS*86400; 
             $end_date = date("m/d/y",$temp);
+        // Else, both days are set.  Format them for the API call.
         } else {
             $temp = strtotime($this->params['pass'][0]);
             $start_date = date("m/d/y",$temp);
@@ -553,29 +547,31 @@ class AjaxController extends AppController {
             $end_date = date("m/d/y",$temp);
         }
 
-        str_replace("-","/",$end_date);
-        str_replace("-","/",$start_date);
+        //str_replace("-","/",$end_date);
+        //str_replace("-","/",$start_date);
 
-        // Check if parameters for the first statistics is set.
+        // Check if parameters for the first statistics is set.  Default to "Clicks".
         if($this->params['pass'][3] == 'null'){
             $stat_1 = 'click';
         } else {
             $stat_1 = $this->params['pass'][3];
         }
 
-        // Check if parameters for the second statistics is set.
+        // Check if parameters for the second statistics is set.  Default to "Est. Opens".
         if($this->params['pass'][4] == 'null'){
             $stat_2 = 'estopens';
         } else {
             $stat_2 = $this->params['pass'][4];
         }
 
+        // If the set start date is not before the end date chronologically, return with an error message.
         if(strtotime($start_date) > strtotime($end_date)){
             echo 'Invalid date range.';
             $this->autoLayout = $this->autoRender = false; 
             return;
         }
 
+        //Prepare array of options to be passed into the API call.
         $options['start_date'] = $start_date;
         $options['end_date'] = $end_date;
         $options['status'] = 'sent';
