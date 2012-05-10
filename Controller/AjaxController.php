@@ -201,10 +201,10 @@ class AjaxController extends AppController {
                 Send a message to the front end and return. */
             if (count($response['blasts']) == 0){
                 //echo '<ul class="campaign_list" id="in_progress"><li><div class="entry"><div id="nothing-to-display">Nothing to Display</div></div></li></ul>';
-                echo 'Nothing to Display';
+                //echo 'Nothing to Display';
                 $results = array();
                 $this->set('blasts',$results);
-                $this->autoLayout = $this->autoRender = false; 
+                $this->render('campaign_table_in_progress');
                 return;
             }
 
