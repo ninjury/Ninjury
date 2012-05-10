@@ -1,5 +1,7 @@
 <ul class="campaign_list" id="in_progress">
-    <?php foreach ($blasts as $blast){ ?>
+    <?php if empty($blasts){ ?>
+    <p>Nothing to Display</p>
+    <?php } else { foreach ($blasts as $blast){ ?>
         <li>
             <div class="entry">
                 <div class="description">
@@ -16,6 +18,6 @@
                 </div>
             </div>
         </li>
-    <?php } ?>
+    <?php }} ?>
 </ul>
 <?php echo $this->element('campaign_pagination_in_progress'); ?>
